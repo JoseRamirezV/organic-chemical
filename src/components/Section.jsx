@@ -7,7 +7,6 @@ export function Section({ children, background = "grey" }) {
       as="section"
       bg={background}
       h={"100vh"}
-      mr={"0.3vw"}
       alignItems={"center"}
       justifyContent={'center'}
     >

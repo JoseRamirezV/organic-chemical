@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 
-export const useScrollBlur = () => {
+export const useScrollBackground = () => {
   const [scrollData, setScrollData] = useState({
     y: 0,
     lastY: 0,
   });
-  const [blurNav, setBlurNav] = useState(false);
-  console.log(scrollData);
+  const [changeStyle, setChangeStyle] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setScrollData((lastState) => {
@@ -30,13 +29,13 @@ export const useScrollBlur = () => {
     }
 
     if (scrollData.y >= 100) {
-      setBlurNav(true);
+      setChangeStyle(true);
     } else {
-      setBlurNav(false);
+      setChangeStyle(false);
     }
   }, [scrollData]);
 
   return {
-    blurNav
+    changeStyle
   }
 };

@@ -1,15 +1,19 @@
 import { Button, Center, Flex, Image, Spacer } from "@chakra-ui/react";
-import PropTypes from "prop-types";
+import { useScrollBackground } from '../hooks/useScrollBackground';
 
-export function Header({ blur }) {
+export function Header() {
+
+  const {changeStyle} = useScrollBackground()
+  
   return (
     <Center
       as="header"
       w={"100vw"}
       position={"fixed"}
+      zIndex={2}
       left={'0px'}
-      transition={'backdrop-filter 0.5s ease'}
-      backdropFilter={blur && "blur(10px)"}
+      transition={'background 0.5s ease'}
+      background={changeStyle && "blue"}
     >
       <Flex w={"85vw"} p={3} alignItems={"center"}>
         <Image
@@ -24,7 +28,3 @@ export function Header({ blur }) {
     </Center>
   );
 }
-
-Header.propTypes = {
-  blur: PropTypes.bool,
-};
