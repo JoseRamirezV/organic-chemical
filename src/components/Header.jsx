@@ -8,16 +8,16 @@ export function Header() {
   return (
     <Center
       as="header"
-      w={"100vw"}
+      w={"100%"}
+      h={"10%"}
       position={"fixed"}
-      zIndex={2}
-      left={'0px'}
-      transition={'background 0.5s ease'}
+      zIndex={1}
+      transition={'background 0.8s ease'}
       background={changeStyle && "blue"}
     >
-      <Flex w={"85vw"} p={3} alignItems={"center"}>
+      <Flex w={"80vw"} h={'100%'} p={1} alignItems={"center"}>
         <Image
-          boxSize="4rem"
+          h="100%"
           objectFit="cover"
           src="https://bit.ly/dan-abramov"
           alt="Dan Abramov"

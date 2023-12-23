@@ -1,7 +1,14 @@
-import { Button, GridItem, Heading, Grid, Stack, Text } from "@chakra-ui/react";
-import { BsArrowRightCircle } from "react-icons/bs";
+import {
+  AspectRatio,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  Stack,
+  Text
+} from "@chakra-ui/react";
 import EmblaCarousel from "./EmblaCarousel";
-import { Container } from "@chakra-ui/react";
+import { LinkButton } from "./LinkButton";
 
 const slides = [
   {
@@ -10,7 +17,7 @@ const slides = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus impedit quaerat a laudantium quia ut ipsa. Iure quos, quasi corrupti asperiores iusto dolorum omnis quae numquam mollitia totam, eveniet officiis.",
     link: "",
-    imgUrl: "1",
+    imgUrl: "slide1.jpg",
   },
   {
     id: 2,
@@ -18,7 +25,7 @@ const slides = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus impedit quaerat a laudantium quia ut ipsa. Iure quos, quasi corrupti asperiores iusto dolorum omnis quae numquam mollitia totam, eveniet officiis.",
     link: "",
-    imgUrl: "2",
+    imgUrl: "slide2.jpg",
   },
 ];
 
@@ -33,41 +40,41 @@ export function Welcome() {
           }}
           templateColumns={{
             base: "1fr",
-            lg: "40% 60%",
+            lg: "45% 55%",
           }}
           templateRows={{
             base: "1fr 1fr",
             lg: "1fr",
           }}
           key={slide.id}
-          boxSize={"100%"}
-          bg={"green"}
-          placeItems="center"
+          px={10}
+          placeItems={"center"}
         >
-          <GridItem area="info" placeContent="center">
+          <GridItem area="info" align="center" ml={"15%"}>
             <Stack
-              boxSize={"70%"}
-              gap={10}
               justify={"center"}
+              textAlign={"start"}
+              gap={10}
+              p={"1.5rem"}
+              bg={"#56d152"}
+              borderRadius={"10px"}
+              color={"white"}
             >
-              <Heading>{slide.title}</Heading>
+              <Heading as="h2" fontWeight={"semibold"} size="2xl">
+                {slide.title}
+              </Heading>
               <Text>{slide.description}</Text>
-              <Button
-                as="a"
-                w={"10rem"}
-                rounded="full"
-                href={slide.link}
-                variant={"outline"}
-                rightIcon={<BsArrowRightCircle />}
-              >
-                Saber mas
-              </Button>
+              <LinkButton link={slide.link}/>
             </Stack>
           </GridItem>
-          <GridItem area="img">
-            <Container h="90%" border="1px solid blue">
-              <Heading>IMG {slide.imgUrl}</Heading>
-            </Container>
+          <GridItem area="img" w="70%">
+            <AspectRatio width={"100%"} ratio={1 / 1}>
+              <Image
+                src={`images/${slide.imgUrl}`}
+                objectFit={"cover"}
+                style={{ borderRadius: "100%" }}
+              ></Image>
+            </AspectRatio>
           </GridItem>
         </Grid>
       ))}

@@ -28,7 +28,7 @@ export const useScrollBackground = () => {
       return;
     }
 
-    if (scrollData.y >= 100) {
+    if (scrollData.y >= 10) {
       setChangeStyle(true);
     } else {
       setChangeStyle(false);

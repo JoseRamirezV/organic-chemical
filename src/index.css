@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -11,36 +11,32 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-html, body{
-  min-height: 100vh;
-}
-
+} */
 .App{
+  height: 100vh;
   width: auto;
   display: block;
-  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
-.App::-webkit-scrollbar {
-  width: 0.5vw;
+::-webkit-scrollbar {
+  width: 1vw;
 }
 
 /* Track */
-.App::-webkit-scrollbar-track {
-  border-radius: 10px;
+::-webkit-scrollbar-track {
+  background: rgb(28, 41, 28);
 }
  
 /* Handle */
-.App::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: rgb(218, 218, 218);
+  border: 3px solid rgb(28, 41, 28);
+  background: #56d152;
 }
 
 /* Handle on hover */
-.App::-webkit-scrollbar-thumb:hover {
-  background: rgb(190, 190, 190);
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(53, 206, 73, 0.959)
 }
 

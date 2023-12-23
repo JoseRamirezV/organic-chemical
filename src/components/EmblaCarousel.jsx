@@ -8,10 +8,10 @@ import {
   NextButton,
   PrevButton,
 } from "./EmblaCarouselArrowsDotsButtons";
-import Autoplay from 'embla-carousel-autoplay'
+// import Autoplay from 'embla-carousel-autoplay'
 
 export default function EmblaCarousel({ children, options, h, w }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -62,10 +62,8 @@ export default function EmblaCarousel({ children, options, h, w }) {
         </Box>
       </Box>
 
-      <Box className="embla__buttons">
-        <PrevButton onClick={scrollPrev} disabled={prevBtnDisabled} />
-        <NextButton onClick={scrollNext} disabled={nextBtnDisabled} />
-      </Box>
+      <PrevButton onClick={scrollPrev} disabled={prevBtnDisabled} />
+      <NextButton onClick={scrollNext} disabled={nextBtnDisabled} />
 
       <Box className="embla__dots">
         {scrollSnaps.map((_, index) => (
@@ -73,7 +71,7 @@ export default function EmblaCarousel({ children, options, h, w }) {
             key={index}
             onClick={() => scrollTo(index)}
             className={"embla__dot".concat(
-              index === selectedIndex ? " embla__dot--selected" : ""
+              index === selectedIndex ? " embla__dot--selected" : " embla__dot--notSelected"
             )}
           />
         ))}
@@ -85,8 +83,8 @@ export default function EmblaCarousel({ children, options, h, w }) {
 EmblaCarousel.propTypes = {
   children: PropTypes.node.isRequired,
   options: PropTypes.shape({
-    duration: PropTypes.number,
     loop: PropTypes.bool,
+    duration: PropTypes.number,
   }),
   h: PropTypes.number.isRequired,
   w: PropTypes.number.isRequired,
