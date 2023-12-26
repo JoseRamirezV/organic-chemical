@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+template/blog.jpg
+template/extra.jpg
+template/footer.jpg
+template/invitacion.jpg
+template/prodcuts.jpg
+template/services.jpg
+template/welcome.jpg
