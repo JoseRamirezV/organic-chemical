@@ -9,7 +9,7 @@ export function Header() {
     <Center
       as="header"
       w={"100%"}
-      h={"10%"}
+      h={"15%"}
       position={"fixed"}
       zIndex={1}
       transition={'background 0.8s ease'}
@@ -17,7 +17,7 @@ export function Header() {
     >
       <Flex w={"80vw"} h={'100%'} p={1} alignItems={"center"}>
         <Image
-          h="100%"
+          h="80%"
           objectFit="cover"
           src="https://bit.ly/dan-abramov"
           alt="Dan Abramov"

@@ -10,7 +10,7 @@ import {
 } from "./EmblaCarouselArrowsDotsButtons";
 // import Autoplay from 'embla-carousel-autoplay'
 
-export default function EmblaCarousel({ children, options, h, w }) {
+export function EmblaCarousel({ children, options, h, w }) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -51,7 +51,7 @@ export default function EmblaCarousel({ children, options, h, w }) {
   }, [emblaApi, onInit, onSelect]);
 
   return (
-    <Box className="embla" h={`${h}%`} w={`${w}%`}>
+    <Box className="embla" h={h ? `${h}%` : "auto"} w={w ? `${w}%` : "auto"}>
       <Box className="embla__viewport" ref={emblaRef}>
         <Box className="embla__container">
           {children.map((child, i) => (
@@ -71,7 +71,9 @@ export default function EmblaCarousel({ children, options, h, w }) {
             key={index}
             onClick={() => scrollTo(index)}
             className={"embla__dot".concat(
-              index === selectedIndex ? " embla__dot--selected" : " embla__dot--notSelected"
+              index === selectedIndex
+                ? " embla__dot--selected"
+                : " embla__dot--notSelected"
             )}
           />
         ))}
@@ -86,6 +88,6 @@ EmblaCarousel.propTypes = {
     loop: PropTypes.bool,
     duration: PropTypes.number,
   }),
-  h: PropTypes.number.isRequired,
-  w: PropTypes.number.isRequired,
+  h: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  w: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };

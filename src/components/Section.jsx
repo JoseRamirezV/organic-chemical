@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 
-export function Section({ children, background = "#ffff", padding = 10}) {
+export function Section({ children, background = "gray.50", padding = 10}) {
   return (
     <Flex
       as="section"

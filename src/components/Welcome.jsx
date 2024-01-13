@@ -5,9 +5,9 @@ import {
   Heading,
   Image,
   Stack,
-  Text
+  Text,
 } from "@chakra-ui/react";
-import EmblaCarousel from "./EmblaCarousel";
+import { EmblaCarousel } from "./EmblaCarousel";
 import { LinkButton } from "./LinkButton";
 
 const slides = [
@@ -64,7 +64,7 @@ export function Welcome() {
                 {slide.title}
               </Heading>
               <Text>{slide.description}</Text>
-              <LinkButton link={slide.link}/>
+              <LinkButton link={slide.link} />
             </Stack>
           </GridItem>
           <GridItem area="img" w="70%">
