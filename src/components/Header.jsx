@@ -13,14 +13,14 @@ export function Header() {
       position={"fixed"}
       zIndex={1}
       transition={'background 0.8s ease'}
-      background={changeStyle && "blue"}
+      background={changeStyle && "gray.700"}
     >
       <Flex w={"80vw"} h={'100%'} p={1} alignItems={"center"}>
         <Image
           h="80%"
           objectFit="cover"
-          src="https://bit.ly/dan-abramov"
-          alt="Dan Abramov"
+          src="images/Logo.png"
+          alt="Chemical-logo"
         />
         <Spacer />
         <Button>Algo</Button>

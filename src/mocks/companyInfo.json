@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Nosotros",
+        "description": "lorem",
+        "img": "images/Logo.png"
+    },
+    {
+        "title": "Misión",
+        "description": "adasd",
+        "img": "images/Misión.png"
+    },
+    {
+        "title": "Visión",
+        "description": "asdasdasd",
+        "img": "images/Visión.png"
+    },
+    {
+        "title": "Historia",
+        "description": "asdasdas2d",
+        "img": "images/Historia.png"
+    }
+]

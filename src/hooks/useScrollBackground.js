@@ -6,6 +6,7 @@ export const useScrollBackground = () => {
     lastY: 0,
   });
   const [changeStyle, setChangeStyle] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollData((lastState) => {
@@ -36,6 +37,6 @@ export const useScrollBackground = () => {
   }, [scrollData]);
 
   return {
-    changeStyle
-  }
+    changeStyle,
+  };
 };

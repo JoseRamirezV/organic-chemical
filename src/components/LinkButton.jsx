@@ -2,7 +2,12 @@ import { Button, HStack, Icon, Text } from "@chakra-ui/react";
 import { PropTypes } from "prop-types";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 
-export function LinkButton({ text = "Saber mas", link, inverted = false, invertedHover = false }) {
+export function LinkButton({
+  text = "Saber mas",
+  link,
+  inverted = false,
+  invertedHover = false,
+}) {
   const hoverStyles = { color: "rgb(56, 197, 68)", bg: "white" };
   const invertedHoverStyles = { color: "white", bg: "rgb(56, 197, 68)" };
 
@@ -24,7 +29,7 @@ export function LinkButton({ text = "Saber mas", link, inverted = false, inverte
           boxSize={"1.8rem"}
           rounded={"full"}
           bg="white"
-          fill="#026402"
+          fill={"#009100"}
         />
       </HStack>
     </Button>
@@ -36,5 +41,4 @@ LinkButton.propTypes = {
   link: PropTypes.string.isRequired,
   inverted: PropTypes.bool,
   invertedHover: PropTypes.bool,
-  
 };
