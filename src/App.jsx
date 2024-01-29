@@ -1,4 +1,5 @@
-import { Blog } from "./components/Blog";
+import { Us } from "./components/Us";
+import { Footer } from "./components/Footer";
 import { Header } from './components/Header';
 import { ProductsList } from "./components/ProductsList";
 import { Section } from './components/Section';
@@ -8,19 +9,21 @@ import { Welcome } from "./components/Welcome";
 function App() {
 
   return (
-    <div className="App">
+    <>
       <Header />
-      <Section padding={0} background="teal">
+      <Section padding={0} bg="teal">
         <Welcome />
       </Section>
-      <Section>
+      <Section bg="gray.50">
         <ProductsList />
       </Section>
-      <Section background={'teal'}>
-        <Blog />
+      <Section>
+        <Us />
       </Section>
-      {/* <Section background={'green'}></Section> */}
-    </div>
+      <Section height="40vh"  bg={"gray.700"}>
+        <Footer/>
+      </Section>
+    </>
   );
 }
 
