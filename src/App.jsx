@@ -11,16 +11,16 @@ function App() {
   return (
     <>
       <Header />
-      <Section padding={0} bg="teal">
+      <Section px={'0'}>
         <Welcome />
       </Section>
-      <Section bg="gray.50">
+      <Section bg="gray.50" px={{base: '10%', '2xl': '5%'}} height="auto" py={{base: '1rem', '2xl': '2rem'}}>
         <ProductsList />
       </Section>
       <Section>
         <Us />
       </Section>
-      <Section height="40vh"  bg={"gray.700"}>
+      <Section height="40vh" bg={"gray.700"}>
         <Footer/>
       </Section>
     </>

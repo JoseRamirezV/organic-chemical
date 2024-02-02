@@ -11,7 +11,7 @@ import { useState } from "react";
 import { LinkButton } from "./LinkButton";
 import { PropTypes } from "prop-types";
 
-export function ProductCard({product, description, link}) {
+export function ProductCard({product, description, link, ...extraStyles}) {
   const [invertBtnStyle, setInvertBtnStyle] = useState(true);
   
   return (
@@ -25,6 +25,7 @@ export function ProductCard({product, description, link}) {
       boxShadow="lg"
       color={'gray.700'}
       _hover={{ bg: "#48c743", color: 'white' }}
+      {...extraStyles}
     >
       <CardBody>
         <Image
@@ -51,4 +52,5 @@ ProductCard.propTypes = {
   product: PropTypes.string,
   description: PropTypes.string,
   link: PropTypes.string,
+  extraStyles: PropTypes.object
 };

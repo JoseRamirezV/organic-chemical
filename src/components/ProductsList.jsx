@@ -1,4 +1,4 @@
-import { Flex, VStack, Heading, Show, Divider } from "@chakra-ui/react";
+import { Flex, VStack, Heading, Show, Divider, Hide } from "@chakra-ui/react";
 import products from "../mocks/products.json";
 import { ProductCard } from "./ProductCard";
 import { EmblaCarousel } from "./EmblaCarousel";
@@ -6,7 +6,7 @@ import { EmblaCarousel } from "./EmblaCarousel";
 export function ProductsList() {
   return (
     <VStack w="100%" pb={10}>
-      <Show above="1400px">
+      <Show above="1600px">
         <Heading as="h2" w="12rem" textAlign={"center"} mt={10} mb={5} color={'gray.700'}>
           Productos
           <Divider
@@ -28,7 +28,7 @@ export function ProductsList() {
       </Show>
 
       {/* Show on mobile */}
-      <Show below="1400px">
+      <Hide above="1600px">
         <Heading as="h2" w="12rem" textAlign={"center"} mt={10} mb={5} color={'gray.700'}>
           Productos
           <Divider
@@ -40,9 +40,12 @@ export function ProductsList() {
         <EmblaCarousel
           h={"auto"}
           w={'100%'}
+          options={{slidesToScroll: '2'}}
+          slidesContainerStyle={{gap: '1.5rem', py: '1rem'}}
           btnColor="#20a71b"
-          btnSeparation="-2.5rem"
-          dotsTopPosition="100%"
+          btnSeparation="-3rem"
+          enableDots = {false}
+          px={'1rem'}
         >
           {products.map((product, i) => (
             <ProductCard
@@ -50,10 +53,11 @@ export function ProductsList() {
               product={product.name}
               description={product.description}
               link={product.link}
-            ></ProductCard>
+              flex= '0 0 fit-content'
+            />
           ))}
         </EmblaCarousel>
-      </Show>
+      </Hide>
     </VStack>
   );
 }

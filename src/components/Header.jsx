@@ -14,14 +14,14 @@ export function Header() {
       zIndex={1}
       transition={'background 0.8s ease'}
       background={changeStyle && "gray.50"}
-      boxShadow={changeStyle && "#56d152 0px -2px 10px 0px;"}
+      boxShadow={changeStyle && "#56d152 0px 0px 2px 0px;"}
     >
       <Flex w={"80vw"} h={'100%'} p={1} alignItems={"center"}>
         <Image
-          h="90%"
+          h="100%"
+          py={2}
           objectFit="cover"
           // bg={'#c2ddc0'}
-          px={1}
           rounded={'lg'}
           src="images/Logo.png"
           alt="Chemical-logo"

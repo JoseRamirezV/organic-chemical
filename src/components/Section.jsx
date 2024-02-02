@@ -1,15 +1,23 @@
 import { Flex } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 
-export function Section({ children, bg = "gray.100", padding = 10, height='100vh'}) {
+export function Section({
+  children,
+  bg = "gray.100",
+  px = '10%',
+  py = '0',
+  height = "100vh",
+}) {
   return (
     <Flex
       as="section"
-      bg={bg}
       minH={height}
-      px={`${padding}%`}
+      px={px}
+      py={py}
       alignItems={"center"}
-      justifyContent={'center'}
+      justifyContent={"center"}
+      overflowX={"hidden"}
+      bg={bg}
     >
       {children}
     </Flex>
@@ -19,6 +27,7 @@ export function Section({ children, bg = "gray.100", padding = 10, height='100vh
 Section.propTypes = {
   children: PropTypes.node.isRequired,
   bg: PropTypes.string,
-  padding: PropTypes.number,
-  height: PropTypes.string
+  px: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  py: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  height: PropTypes.string,
 };

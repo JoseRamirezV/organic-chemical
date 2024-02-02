@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import useEmblaCarousel from "embla-carousel-react";
 import PropTypes from "prop-types";
 import { useCallback, useEffect, useState } from "react";
@@ -10,7 +10,17 @@ import {
 } from "./EmblaCarouselArrowsDotsButtons";
 // import Autoplay from 'embla-carousel-autoplay'
 
-export function EmblaCarousel({ children, options, h, w }) {
+export function EmblaCarousel({
+  children,
+  options,
+  h = "auto",
+  w = "auto",
+  btnColor = "white",
+  btnSeparation = "1rem",
+  enableDots = true,
+  dotsPositionTop = "90%",
+  slidesContainerStyle,
+  ...extraStyles}) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -50,22 +60,60 @@ export function EmblaCarousel({ children, options, h, w }) {
     emblaApi.on("select", onSelect);
   }, [emblaApi, onInit, onSelect]);
 
+  const nextPrevBtnCommonStyles = {
+    position: "absolute",
+    w: "3rem",
+    h: "100%",
+    justify: "center",
+    align: "center",
+    style: { touchAction: "manipulation" },
+    cursor: "pointer",
+    color: btnColor,
+    _disabled: { opacity: 0.3 },
+  };
+
   return (
-    <Box className="embla" h={h ? `${h}%` : "auto"} w={w ? `${w}%` : "auto"}>
-      <Box className="embla__viewport" ref={emblaRef}>
-        <Box className="embla__container">
-          {children.map((child, i) => (
-            <Box className="embla__slide" key={i}>
-              {child}
-            </Box>
-          ))}
-        </Box>
+    <Flex
+      // className="embla"
+      h={h}
+      w={w}
+      direction={"column"}
+      justify={"center"}
+      pos={"relative"}
+    >
+      <Box
+        // className="embla__viewport"
+        boxSize='full'
+        overflowX={"hidden"}
+        {...extraStyles}
+        ref={emblaRef}
+      >
+        <Flex
+          // className="embla__container"
+          h="full"
+          w={'100%'}
+          style={{ touchAction: "pan-y" }}
+          {...slidesContainerStyle}
+        >
+          {children}
+        </Flex>
       </Box>
 
-      <PrevButton onClick={scrollPrev} disabled={prevBtnDisabled} />
-      <NextButton onClick={scrollNext} disabled={nextBtnDisabled} />
+      <PrevButton
+        onClick={scrollPrev}
+        disabled={prevBtnDisabled}
+        left={btnSeparation}
+        {...nextPrevBtnCommonStyles}
+      />
+      <NextButton
+        onClick={scrollNext}
+        disabled={nextBtnDisabled}
+        right={btnSeparation}
+        {...nextPrevBtnCommonStyles}
+      />
 
-      <Box className="embla__dots">
+      {enableDots && (
+        <Box className="embla__dots" top={dotsPositionTop}>
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
@@ -78,7 +126,8 @@ export function EmblaCarousel({ children, options, h, w }) {
           />
         ))}
       </Box>
-    </Box>
+      )}
+    </Flex>
   );
 }
 
@@ -88,6 +137,12 @@ EmblaCarousel.propTypes = {
     loop: PropTypes.bool,
     duration: PropTypes.number,
   }),
-  h: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  w: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  h: PropTypes.string,
+  w: PropTypes.string,
+  extraStyles: PropTypes.string,
+  slidesContainerStyle: PropTypes.object,
+  btnColor: PropTypes.string,
+  btnSeparation: PropTypes.string,
+  dotsPositionTop: PropTypes.string,
+  enableDots: PropTypes.bool,
 };
