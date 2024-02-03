@@ -21,7 +21,6 @@ export function Header() {
           h="100%"
           py={2}
           objectFit="cover"
-          // bg={'#c2ddc0'}
           rounded={'lg'}
           src="images/Logo.png"
           alt="Chemical-logo"

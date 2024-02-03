@@ -10,20 +10,17 @@ import {
 import { EmblaCarousel } from "./EmblaCarousel";
 import { LinkButton } from "./LinkButton";
 import slides from "../mocks/heroSlides.json";
+import { primaryColor } from '../styles/colorConstants.json';
 
 export function Welcome() {
   return (
-    <EmblaCarousel
-      options={{ loop: true }}
-      h={"100vh"}
-      w={"100%"}
-    >
+    <EmblaCarousel options={{ loop: true }} h={"100vh"} w={"100%"}>
       {slides.map((slide) => (
         <Box
           key={slide.id}
-          bgImage={`images/${slide.imgUrl}`}
+          bgImage={slide.imgUrl}
           bgSize={"cover"}
-          flex={'0 0 100%'}
+          flex={"0 0 100%"}
         >
           <Flex
             direction={{ base: "column-reverse", md: "row" }}
@@ -32,17 +29,16 @@ export function Welcome() {
             justify={{ base: "center", md: "space-between" }}
             align={"center"}
             gap={{ md: "2rem" }}
-            bg={'#ffffff32'}
+            bg={"#ffffff32"}
             backdropFilter={"blur(10px)"}
           >
             <Stack
               justify={"center"}
               textAlign={{ base: "center", sm: "start" }}
-              align={{base: 'center', sm: 'start'}}
+              align={{ base: "center", sm: "start" }}
               gap={{ base: 5, md: 10 }}
               p={"1.5rem"}
               w={{ base: "100%", md: "60%" }}
-              // bg={"#56d152"}
               color={"white"}
             >
               <Heading
@@ -53,7 +49,13 @@ export function Welcome() {
                 {slide.title}
               </Heading>
               <Text>{slide.description}</Text>
-              <LinkButton link={slide.link} />
+              <LinkButton
+                link={slide.link}
+                borderColor='white'
+                color='white'
+                gb='red'
+                _hover={{ color: primaryColor, bg: "white" }}
+              />
             </Stack>
             <AspectRatio
               width={{ base: "100%", md: "25rem" }}
@@ -61,7 +63,7 @@ export function Welcome() {
               flexGrow={{ md: 1 }}
             >
               <Image
-                src={`images/${slide.imgUrl}`}
+                src={slide.imgUrl}
                 objectFit={"cover"}
                 rounded={"full"}
               ></Image>

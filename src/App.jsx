@@ -20,7 +20,7 @@ function App() {
       <Section id={'Nosotros'} height="auto" px={{base: '5%', sm: '10%'}}>
         <Us />
       </Section>
-      <Section height="40vh" bg={"gray.50"}>
+      <Section height="auto" bg={"gray.50"} py="2rem">
         <Footer/>
       </Section>
     </>

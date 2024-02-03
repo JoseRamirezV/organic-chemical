@@ -1,8 +1,7 @@
-import { Box, Flex } from "@chakra-ui/react";
-import useEmblaCarousel from "embla-carousel-react";
+import { Box, Center, Flex } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import { useCallback, useEffect, useState } from "react";
-import "../styles/carousel.css";
+import { useCarousel } from "../hooks/useCarousel";
+import { primaryColor, tertiaryColor } from '../styles/colorConstants.json';
 import {
   DotButton,
   NextButton,
@@ -20,45 +19,18 @@ export function EmblaCarousel({
   enableDots = true,
   dotsPositionTop = "90%",
   slidesContainerStyle,
-  ...extraStyles}) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState([]);
-
-  const scrollPrev = useCallback(
-    () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi]
-  );
-  const scrollNext = useCallback(
-    () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi]
-  );
-  const scrollTo = useCallback(
-    (index) => emblaApi && emblaApi.scrollTo(index),
-    [emblaApi]
-  );
-
-  const onInit = useCallback((emblaApi) => {
-    setScrollSnaps(emblaApi.scrollSnapList());
-  }, []);
-
-  const onSelect = useCallback((emblaApi) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    onInit(emblaApi);
-    onSelect(emblaApi);
-    emblaApi.on("reInit", onInit);
-    emblaApi.on("reInit", onSelect);
-    emblaApi.on("select", onSelect);
-  }, [emblaApi, onInit, onSelect]);
+  ...extraStyles
+}) {
+  const {
+    emblaRef,
+    prevBtnDisabled,
+    nextBtnDisabled,
+    selectedIndex,
+    scrollSnaps,
+    scrollPrev,
+    scrollNext,
+    scrollTo,
+  } = useCarousel(options);
 
   const nextPrevBtnCommonStyles = {
     position: "absolute",
@@ -83,7 +55,7 @@ export function EmblaCarousel({
     >
       <Box
         // className="embla__viewport"
-        boxSize='full'
+        boxSize="full"
         overflowX={"hidden"}
         {...extraStyles}
         ref={emblaRef}
@@ -91,7 +63,7 @@ export function EmblaCarousel({
         <Flex
           // className="embla__container"
           h="full"
-          w={'100%'}
+          w={"100%"}
           style={{ touchAction: "pan-y" }}
           {...slidesContainerStyle}
         >
@@ -113,19 +85,29 @@ export function EmblaCarousel({
       />
 
       {enableDots && (
-        <Box className="embla__dots" top={dotsPositionTop}>
-        {scrollSnaps.map((_, index) => (
-          <DotButton
-            key={index}
-            onClick={() => scrollTo(index)}
-            className={"embla__dot".concat(
-              index === selectedIndex
-                ? " embla__dot--selected"
-                : " embla__dot--notSelected"
-            )}
-          />
-        ))}
-      </Box>
+        <Center
+          gap={"0.75rem"}
+          pos={"absolute"}
+          top={dotsPositionTop}
+          left={0}
+          right={0}
+        >
+          {scrollSnaps.map((_, index) => (
+            <DotButton
+              key={index}
+              onClick={() => scrollTo(index)}
+              _after={{
+                content: '""',
+                width: "100%",
+                height: "0.4rem",
+                borderRadius: "0.2rem",
+                transition: "all 0.2s ease",
+                background: index === selectedIndex ? primaryColor : tertiaryColor,
+              }}
+              _hover={{ _after: { transform: index !== selectedIndex && "translateY(-5px)" } }}
+            />
+          ))}
+        </Center>
       )}
     </Flex>
   );
@@ -139,10 +121,10 @@ EmblaCarousel.propTypes = {
   }),
   h: PropTypes.string,
   w: PropTypes.string,
-  extraStyles: PropTypes.string,
-  slidesContainerStyle: PropTypes.object,
   btnColor: PropTypes.string,
   btnSeparation: PropTypes.string,
-  dotsPositionTop: PropTypes.string,
   enableDots: PropTypes.bool,
+  dotsPositionTop: PropTypes.string,
+  slidesContainerStyle: PropTypes.object,
+  extraStyles: PropTypes.string,
 };

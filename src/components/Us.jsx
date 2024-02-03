@@ -12,6 +12,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import companyInfo from "../mocks/companyInfo.json";
+import {primaryColor, primaryFontColor, secondaryFontColor} from '../styles/colorConstants.json';
 
 export function Us() {
   return (
@@ -27,17 +28,17 @@ export function Us() {
               flexGrow={1}
               roundedTop={"xl"}
               roundedBottom={{ base: "xl", sm: "none" }}
-              bg={"#56d152"}
+              bg={primaryColor}
               color={"white"}
               border={"1px solid"}
-              borderColor={"gray.300"}
+              borderColor={'gray.300'}
               borderBottom={"0"}
               fontWeight={600}
               transition={"all 0.2s ease"}
               transform={"translateY(1px)"}
               _selected={{
                 base: {
-                  color: "gray.700",
+                  color: primaryFontColor,
                   bg: "white",
                 },
                 sm: {
@@ -46,7 +47,7 @@ export function Us() {
               }}
               _hover={{
                 base: {
-                  color: "gray.700",
+                  color: secondaryFontColor,
                   bg: "white",
                 },
                 sm: {
@@ -61,7 +62,7 @@ export function Us() {
       </TabList>
       <TabPanels
         border={"1px solid"}
-        borderColor={"gray.300"}
+        borderColor={'gray.300'}
         bg={"white"}
         rounded={"lg"}
         px={"5%"}
@@ -73,7 +74,7 @@ export function Us() {
             flexDirection={"column"}
             key={title}
             h={{base: '80vh', sm: "60vh"}}
-            color={"gray."}
+            color={primaryFontColor}
           >
             <Heading>{title}</Heading>
             <Divider my={5}/>

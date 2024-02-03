@@ -1,35 +1,28 @@
 import { Button, HStack, Icon, Text } from "@chakra-ui/react";
 import { PropTypes } from "prop-types";
-import { BsArrowRightCircleFill } from "react-icons/bs";
+import { FaAngleRight } from "react-icons/fa";
 
-export function LinkButton({
-  text = "Saber mas",
-  link,
-  inverted = false,
-  invertedHover = false,
-}) {
-  const hoverStyles = { color: "rgb(56, 197, 68)", bg: "white" };
-  const invertedHoverStyles = { color: "white", bg: "rgb(56, 197, 68)" };
-
+export function LinkButton({ text = "Saber mas", link, ...styles }) {
   return (
     <Button
       as="a"
       w={"9rem"}
+      h={"auto"}
       rounded="full"
       href={link}
       variant={"outline"}
-      color={inverted ? "rgb(56, 197, 68)" : "white"}
-      border={`2px solid ${inverted ? "rgb(56, 197, 68)" : "white"}`}
-      _hover={invertedHover ? invertedHoverStyles : hoverStyles}
+      border={"2px solid"}
+      {...styles}
     >
-      <HStack h="100%" gap={4} ml={1}>
+      <HStack gap={4} p={1.5}>
         <Text ml={2}>{text}</Text>
         <Icon
-          as={BsArrowRightCircleFill}
-          boxSize={"1.8rem"}
+          as={FaAngleRight}
+          boxSize={7}
+          p={"5px"}
           rounded={"full"}
-          bg="white"
-          fill={"#009100"}
+          bg="#009100"
+          fill={"white"}
         />
       </HStack>
     </Button>
@@ -39,6 +32,5 @@ export function LinkButton({
 LinkButton.propTypes = {
   text: PropTypes.string,
   link: PropTypes.string.isRequired,
-  inverted: PropTypes.bool,
-  invertedHover: PropTypes.bool,
+  styles: PropTypes.object,
 };

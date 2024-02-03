@@ -5,7 +5,7 @@
       "description":
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus impedit quaerat a laudantium quia ut ipsa. Iure quos, quasi corrupti asperiores iusto dolorum omnis quae numquam mollitia totam, eveniet officiis.",
       "link": "",
-      "imgUrl": "slide1.jpg"
+      "imgUrl": "images/slide1.jpg"
     },
     {
       "id": 2,
@@ -13,6 +13,6 @@
       "description":
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus impedit quaerat a laudantium quia ut ipsa. Iure quos, quasi corrupti asperiores iusto dolorum omnis quae numquam mollitia totam, eveniet officiis.",
       "link": "",
-      "imgUrl": "slide2.jpg"
+      "imgUrl": "images/slide2.jpg"
     }
   ]

@@ -2,30 +2,27 @@ import {
   Card,
   CardBody,
   CardFooter,
-  Image,
   Flex,
   Heading,
+  Image,
   Text,
 } from "@chakra-ui/react";
-import { useState } from "react";
-import { LinkButton } from "./LinkButton";
 import { PropTypes } from "prop-types";
+import { LinkButton } from "./LinkButton";
+import { primaryColor, primaryFontColor } from "../styles/colorConstants.json";
 
-export function ProductCard({product, description, link, ...extraStyles}) {
-  const [invertBtnStyle, setInvertBtnStyle] = useState(true);
-  
+export function ProductCard({ product, description, link, ...extraStyles }) {
   return (
     <Card
-      onMouseEnter={() => setInvertBtnStyle(false)}
-      onMouseLeave={() => setInvertBtnStyle(true)}
-      maxW={{sm: "40rem", md: "20rem"}}
-      maxH={{sm: "45rem", md: "32rem"}}
-      transition={'all 0.2s ease'}
+      maxW={{ sm: "40rem", md: "20rem" }}
+      maxH={{ sm: "45rem", md: "32rem" }}
+      transition={"all 0.2s ease"}
       borderRadius={"3xl"}
       boxShadow="lg"
-      color={'gray.700'}
-      _hover={{ bg: "#48c743", color: 'white' }}
+      color={primaryFontColor}
+      _hover={{ bg: primaryColor, color: "white" }}
       {...extraStyles}
+      data-group
     >
       <CardBody>
         <Image
@@ -35,14 +32,22 @@ export function ProductCard({product, description, link, ...extraStyles}) {
           w={"100%"}
         />
         <Flex direction="column" mt="6" gap="3" w="100%" textAlign={"center"}>
-          <Heading size="md" h={'3rem'} fontWeight={"semibold"}>
+          <Heading size="md" h={"3rem"} fontWeight={"semibold"}>
             {product}
           </Heading>
           <Text fontSize="sm">{description}</Text>
         </Flex>
       </CardBody>
       <CardFooter justify={"center"}>
-        <LinkButton link={link} inverted={invertBtnStyle} />
+        <LinkButton
+          link={link}
+          color={primaryColor}
+          _groupHover={{
+            color: "white",
+            borderColor: "white",
+            _hover: { bg: "white", color: primaryColor },
+          }}
+        />
       </CardFooter>
     </Card>
   );
@@ -52,5 +57,5 @@ ProductCard.propTypes = {
   product: PropTypes.string,
   description: PropTypes.string,
   link: PropTypes.string,
-  extraStyles: PropTypes.object
+  extraStyles: PropTypes.object,
 };

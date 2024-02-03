@@ -2,7 +2,17 @@ import { Flex, Icon } from "@chakra-ui/react";
 import { IoIosArrowForward } from "react-icons/io";
 
 export const DotButton = ({ ...props }) => {
-  return <button type="button" {...props} />;
+  return (
+    <Flex
+      as="button"
+      type="button"
+      align={"center"}
+      style={{ touchAction: "manipulation" }}
+      cursor={"pointer"}
+      boxSize={"3rem"}
+      {...props}
+    />
+  );
 };
 
 export const PrevButton = ({ ...props }) => {

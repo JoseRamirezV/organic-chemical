@@ -2,16 +2,18 @@ import { Flex, VStack, Heading, Show, Divider, Hide } from "@chakra-ui/react";
 import products from "../mocks/products.json";
 import { ProductCard } from "./ProductCard";
 import { EmblaCarousel } from "./EmblaCarousel";
+import { primaryColor, secondaryColor, primaryFontColor } from '../styles/colorConstants.json';
 
 export function ProductsList() {
   return (
     <VStack w="100%" pb={10}>
       <Show above="1600px">
-        <Heading as="h2" w="12rem" textAlign={"center"} mt={10} mb={5} color={'gray.700'}>
+        <Heading as="h2" w="12rem" textAlign={"center"} mt={10} mb={5} color={primaryFontColor}>
           Productos
           <Divider
             mt={2}
-            borderBottom={"5px solid #20a71b"}
+            borderBottom={"5px solid"}
+            borderBottomColor={secondaryColor}
             borderRadius={"full"}
           />
         </Heading>
@@ -29,11 +31,12 @@ export function ProductsList() {
 
       {/* Show on mobile */}
       <Hide above="1600px">
-        <Heading as="h2" w="12rem" textAlign={"center"} mt={10} mb={5} color={'gray.700'}>
+        <Heading as="h2" w="12rem" textAlign={"center"} mt={10} mb={5} color={primaryFontColor}>
           Productos
           <Divider
             mt={2}
-            borderBottom={"5px solid #20a71b"}
+            borderBottom={"5px solid"}
+            borderColor={secondaryColor}
             borderRadius={"full"}
           />
         </Heading>
@@ -42,7 +45,7 @@ export function ProductsList() {
           w={'100%'}
           options={{slidesToScroll: '2'}}
           slidesContainerStyle={{gap: '1.5rem', py: '1rem'}}
-          btnColor="#20a71b"
+          btnColor={primaryColor}
           btnSeparation="-3rem"
           enableDots = {false}
           px={'1rem'}

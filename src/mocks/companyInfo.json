@@ -2,7 +2,7 @@
     {
         "title": "Nosotros",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
-        "img": "images/Logo.png"
+        "img": "images/Nosotros.jpg"
     },
     {
         "title": "Misión",
@@ -12,12 +12,12 @@
     {
         "title": "Visión",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
-        "img": "images/Visión.png"
+        "img": "images/Visión.jpg"
     },
     {
         "title": "Historia",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
-        "img": "images/Historia.png"
+        "img": "images/Historia.jpg"
     }
 
 ]
