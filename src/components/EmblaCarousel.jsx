@@ -7,11 +7,11 @@ import {
   NextButton,
   PrevButton,
 } from "./EmblaCarouselArrowsDotsButtons";
-// import Autoplay from 'embla-carousel-autoplay'
 
 export function EmblaCarousel({
   children,
   options,
+  autoplay = false,
   h = "auto",
   w = "auto",
   btnColor = "white",
@@ -30,7 +30,7 @@ export function EmblaCarousel({
     scrollPrev,
     scrollNext,
     scrollTo,
-  } = useCarousel(options);
+  } = useCarousel(options, autoplay);
 
   const nextPrevBtnCommonStyles = {
     position: "absolute",
@@ -119,6 +119,7 @@ EmblaCarousel.propTypes = {
     loop: PropTypes.bool,
     duration: PropTypes.number,
   }),
+  autoplay: PropTypes.bool,
   h: PropTypes.string,
   w: PropTypes.string,
   btnColor: PropTypes.string,

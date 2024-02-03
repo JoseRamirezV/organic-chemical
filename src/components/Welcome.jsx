@@ -14,7 +14,7 @@ import { primaryColor } from '../styles/colorConstants.json';
 
 export function Welcome() {
   return (
-    <EmblaCarousel options={{ loop: true }} h={"100vh"} w={"100%"}>
+    <EmblaCarousel h={"100vh"} w={"100%"} options={{ loop: true }} autoplay>
       {slides.map((slide) => (
         <Box
           key={slide.id}
