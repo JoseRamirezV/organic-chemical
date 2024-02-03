@@ -7,6 +7,7 @@ export function Section({
   px = '10%',
   py = '0',
   height = "100vh",
+  id
 }) {
   return (
     <Flex
@@ -18,6 +19,7 @@ export function Section({
       justifyContent={"center"}
       overflowX={"hidden"}
       bg={bg}
+      id={id}
     >
       {children}
     </Flex>
@@ -30,4 +32,5 @@ Section.propTypes = {
   px: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   py: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   height: PropTypes.string,
+  id: PropTypes.string,
 };

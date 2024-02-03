@@ -15,8 +15,11 @@
 
 body{
   height: 100vh;
-  scroll-behavior: smooth;
   overflow-y: auto;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {

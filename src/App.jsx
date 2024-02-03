@@ -11,16 +11,16 @@ function App() {
   return (
     <>
       <Header />
-      <Section px={'0'}>
+      <Section id={'Inicio'} px={'0'}>
         <Welcome />
       </Section>
-      <Section bg="gray.50" px={{base: '10%', '2xl': '5%'}} height="auto" py={{base: '1rem', '2xl': '2rem'}}>
+      <Section id={'Productos'} bg="gray.50" px={{base: '10%', '2xl': '5%'}} height="auto" py={{base: '1rem', '2xl': '2rem'}}>
         <ProductsList />
       </Section>
-      <Section>
+      <Section id={'Nosotros'} height="auto" px={{base: '5%', sm: '10%'}}>
         <Us />
       </Section>
-      <Section height="40vh" bg={"gray.700"}>
+      <Section height="40vh" bg={"gray.50"}>
         <Footer/>
       </Section>
     </>

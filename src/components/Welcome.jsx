@@ -17,7 +17,6 @@ export function Welcome() {
       options={{ loop: true }}
       h={"100vh"}
       w={"100%"}
-      slidesStyle={{ flex: "0 0 100%" }}
     >
       {slides.map((slide) => (
         <Box
@@ -33,6 +32,7 @@ export function Welcome() {
             justify={{ base: "center", md: "space-between" }}
             align={"center"}
             gap={{ md: "2rem" }}
+            bg={'#ffffff32'}
             backdropFilter={"blur(10px)"}
           >
             <Stack

@@ -1,22 +1,23 @@
 [
     {
         "title": "Nosotros",
-        "description": "lorem",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
         "img": "images/Logo.png"
     },
     {
         "title": "Misión",
-        "description": "adasd",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
         "img": "images/Misión.png"
     },
     {
         "title": "Visión",
-        "description": "asdasdasd",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
         "img": "images/Visión.png"
     },
     {
         "title": "Historia",
-        "description": "asdasdas2d",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
         "img": "images/Historia.png"
     }
+
 ]
