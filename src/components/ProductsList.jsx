@@ -2,13 +2,32 @@ import { Flex, VStack, Heading, Show, Divider, Hide } from "@chakra-ui/react";
 import products from "../mocks/products.json";
 import { ProductCard } from "./ProductCard";
 import { EmblaCarousel } from "./EmblaCarousel";
-import { primaryColor, secondaryColor, primaryFontColor } from '../styles/colorConstants.json';
+import {
+  primaryColor,
+  secondaryColor,
+  primaryFontColor,
+} from "../colorConstants.json";
 
 export function ProductsList() {
   return (
-    <VStack w="100%" pb={10}>
+    <VStack
+      height="auto"
+      id={"Productos"}
+      bg="gray.50"
+      px={{ base: "10%", "2xl": "5%" }}
+      py={{ base: "2rem", "2xl": "2rem" }}
+      align={'center'}
+      justify={'center'}
+    >
       <Show above="1600px">
-        <Heading as="h2" w="12rem" textAlign={"center"} mt={10} mb={5} color={primaryFontColor}>
+        <Heading
+          as="h2"
+          w="12rem"
+          textAlign={"center"}
+          mt={10}
+          mb={5}
+          color={primaryFontColor}
+        >
           Productos
           <Divider
             mt={2}
@@ -31,7 +50,14 @@ export function ProductsList() {
 
       {/* Show on mobile */}
       <Hide above="1600px">
-        <Heading as="h2" w="12rem" textAlign={"center"} mt={10} mb={5} color={primaryFontColor}>
+        <Heading
+          as="h2"
+          w="12rem"
+          textAlign={"center"}
+          mt={10}
+          mb={5}
+          color={primaryFontColor}
+        >
           Productos
           <Divider
             mt={2}
@@ -42,13 +68,12 @@ export function ProductsList() {
         </Heading>
         <EmblaCarousel
           h={"auto"}
-          w={'100%'}
-          options={{slidesToScroll: '2'}}
-          slidesContainerStyle={{gap: '1.5rem', py: '1rem'}}
+          w={"100%"}
+          options={{ slidesToScroll: "2" }}
+          slidesContainerStyle={{ gap: "1.5rem", py: "1rem" }}
           btnColor={primaryColor}
-          btnSeparation="-3rem"
-          enableDots = {false}
-          px={'1rem'}
+          btnSeparation="-2rem"
+          enableDots={false}
         >
           {products.map((product, i) => (
             <ProductCard
@@ -56,7 +81,7 @@ export function ProductsList() {
               product={product.name}
               description={product.description}
               link={product.link}
-              flex= '0 0 fit-content'
+              flex="0 0 fit-content"
             />
           ))}
         </EmblaCarousel>

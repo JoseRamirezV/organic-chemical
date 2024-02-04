@@ -1,6 +1,7 @@
 import { Button, HStack, Icon, Text } from "@chakra-ui/react";
 import { PropTypes } from "prop-types";
 import { FaAngleRight } from "react-icons/fa";
+import { secondaryColor } from "../colorConstants.json";
 
 export function LinkButton({ text = "Saber mas", link, ...styles }) {
   return (
@@ -21,7 +22,7 @@ export function LinkButton({ text = "Saber mas", link, ...styles }) {
           boxSize={7}
           p={"5px"}
           rounded={"full"}
-          bg="#009100"
+          bg={secondaryColor}
           fill={"white"}
         />
       </HStack>

@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { PropTypes } from "prop-types";
 import { LinkButton } from "./LinkButton";
-import { primaryColor, primaryFontColor } from "../styles/colorConstants.json";
+import { primaryColor, primaryFontColor } from "../colorConstants.json";
 
 export function ProductCard({ product, description, link, ...extraStyles }) {
   return (

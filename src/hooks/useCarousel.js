@@ -1,9 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from 'embla-carousel-autoplay'
 
 export const useCarousel = (options, autoplay) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay({playOnInit: autoplay})]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -41,8 +40,20 @@ export const useCarousel = (options, autoplay) => {
     emblaApi.on("reInit", onInit);
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
+
     
   }, [emblaApi, onInit, onSelect]);
+
+  useEffect(()=>{
+    if(autoplay) {
+      const nextSlide = setTimeout(() => {
+        scrollNext()
+      }, 4000);
+      return () => {
+        clearTimeout(nextSlide)
+      }
+    }
+  })
 
   return {
     emblaRef,

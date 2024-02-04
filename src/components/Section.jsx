@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 export function Section({
   children,
   bg = "gray.100",
-  px = '10%',
-  py = '0',
+  px = "10%",
+  py = "0",
   height = "100vh",
-  id
+  id,
 }) {
   return (
     <Flex

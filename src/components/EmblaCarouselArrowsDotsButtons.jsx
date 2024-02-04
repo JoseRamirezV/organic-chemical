@@ -15,15 +15,32 @@ export const DotButton = ({ ...props }) => {
   );
 };
 
+const btnCommonStyles = {
+  boxSize: "3rem",
+  transition: "all 0.2s ease",
+  position: "absolute",
+  h: "100%",
+  justify: "center",
+  align: "center",
+  style: { touchAction: "manipulation" },
+  cursor: "pointer",
+  _disabled: { opacity: 0.3 },
+};
+
 export const PrevButton = ({ ...props }) => {
   return (
-    <Flex as={"button"} type="button" data-group {...props}>
+    <Flex
+      as={"button"}
+      type="button"
+      {...btnCommonStyles}
+      data-group
+      {...props}
+    >
       <Icon
         as={IoIosArrowForward}
-        boxSize={"3rem"}
-        transition={"all 0.2s ease"}
-        _groupHover={{ transform: "scale(1.3) rotate(0.5turn)" }}
         transform={"rotate(0.5turn)"}
+        boxSize={"3rem"}
+        _groupHover={{ transform: "scale(1.3) rotate(0.5turn)" }}
       />
     </Flex>
   );
@@ -31,11 +48,10 @@ export const PrevButton = ({ ...props }) => {
 
 export const NextButton = ({ ...props }) => {
   return (
-    <Flex as="button" type="button" data-group {...props}>
+    <Flex as="button" type="button" {...btnCommonStyles} data-group {...props}>
       <Icon
         as={IoIosArrowForward}
         boxSize={"3rem"}
-        transition={"all 0.2s ease"}
         _groupHover={{ transform: "scale(1.3)" }}
       />
     </Flex>

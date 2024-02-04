@@ -1,7 +1,7 @@
 import { Box, Center, Flex } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { useCarousel } from "../hooks/useCarousel";
-import { primaryColor, tertiaryColor } from '../styles/colorConstants.json';
+import { primaryColor, tertiaryColor } from "../colorConstants.json";
 import {
   DotButton,
   NextButton,
@@ -11,7 +11,6 @@ import {
 export function EmblaCarousel({
   children,
   options,
-  autoplay = false,
   h = "auto",
   w = "auto",
   btnColor = "white",
@@ -19,7 +18,7 @@ export function EmblaCarousel({
   enableDots = true,
   dotsPositionTop = "90%",
   slidesContainerStyle,
-  ...extraStyles
+  autoplay
 }) {
   const {
     emblaRef,
@@ -31,18 +30,6 @@ export function EmblaCarousel({
     scrollNext,
     scrollTo,
   } = useCarousel(options, autoplay);
-
-  const nextPrevBtnCommonStyles = {
-    position: "absolute",
-    w: "3rem",
-    h: "100%",
-    justify: "center",
-    align: "center",
-    style: { touchAction: "manipulation" },
-    cursor: "pointer",
-    color: btnColor,
-    _disabled: { opacity: 0.3 },
-  };
 
   return (
     <Flex
@@ -57,7 +44,6 @@ export function EmblaCarousel({
         // className="embla__viewport"
         boxSize="full"
         overflowX={"hidden"}
-        {...extraStyles}
         ref={emblaRef}
       >
         <Flex
@@ -75,13 +61,13 @@ export function EmblaCarousel({
         onClick={scrollPrev}
         disabled={prevBtnDisabled}
         left={btnSeparation}
-        {...nextPrevBtnCommonStyles}
+        color={btnColor}
       />
       <NextButton
         onClick={scrollNext}
         disabled={nextBtnDisabled}
         right={btnSeparation}
-        {...nextPrevBtnCommonStyles}
+        color={btnColor}
       />
 
       {enableDots && (
@@ -102,9 +88,14 @@ export function EmblaCarousel({
                 height: "0.4rem",
                 borderRadius: "0.2rem",
                 transition: "all 0.2s ease",
-                background: index === selectedIndex ? primaryColor : tertiaryColor,
+                background:
+                  index === selectedIndex ? primaryColor : tertiaryColor,
               }}
-              _hover={{ _after: { transform: index !== selectedIndex && "translateY(-5px)" } }}
+              _hover={{
+                _after: {
+                  transform: index !== selectedIndex && "translateY(-5px)",
+                },
+              }}
             />
           ))}
         </Center>
@@ -119,7 +110,6 @@ EmblaCarousel.propTypes = {
     loop: PropTypes.bool,
     duration: PropTypes.number,
   }),
-  autoplay: PropTypes.bool,
   h: PropTypes.string,
   w: PropTypes.string,
   btnColor: PropTypes.string,
@@ -127,5 +117,5 @@ EmblaCarousel.propTypes = {
   enableDots: PropTypes.bool,
   dotsPositionTop: PropTypes.string,
   slidesContainerStyle: PropTypes.object,
-  extraStyles: PropTypes.string,
+  autoplay: PropTypes.bool,
 };

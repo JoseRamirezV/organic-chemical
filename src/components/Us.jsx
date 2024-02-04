@@ -12,11 +12,22 @@ import {
   Text,
 } from "@chakra-ui/react";
 import companyInfo from "../mocks/companyInfo.json";
-import {primaryColor, primaryFontColor, secondaryFontColor} from '../styles/colorConstants.json';
+import {
+  primaryColor,
+  primaryFontColor,
+  secondaryFontColor,
+} from "../colorConstants.json";
+
 
 export function Us() {
   return (
-    <Tabs size={"lg"} w={"100%"} minH={{base: '100vh', sm: "80vh"}} py={"5vh"} variant="enclosed">
+    <Tabs
+      size={"lg"}
+      w={"100%"}
+      minH={{ base: "100vh", sm: "80vh" }}
+      py={"5vh"}
+      variant="enclosed"
+    >
       <TabList ms={{ base: 0, sm: 2 }} mb={{ base: 3, sm: 0 }}>
         <Flex wrap={"wrap"} gap={{ base: 1, sm: 0 }} align={"end"}>
           {companyInfo.map(({ title }) => (
@@ -31,7 +42,7 @@ export function Us() {
               bg={primaryColor}
               color={"white"}
               border={"1px solid"}
-              borderColor={'gray.300'}
+              borderColor={"gray.300"}
               borderBottom={"0"}
               fontWeight={600}
               transition={"all 0.2s ease"}
@@ -62,22 +73,22 @@ export function Us() {
       </TabList>
       <TabPanels
         border={"1px solid"}
-        borderColor={'gray.300'}
+        borderColor={"gray.300"}
         bg={"white"}
         rounded={"lg"}
         px={"5%"}
-        py={{base: '1rem', sm: "2rem"}}
+        py={{ base: "1rem", sm: "2rem" }}
       >
         {companyInfo.map(({ title, description, img }) => (
           <TabPanel
             display={"flex"}
             flexDirection={"column"}
             key={title}
-            h={{base: '80vh', sm: "60vh"}}
+            h={{ base: "80vh", sm: "60vh" }}
             color={primaryFontColor}
           >
             <Heading>{title}</Heading>
-            <Divider my={5}/>
+            <Divider my={5} />
             <Flex
               direction={{ base: "column-reverse", lg: "row" }}
               justify={{ base: "center", lg: "space-between" }}
@@ -86,8 +97,14 @@ export function Us() {
               fontSize="xl"
             >
               <Text>{description}</Text>
-              <Box flex={"1 0 40%"} h={"100%"} rounded={'lg'} overflow={"clip"} boxShadow={'base'}>
-                <Image boxSize={"100%"} src={img} objectFit={"cover"}/>
+              <Box
+                flex={"1 0 40%"}
+                h={"100%"}
+                rounded={"lg"}
+                overflow={"clip"}
+                boxShadow={"base"}
+              >
+                <Image boxSize={"100%"} src={img} objectFit={"cover"} />
               </Box>
             </Flex>
           </TabPanel>
