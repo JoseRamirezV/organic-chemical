@@ -11,19 +11,20 @@ import { EmblaCarousel } from "./EmblaCarousel";
 import { LinkButton } from "./LinkButton";
 import slides from "../mocks/heroSlides.json";
 import { primaryColor } from "../colorConstants.json";
+import PropTypes from "prop-types";
 
-export function Welcome() {
+export function Hero({ lan, id }) {
   return (
     <Flex
       as={"section"}
-      id={'Inicio'}
+      id={id}
       minH="100vh"
       align={"center"}
       justify={"center"}
-      overflowX={'hidden'}
+      overflowX={"hidden"}
     >
       <EmblaCarousel h={"100vh"} w={"100%"} options={{ loop: true }} autoplay>
-        {slides.map((slide) => (
+        {slides[lan].map((slide) => (
           <Box
             key={slide.id}
             bgImage={slide.imgUrl}
@@ -83,3 +84,8 @@ export function Welcome() {
     </Flex>
   );
 }
+
+Hero.propTypes = {
+  lan: PropTypes.oneOf(["es", "en"]),
+  id: PropTypes.string.isRequired,
+};

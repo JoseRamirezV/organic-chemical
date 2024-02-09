@@ -49,7 +49,6 @@ export function EmblaCarousel({
         <Flex
           // className="embla__container"
           h="full"
-          w={"100%"}
           style={{ touchAction: "pan-y" }}
           {...slidesContainerStyle}
         >

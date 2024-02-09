@@ -1,23 +1,46 @@
-[
-    {
-        "title": "Nosotros",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
-        "img": "images/Nosotros.jpg"
-    },
-    {
-        "title": "Misión",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
-        "img": "images/Misión.png"
-    },
-    {
-        "title": "Visión",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
-        "img": "images/Visión.jpg"
-    },
-    {
-        "title": "Historia",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
-        "img": "images/Historia.jpg"
-    }
-
-]
+{
+    "es": [
+        {
+            "title": "Nosotros",
+            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
+            "img": "images/Nosotros.jpg"
+        },
+        {
+            "title": "Misión",
+            "description": "Organic & Chemical Group S.A.S. es una empresa que aprovecha la materia orgánica y la transforma en Abono orgánico Mineral, liderando la Agroindustria de fertilizantes siempre orientada a Mercados nacionales e Internacionales comprometida con el desarrollo sostenible del Campo con altos estándares de Calidad permitiendo el crecimiento empresarial, generando bienestar social y beneficio económico a nuestras regiones",
+            "img": "images/Misión.png"
+        },
+        {
+            "title": "Visión",
+            "description": "Para el 2029 Ser reconocidos en el mercado Agroindustrial como el major aliado de negocios de Colombia y en el exterior con soluciones en el mercado de Abonos orgánicos minerales con propuestas innovadoras, basadas en las necesidades de nuestros clientes apoyados en nuestra experiencia y equipo técnico, generando valor agregado y crecimiento a nuestros clientes",
+            "img": "images/Visión.jpg"
+        },
+        {
+            "title": "Historia",
+            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
+            "img": "images/Historia.jpg"
+        }
+    ],
+    "en": [
+        {
+            "title": "Nosotros",
+            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
+            "img": "images/Nosotros.jpg"
+        },
+        {
+            "title": "Misión",
+            "description": "Organic & Chemical Group S.A.S. is a company that takes advantage of the organic matter and transforms it into organic mineral fertilizer, leading the agro-industry of fertilizers always oriented to national and international markets committed to the sustainable development of the field with high quality standards allowing business growth,generating social welfare and economic benefit to our regions.",
+            "img": "images/Misión.png"
+        },
+        {
+            "title": "Visión",
+            "description": "Para el 2029 Ser reconocidos en el mercado Agroindustrial como el major aliado de negocios de Colombia y en el exterior con soluciones en el mercado de Abonos orgánicos minerales con propuestas innovadoras, basadas en las necesidades de nuestros clientes apoyados en nuestra experiencia y equipo técnico, generando valor agregado y crecimiento a nuestros clientes",
+            "img": "images/Visión.jpg"
+        },
+        {
+            "title": "Historia",
+            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
+            "img": "images/Historia.jpg"
+        }
+    ]
+}

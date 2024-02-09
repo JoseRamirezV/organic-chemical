@@ -1,40 +1,56 @@
-import { Box, VStack, HStack, Text, Icon, Link } from "@chakra-ui/react";
+import { Box, HStack, Icon, Link, Text, VStack } from "@chakra-ui/react";
 import {
   FaFacebookSquare,
   FaInstagramSquare,
-  FaWhatsappSquare,
   FaLinkedin,
+  FaWhatsappSquare,
 } from "react-icons/fa";
 // import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineWhatsApp, AiOutlineLinkedin } from 'react-icons/ai';
-import companyLinks from "../mocks/companyLinks.json";
+import PropTypes from "prop-types";
 import { primaryFontColor, secondaryFontColor } from "../colorConstants.json";
+import sections from "../mocks/sections.json";
 
-export function Footer() {
-  const links = {
+export function Footer({ lan, id }) {
+  const socialMediaLinks = {
+    Facebook: "https://Facebook.com",
+    Instagram: "https://Instagram.com",
+    WhatsApp: "https://wa.me/573173777044",
+    LinkedIn: "https://LinkedIn.com",
+  };
+
+  const linkIcons = {
     Facebook: FaFacebookSquare,
     Instagram: FaInstagramSquare,
     WhatsApp: FaWhatsappSquare,
     LinkedIn: FaLinkedin,
   };
 
-  const sections = ["Inicio", "Productos", "Nosotros"];
-
   return (
-    <Box as="footer" boxSize="100%">
+    <Box as="footer" id={id} boxSize="100%" bg={"gray.50"} py="2rem">
       <VStack gap={5} py={5} color={primaryFontColor}>
         <HStack align={"center"}>
-          {companyLinks.map((link, i) => (
-            <Link key={i} href={link.link} boxSize={"2.2rem"}>
-              <Icon as={links[link.social]} boxSize={"full"} />
+          {Object.keys(socialMediaLinks).map((link, i) => (
+            <Link key={i} href={socialMediaLinks[link]} boxSize={"2.2rem"}>
+              <Icon as={linkIcons[link]} boxSize={"full"} />
             </Link>
           ))}
         </HStack>
-        <HStack gap={10}>
-          {sections.map((section, i) => (
-            <Text fontSize={"xl"} as={"a"} href={`#${section}`} key={i}>
-              {section}
-            </Text>
-          ))}
+        <HStack gap={5}>
+          {sections[lan].map((section, i) => {
+            return (
+              section !== sections[lan][3] && (
+                <Text
+                  as={"a"}
+                  key={i}
+                  fontSize={{ base: "md", md: "xl" }}
+                  textAlign={"center"}
+                  href={`#${section}`}
+                >
+                  {section}
+                </Text>
+              )
+            );
+          })}
         </HStack>
         <Text color={secondaryFontColor} textAlign={"center"}>
           Copyright © 2024 All rights reserved by Chemical Group
@@ -43,3 +59,8 @@ export function Footer() {
     </Box>
   );
 }
+
+Footer.propTypes = {
+  lan: PropTypes.oneOf(["es", "en"]),
+  id: PropTypes.string.isRequired,
+};
