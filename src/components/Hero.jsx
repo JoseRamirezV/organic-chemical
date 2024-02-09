@@ -23,7 +23,7 @@ export function Hero({ lan, id }) {
       justify={"center"}
       overflowX={"hidden"}
     >
-      <EmblaCarousel h={"100vh"} w={"100%"} options={{ loop: true }} autoplay>
+      <EmblaCarousel h={"100vh"} w={"100%"} options={{ loop: true }} btnSeparation="0.5rem" autoplay>
         {slides[lan].map((slide) => (
           <Box
             key={slide.id}
@@ -34,7 +34,7 @@ export function Hero({ lan, id }) {
             <Flex
               direction={{ base: "column-reverse", md: "row" }}
               h={"100%"}
-              px={"10vw"}
+              px={{base: "5vw", sm: "10vw"}}
               justify={{ base: "center", md: "space-between" }}
               align={"center"}
               gap={{ md: "2rem" }}
@@ -67,7 +67,7 @@ export function Hero({ lan, id }) {
                 />
               </Stack>
               <AspectRatio
-                width={{ base: "100%", md: "25rem" }}
+                width={{ base: "90%", md: "25rem" }}
                 ratio={{ base: 6 / 4, md: 1 }}
                 flexGrow={{ md: 1 }}
               >

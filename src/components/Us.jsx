@@ -112,7 +112,7 @@ export function Us({ lan, id }) {
                   overflow={"clip"}
                   boxShadow={"base"}
                 >
-                  <Image boxSize={"100%"} src={img} objectFit={"cover"} />
+                  <Image boxSize={"100%"} src={img} objectFit={"cover"} loading="lazy"/>
                 </Box>
               </Flex>
             </TabPanel>
