@@ -3,10 +3,10 @@ import {
   Center,
   Drawer,
   DrawerBody,
+  DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  DrawerCloseButton,
   Flex,
   IconButton,
   Image,
@@ -14,10 +14,11 @@ import {
   Spacer,
   useDisclosure,
 } from "@chakra-ui/react";
-import { TiThMenu } from "react-icons/ti";
 import PropTypes from "prop-types";
+import { TiThMenu } from "react-icons/ti";
 import { useScrollBackground } from "../hooks/useScrollBackground";
-import sections from "../mocks/sections.json";
+import pageData from "../mocks/pageData.json";
+import { primaryColor } from '@/colorConstants.json';
 
 export function Header({ lan, toggleLan }) {
   const { changeStyle } = useScrollBackground();
@@ -32,7 +33,7 @@ export function Header({ lan, toggleLan }) {
       zIndex={1}
       transition={"background 0.8s ease"}
       background={changeStyle && "gray.50"}
-      boxShadow={changeStyle && "#56d152 0px 0px 2px 0px;"}
+      boxShadow={changeStyle &&  `${primaryColor} 0px 0px 2px 0px`}
     >
       <Flex w={"80vw"} h={"100%"} p={1} alignItems={"center"} pos={"relative"}>
         <Image
@@ -44,15 +45,14 @@ export function Header({ lan, toggleLan }) {
         />
         <Spacer />
         <Show above="sm">
-          {sections &&
-            sections[lan].map((section) => (
+          {pageData[lan].sections.map((section) => (
               <Button
                 as={"a"}
                 key={section}
                 href={`#${section}`}
                 variant={changeStyle ? "ghost" : "solid"}
                 colorScheme={"WhiteAlpha"}
-                color={changeStyle ? "green.600" : "white"}
+                color={changeStyle ? primaryColor : "white"}
               >
                 {section}
               </Button>
@@ -71,10 +71,10 @@ export function Header({ lan, toggleLan }) {
         <Show below="sm">
           <IconButton
             onClick={onOpen}
+            color={changeStyle ? primaryColor : "white"}
             icon={
               <TiThMenu
                 transition={"all 0.5s ease"}
-                color={changeStyle ? "green" : "white"}
               />
             }
             colorScheme={"green"}
@@ -88,7 +88,7 @@ export function Header({ lan, toggleLan }) {
             <DrawerOverlay />
             <DrawerContent>
               <DrawerCloseButton />
-              <DrawerHeader borderBottomWidth="1px">
+              <DrawerHeader borderBottomWidth="1px" display={'flex'} alignItems={'center'} justifyContent={'space-around'}>
                 <Image
                   h={"4rem"}
                   objectFit="cover"
@@ -96,18 +96,25 @@ export function Header({ lan, toggleLan }) {
                   alt="Chemical-logo"
                   loading="lazy"
                 />
+                <Button
+                  variant="solid"
+                  colorScheme={changeStyle ? "green" : "whiteAlpha"}
+                  rounded={"full"}
+                  onClick={() => toggleLan()}
+                >
+                  {lan === "es" ? "en" : "es"}
+                </Button>
               </DrawerHeader>
-              <DrawerBody display={'flex'} flexDirection={'column'}>
-                {sections &&
-                  sections[lan].map((section) => (
+              <DrawerBody display={"flex"} flexDirection={"column"}>
+                {pageData[lan].sections.map((section) => (
                     <Button
                       as={"a"}
                       key={section}
                       href={`#${section}`}
                       variant={"ghost"}
-                      color="green.600"
-                      fontSize={'xl'}
-                      size={'lg'}
+                      color={primaryColor}
+                      fontSize={"xl"}
+                      size={"lg"}
                       onClick={onClose}
                     >
                       {section}

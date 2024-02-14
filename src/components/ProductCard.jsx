@@ -9,13 +9,12 @@ import {
 } from "@chakra-ui/react";
 import { PropTypes } from "prop-types";
 import { LinkButton } from "./LinkButton";
-import { primaryColor, primaryFontColor } from "../colorConstants.json";
+import { primaryColor, primaryFontColor } from "@/colorConstants.json";
 
 export function ProductCard({ product, description, link, ...extraStyles }) {
   return (
     <Card
-      maxW={{ sm: "40rem", md: "20rem" }}
-      maxH={{ sm: "45rem", md: "32rem" }}
+      maxW={{base: "25rem", sm: "20rem"}}
       transition={"all 0.2s ease"}
       borderRadius={"3xl"}
       boxShadow="lg"
@@ -32,8 +31,14 @@ export function ProductCard({ product, description, link, ...extraStyles }) {
           loading="lazy"
           w={"100%"}
         />
-        <Flex direction="column" mt="6" gap="3" w="100%" textAlign={"center"}>
-          <Heading size="md" h={"3rem"} fontWeight={"semibold"}>
+        <Flex
+          direction="column"
+          mt="6"
+          gap={{ base: "1rem", sm: "3" }}
+          w="100%"
+          textAlign={"center"}
+        >
+          <Heading size={"md"} fontWeight={"semibold"}>
             {product}
           </Heading>
           <Text fontSize="sm">{description}</Text>

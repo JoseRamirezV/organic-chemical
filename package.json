@@ -14,8 +14,10 @@
   },
   "dependencies": {
     "@chakra-ui/react": "2.8.2",
+    "@emailjs/browser": "^4.1.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "embla-carousel-autoplay": "^8.0.0-rc22",
     "embla-carousel-react": "8.0.0-rc15",
     "framer-motion": "^10.16.5",
     "react": "^18.2.0",

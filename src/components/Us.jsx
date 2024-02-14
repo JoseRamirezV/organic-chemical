@@ -9,42 +9,33 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import {
-  primaryColor,
-  primaryFontColor,
-  secondaryFontColor,
-} from "../colorConstants.json";
-import companyInfo from "../mocks/companyInfo.json";
+import { primaryColor, primaryFontColor } from "@/colorConstants.json";
+import companyData from "../mocks/companyData.json";
 
 export function Us({ lan, id }) {
   return (
     <Box
       as="section"
       id={id}
-      height="auto"
       px={{ base: "5%", sm: "10%" }}
-      py={"1rem"}
+      py={"6vh"}
       bg={"gray.100"}
     >
       <Tabs
         size={"lg"}
-        w={"100%"}
-        minH={{ base: "100vh", sm: "80vh" }}
-        py={"5vh"}
         variant="enclosed"
+        isFitted
+        isLazy
       >
-        <TabList ms={{ base: 0, sm: 2 }} mb={{ base: 3, sm: 0 }}>
-          <Flex wrap={"wrap"} gap={{ base: 1, sm: 0 }} align={"end"}>
-            {companyInfo[lan].map(({ title }) => (
+        <TabList mb={{ base: 3, sm: 0 }} gap={{ base: 1, sm: 0 }} align={"end"} flexWrap={'wrap'}>
+            {companyData[lan].map(({ title }) => (
               <Tab
                 key={title}
                 h="3rem"
-                w="auto"
-                flexBasis={{ base: "8rem", sm: "0" }}
-                flexGrow={1}
+                // flexBasis={{ base: "8rem", sm: "0" }}
                 roundedTop={"xl"}
                 roundedBottom={{ base: "xl", sm: "none" }}
                 bg={primaryColor}
@@ -59,35 +50,29 @@ export function Us({ lan, id }) {
                   base: {
                     color: primaryFontColor,
                     bg: "white",
-                  },
-                  sm: {
-                    h: "3.4rem",
-                  },
+                  }
                 }}
                 _hover={{
                   base: {
-                    color: secondaryFontColor,
+                    color: primaryFontColor,
                     bg: "white",
-                  },
-                  sm: {
-                    h: "3.4rem",
-                  },
+                  }
                 }}
               >
                 {title}
               </Tab>
             ))}
-          </Flex>
         </TabList>
         <TabPanels
           border={"1px solid"}
           borderColor={"gray.300"}
           bg={"white"}
           rounded={"lg"}
+          roundedTop={{ sm: "none" }}
           px={"5%"}
           py={{ base: "1rem", sm: "2rem" }}
         >
-          {companyInfo[lan].map(({ title, description, img }) => (
+          {companyData[lan].map(({ title, description, img }) => (
             <TabPanel
               display={"flex"}
               flexDirection={"column"}
@@ -104,7 +89,7 @@ export function Us({ lan, id }) {
                 h={"100%"}
                 fontSize={{ base: "md", sm: "lg", lg: "xl" }}
               >
-                <Text>{description}</Text>
+                <Text whiteSpace={'pre-wrap'} >{description}</Text>
                 <Box
                   flex={"1 0 40%"}
                   h={"100%"}
@@ -112,7 +97,12 @@ export function Us({ lan, id }) {
                   overflow={"clip"}
                   boxShadow={"base"}
                 >
-                  <Image boxSize={"100%"} src={img} objectFit={"cover"} loading="lazy"/>
+                  <Image
+                    boxSize={"100%"}
+                    src={img}
+                    objectFit={"cover"}
+                    loading="lazy"
+                  />
                 </Box>
               </Flex>
             </TabPanel>

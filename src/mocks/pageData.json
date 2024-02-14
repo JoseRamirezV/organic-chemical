@@ -1,0 +1,10 @@
+{
+    "es": {
+        "sections": ["Inicio", "Productos", "Nosotros", "Contáctenos"],
+        "linkButtonText": "Saber más"
+    },
+    "en": {
+        "sections": ["Home", "Products", "About us", "Contact us"],
+        "linkButtonText": "Learn more"
+    }
+}

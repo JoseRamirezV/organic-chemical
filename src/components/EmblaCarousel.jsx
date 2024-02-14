@@ -1,7 +1,6 @@
-import { Box, Center, Flex } from "@chakra-ui/react";
+import { Box, Center, Flex, Show } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { useCarousel } from "../hooks/useCarousel";
-import { primaryColor, tertiaryColor } from "../colorConstants.json";
 import {
   DotButton,
   NextButton,
@@ -11,14 +10,11 @@ import {
 export function EmblaCarousel({
   children,
   options,
-  h = "auto",
-  w = "auto",
-  btnColor = "white",
-  btnSeparation = "1rem",
-  enableDots = true,
-  dotsPositionTop = "90%",
-  slidesContainerStyle,
-  autoplay
+  arrowBtnOptions = { color: "white", separation: "1rem" },
+  dotsOptions = { color: "gray.50", positionFromTop: "95%"},
+  gap,
+  p,
+  autoplay,
 }) {
   const {
     emblaRef,
@@ -34,71 +30,66 @@ export function EmblaCarousel({
   return (
     <Flex
       // className="embla"
-      h={h}
-      w={w}
+      w={"100%"}
       direction={"column"}
-      justify={"center"}
       pos={"relative"}
     >
       <Box
         // className="embla__viewport"
-        boxSize="full"
+        // boxSize="full"
         overflowX={"hidden"}
+        px={p?.px}
+        py={p?.py}
         ref={emblaRef}
       >
         <Flex
           // className="embla__container"
-          h="full"
-          style={{ touchAction: "pan-y" }}
-          {...slidesContainerStyle}
+          // h="full"
+          style={{ touchAction: "pan-y", backfaceVisibility: "hidden" }}
+          gap={gap}
         >
           {children}
         </Flex>
       </Box>
 
-      <PrevButton
-        onClick={scrollPrev}
-        disabled={prevBtnDisabled}
-        left={btnSeparation}
-        color={btnColor}
-      />
-      <NextButton
-        onClick={scrollNext}
-        disabled={nextBtnDisabled}
-        right={btnSeparation}
-        color={btnColor}
-      />
+      <Show above="sm">
+        <PrevButton
+          onClick={scrollPrev}
+          disabled={prevBtnDisabled}
+          left={arrowBtnOptions.separation}
+          color={arrowBtnOptions?.color}
+        />
+        <NextButton
+          onClick={scrollNext}
+          disabled={nextBtnDisabled}
+          right={arrowBtnOptions.separation}
+          color={arrowBtnOptions?.color}
+        />
+      </Show>
 
-      {enableDots && (
-        <Center
-          gap={"0.75rem"}
-          pos={"absolute"}
-          top={dotsPositionTop}
-          left={0}
-          right={0}
-        >
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => scrollTo(index)}
-              _after={{
-                content: '""',
-                width: "100%",
-                height: "0.4rem",
-                borderRadius: "0.2rem",
-                transition: "all 0.2s ease",
-                background:
-                  index === selectedIndex ? primaryColor : tertiaryColor,
-              }}
-              _hover={{
-                _after: {
-                  transform: index !== selectedIndex && "translateY(-5px)",
-                },
-              }}
-            />
-          ))}
-        </Center>
-      )}
+      <Center
+        gap={"0.75rem"}
+        pos={"absolute"}
+        top={dotsOptions.positionFromTop}
+        left={0}
+        right={0}
+      >
+        {scrollSnaps.map((_, index) => (
+          <DotButton
+            key={index}
+            onClick={() => scrollTo(index)}
+            _after={{
+              content: '""',
+              boxSize: "100%",
+              rounded: "full",
+              transition: "all 0.2s ease",
+              outline: `2px solid`,
+              outlineColor: dotsOptions.color,
+              background: index === selectedIndex && dotsOptions.color,
+            }}
+          />
+        ))}
+      </Center>
     </Flex>
   );
 }
@@ -109,12 +100,19 @@ EmblaCarousel.propTypes = {
     loop: PropTypes.bool,
     duration: PropTypes.number,
   }),
-  h: PropTypes.string,
-  w: PropTypes.string,
-  btnColor: PropTypes.string,
-  btnSeparation: PropTypes.string,
+  arrowBtnOptions: PropTypes.shape({
+    color: PropTypes.string,
+    separation: PropTypes.string,
+  }),
   enableDots: PropTypes.bool,
-  dotsPositionTop: PropTypes.string,
-  slidesContainerStyle: PropTypes.object,
+  dotsOptions: PropTypes.shape({
+    color: PropTypes.string,
+    positionFromTop: PropTypes.string
+  }),
+  gap: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  p: PropTypes.shape({
+    px: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    py: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  }),
   autoplay: PropTypes.bool,
 };

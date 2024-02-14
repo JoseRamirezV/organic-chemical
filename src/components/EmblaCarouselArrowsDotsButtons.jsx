@@ -6,10 +6,9 @@ export const DotButton = ({ ...props }) => {
     <Flex
       as="button"
       type="button"
-      align={"center"}
       style={{ touchAction: "manipulation" }}
       cursor={"pointer"}
-      boxSize={"3rem"}
+      boxSize={".5rem"}
       {...props}
     />
   );
@@ -17,7 +16,6 @@ export const DotButton = ({ ...props }) => {
 
 const btnCommonStyles = {
   boxSize: "3rem",
-  transition: "all 0.2s ease",
   position: "absolute",
   h: "100%",
   justify: "center",
@@ -38,6 +36,7 @@ export const PrevButton = ({ ...props }) => {
     >
       <Icon
         as={IoIosArrowForward}
+        transition= "all 0.2s ease"
         transform={"rotate(0.5turn)"}
         boxSize={"3rem"}
         _groupHover={{ transform: "scale(1.3) rotate(0.5turn)" }}
@@ -51,6 +50,7 @@ export const NextButton = ({ ...props }) => {
     <Flex as="button" type="button" {...btnCommonStyles} data-group {...props}>
       <Icon
         as={IoIosArrowForward}
+        transition= "all 0.2s ease"
         boxSize={"3rem"}
         _groupHover={{ transform: "scale(1.3)" }}
       />

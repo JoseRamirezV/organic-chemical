@@ -1,7 +1,6 @@
 {
-    "primaryColor": "#48c743",
+    "primaryColor": "#2f855a",
     "secondaryColor": "#009100",
-    "tertiaryColor": "#96F192",
-    "primaryFontColor": "gray.700",
-    "secondaryFontColor": "gray.500"
+    "primaryFontColor": "#2d3748",
+    "secondaryFontColor": "#718096"
 }

@@ -1,9 +1,14 @@
 import { Button, HStack, Icon, Text } from "@chakra-ui/react";
 import { PropTypes } from "prop-types";
 import { FaAngleRight } from "react-icons/fa";
-import { secondaryColor } from "../colorConstants.json";
+import { secondaryColor } from "@/colorConstants.json";
+import { useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext";
+import pageData from '../mocks/pageData.json';
 
-export function LinkButton({ text = "Saber mas", link, ...styles }) {
+export function LinkButton({ link, ...styles }) {
+  const { language } = useContext(LanguageContext);
+
   return (
     <Button
       as="a"
@@ -15,8 +20,8 @@ export function LinkButton({ text = "Saber mas", link, ...styles }) {
       border={"2px solid"}
       {...styles}
     >
-      <HStack gap={4} p={1.5}>
-        <Text ml={2}>{text}</Text>
+      <HStack gap={5} p={1.5}>
+        <Text ml={2} w={'4.5rem'}>{pageData[language].linkButtonText}</Text>
         <Icon
           as={FaAngleRight}
           boxSize={7}
@@ -31,7 +36,6 @@ export function LinkButton({ text = "Saber mas", link, ...styles }) {
 }
 
 LinkButton.propTypes = {
-  text: PropTypes.string,
   link: PropTypes.string.isRequired,
   styles: PropTypes.object,
 };

@@ -7,8 +7,8 @@ import {
 } from "react-icons/fa";
 // import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineWhatsApp, AiOutlineLinkedin } from 'react-icons/ai';
 import PropTypes from "prop-types";
-import { primaryFontColor, secondaryFontColor } from "../colorConstants.json";
-import sections from "../mocks/sections.json";
+import { primaryFontColor, secondaryFontColor } from "@/colorConstants.json";
+import pageData from "../mocks/pageData.json";
 
 export function Footer({ lan, id }) {
   const socialMediaLinks = {
@@ -36,9 +36,9 @@ export function Footer({ lan, id }) {
           ))}
         </HStack>
         <HStack gap={5}>
-          {sections[lan].map((section, i) => {
+          {pageData[lan].sections.map((section, i) => {
             return (
-              section !== sections[lan][3] && (
+              section !== pageData[lan].sections[3] && (
                 <Text
                   as={"a"}
                   key={i}
@@ -52,7 +52,7 @@ export function Footer({ lan, id }) {
             );
           })}
         </HStack>
-        <Text color={secondaryFontColor} textAlign={"center"}>
+        <Text color={secondaryFontColor} textAlign={"center"} mx={2}>
           Copyright © 2024 All rights reserved by Chemical Group
         </Text>
       </VStack>

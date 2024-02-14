@@ -10,23 +10,22 @@ import {
 import { EmblaCarousel } from "./EmblaCarousel";
 import { LinkButton } from "./LinkButton";
 import slides from "../mocks/heroSlides.json";
-import { primaryColor } from "../colorConstants.json";
+import { primaryColor } from "@/colorConstants.json";
 import PropTypes from "prop-types";
 
 export function Hero({ lan, id }) {
   return (
     <Flex
       as={"section"}
+      // w={'100%'}
       id={id}
-      minH="100vh"
-      align={"center"}
-      justify={"center"}
       overflowX={"hidden"}
     >
-      <EmblaCarousel h={"100vh"} w={"100%"} options={{ loop: true }} btnSeparation="0.5rem" autoplay>
+      <EmblaCarousel options={{ loop: true }} btnSeparation="0.5rem" autoplay>
         {slides[lan].map((slide) => (
           <Box
             key={slide.id}
+            h={'100vh'}
             bgImage={slide.imgUrl}
             bgSize={"cover"}
             flex={"0 0 100%"}
@@ -62,7 +61,6 @@ export function Hero({ lan, id }) {
                   link={slide.link}
                   borderColor="white"
                   color="white"
-                  gb="red"
                   _hover={{ color: primaryColor, bg: "white" }}
                 />
               </Stack>

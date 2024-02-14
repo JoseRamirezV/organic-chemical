@@ -5,4 +5,9 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   base: "/organic-chemical/",
   plugins: [react()],
+  resolve: {
+    alias: {
+      "@": "/src"
+    }
+  }
 });
