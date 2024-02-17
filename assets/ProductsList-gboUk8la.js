@@ -1,0 +1,1 @@
+import{j as o,F as i,n as r}from"./index-vjG0HH_D.js";import{ProductCard as p}from"./ProductCard-9-8aOF5x.js";function a({lan:s,products:e}){return o.jsx(i,{justifyContent:"space-around",w:"100%",children:e[s].map((n,t)=>o.jsx(p,{product:n.name,description:n.description,link:n.link},t))})}a.propTypes={lan:r.oneOf(["es","en"]),products:r.object};export{a as ProductsList};
