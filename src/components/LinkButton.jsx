@@ -3,8 +3,8 @@ import { PropTypes } from "prop-types";
 import { FaAngleRight } from "react-icons/fa";
 import { secondaryColor } from "@/colorConstants.json";
 import { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
-import pageData from '../mocks/pageData.json';
+import { LanguageContext } from "@/context/LanguageContext";
+import pageData from '@/mocks/pageData.json';
 
 export function LinkButton({ link, ...styles }) {
   const { language } = useContext(LanguageContext);

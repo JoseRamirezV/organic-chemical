@@ -3,44 +3,44 @@
         {
             "title": "Nosotros",
             "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
-            "img": "images/Nosotros.jpg"
+            "img": "images/Nosotros.webp"
         },
         {
             "title": "Misión",
             "description": "Organic & Chemical Group S.A.S. es una empresa que aprovecha la materia orgánica y la transforma en Abono orgánico Mineral, liderando la Agroindustria de fertilizantes siempre orientada a Mercados nacionales e Internacionales comprometida con el desarrollo sostenible del Campo con altos estándares de Calidad permitiendo el crecimiento empresarial, generando bienestar social y beneficio económico a nuestras regiones",
-            "img": "images/Misión.png"
+            "img": "images/Misión.webp"
         },
         {
             "title": "Visión",
             "description": "Para el 2029 Ser reconocidos en el mercado Agroindustrial como el major aliado de negocios de Colombia y en el exterior con soluciones en el mercado de Abonos orgánicos minerales con propuestas innovadoras, basadas en las necesidades de nuestros clientes apoyados en nuestra experiencia y equipo técnico, generando valor agregado y crecimiento a nuestros clientes",
-            "img": "images/Visión.jpg"
+            "img": "images/Visión.webp"
         },
         {
             "title": "Instalaciones",
             "description": "Contamos con un área de 40 hectáreas para crecer en nuestra labor año a año.\nActualmente tenemos 3 invernadero de transformación de la materia orgánica que nos da una capacidad instalada mensual de 4.000 toneladas de material prima y un invernadero de maduración final, almacenamiento, zarandeo y despacho de producto final ",
-            "img": "images/Instalaciones.png"
+            "img": "images/Instalaciones.webp"
         }
     ],
     "en": [
         {
             "title": "About us",
             "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi accusamus quam quasi explicabo minima cum, beatae ipsum reprehenderit incidunt alias vitae deserunt totam quibusdam est exercitationem repudiandae iste velit!",
-            "img": "images/Nosotros.jpg"
+            "img": "images/Nosotros.webp"
         },
         {
             "title": "Mission",
             "description": "Organic & Chemical Group S.A.S. is a company that takes advantage of the organic matter and transforms it into organic mineral fertilizer, leading the agro-industry of fertilizers always oriented to national and international markets committed to the sustainable development of the field with high quality standards allowing business growth,generating social welfare and economic benefit to our regions.",
-            "img": "images/Misión.png"
+            "img": "images/Misión.webp"
         },
         {
             "title": "Vision",
             "description": "By 2029 be recognized in the Agroindustrial market as the best business ally in Colombia and abroad with solutions in the Organic Mineral Fertilizers market with innovative proposals, based on the needs of our clients supported by our experience and technical team, generating added value and growth to our clients",
-            "img": "images/Visión.jpg"
+            "img": "images/Visión.webp"
         },
         {
             "title": "Facilities",
             "description": "We have an area of ​​40 hectares to grow in our work year after year..\nWe currently have 3 organic matter transformation greenhouses that give us a monthly installed capacity of 4,000 tons of raw material and a greenhouse for final maturation, storage, sifting and dispatch of the final product.",
-            "img": "images/Instalaciones.png"
+            "img": "images/Instalaciones.webp"
         }
     ]
 }

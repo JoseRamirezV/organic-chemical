@@ -11,7 +11,7 @@ import { PropTypes } from "prop-types";
 import { LinkButton } from "./LinkButton";
 import { primaryColor, primaryFontColor } from "@/colorConstants.json";
 
-export function ProductCard({ product, description, link, ...extraStyles }) {
+export function ProductCard({ product, description, link, flex}) {
   return (
     <Card
       maxW={{base: "25rem", sm: "20rem"}}
@@ -20,7 +20,7 @@ export function ProductCard({ product, description, link, ...extraStyles }) {
       boxShadow="lg"
       color={primaryFontColor}
       _hover={{ bg: primaryColor, color: "white" }}
-      {...extraStyles}
+      flex={flex}
       data-group
     >
       <CardBody>
@@ -36,9 +36,8 @@ export function ProductCard({ product, description, link, ...extraStyles }) {
           mt="6"
           gap={{ base: "1rem", sm: "3" }}
           w="100%"
-          textAlign={"center"}
         >
-          <Heading size={"md"} fontWeight={"semibold"}>
+          <Heading size={"md"} fontWeight={"semibold"} textAlign={"center"}>
             {product}
           </Heading>
           <Text fontSize="sm">{description}</Text>
@@ -63,5 +62,5 @@ ProductCard.propTypes = {
   product: PropTypes.string,
   description: PropTypes.string,
   link: PropTypes.string,
-  extraStyles: PropTypes.object,
+  flex: PropTypes.string,
 };

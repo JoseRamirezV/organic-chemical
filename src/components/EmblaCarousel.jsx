@@ -1,6 +1,6 @@
 import { Box, Center, Flex, Show } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import { useCarousel } from "../hooks/useCarousel";
+import { useCarousel } from "@/hooks/useCarousel";
 import {
   DotButton,
   NextButton,

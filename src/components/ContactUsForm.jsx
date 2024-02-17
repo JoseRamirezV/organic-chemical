@@ -15,36 +15,45 @@ import {
   IoCloseOutline,
   IoSendSharp,
 } from "react-icons/io5";
+import pageData from "@/mocks/pageData.json";
 
-export function ContactUsForm({ initialFocusRef, onClose }) {
-  
+export function ContactUsForm({ initialFocusRef, onClose, lan }) {
+  const { formData, emailRequestStates } = pageData[lan];
   const states = {
     normal: {
-      text: "Send",
+      status: "normal",
+      text: emailRequestStates.normal,
       icon: <IoSendSharp />,
     },
     success: {
       status: "success",
-      text: "Sent!",
+      text: emailRequestStates.success,
       description: "Your message was sent successfully",
       icon: <IoCheckmarkOutline />,
     },
     failed: {
-      text: "Failed",
+      status: "failed",
+      text: emailRequestStates.failed,
       icon: <IoCloseOutline />,
     },
     loading: {
-      text: "Loading",
+      status: "loading",
+      text: emailRequestStates.loading,
     },
   };
-  const { emailReqState, sendEmail } = useEmailJs(states);
-  
-  
-  const handleSubmit =  (e) => {
+  const { emailReqState, sendEmail } = useEmailJs({ states });
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     sendEmail(e);
   };
 
+  const commonInputStyles = {
+    bg: "gray.600",
+    px: 4,
+    py: 2,
+    required: true,
+  };
   return (
     <FormControl
       as={"form"}
@@ -53,34 +62,54 @@ export function ContactUsForm({ initialFocusRef, onClose }) {
       gap={2}
       onSubmit={handleSubmit}
     >
-      <InputGroup flexDirection={"column"}>
-        <FormLabel my={1}>Name</FormLabel>
+      <InputGroup flexDirection={"column"} variant="unstyled">
+        <FormLabel my={1}>{formData.name}</FormLabel>
         <Input
           type="text"
           name="user_name"
           id="user_name"
-          required
+          placeholder={formData.namePlaceholder}
+          sx={{
+            "&::-webkit-input-placeholder": {
+              color: "gray.400",
+            },
+          }}
+          {...commonInputStyles}
           ref={initialFocusRef}
         />
       </InputGroup>
-      <InputGroup flexDirection={"column"}>
-        <FormLabel my={1}>E-mail</FormLabel>
-        <Input type="email" name="user_email" id="user_email" required />
+      <InputGroup flexDirection={"column"} variant="unstyled">
+        <FormLabel my={1}>{formData.email}</FormLabel>
+        <Input
+          type="email"
+          name="user_email"
+          id="user_email"
+          sx={{
+            "&::-webkit-input-placeholder": {
+              color: "gray.400",
+            },
+          }}
+          {...commonInputStyles}
+          placeholder={formData.emailPlaceholder}
+        />
       </InputGroup>
-      <InputGroup flexDirection={"column"}>
-        <FormLabel my={1}>Message</FormLabel>
+      <InputGroup flexDirection={"column"} variant="unstyled">
+        <FormLabel my={1}>{formData.message}</FormLabel>
         <Textarea
           name="message"
           id="message"
-          placeholder="Hola, me gustaría..."
+          placeholder={formData.messagePlaceholder}
           sx={{
             "&::-webkit-scrollbar-track": { bg: primaryFontColor },
             "&::-webkit-scrollbar-thumb": {
               borderColor: primaryFontColor,
             },
+            "&::-webkit-input-placeholder": {
+              color: "gray.400",
+            },
           }}
           resize={"none"}
-          required
+          {...commonInputStyles}
         />
       </InputGroup>
       <Input
@@ -90,7 +119,7 @@ export function ContactUsForm({ initialFocusRef, onClose }) {
         hidden
         readOnly
       />
-      <ButtonGroup justifyContent="end" size={"sm"}>
+      <ButtonGroup justifyContent="end" size={"sm"} mt={1}>
         {emailReqState === states.failed && (
           <Button
             as={"a"}
@@ -99,24 +128,29 @@ export function ContactUsForm({ initialFocusRef, onClose }) {
             me={"auto"}
             href="mailto:jr.ramirez.varon@gmail.com"
           >
-            Email
+            {formData.email}
           </Button>
         )}
         <Button colorScheme="gray" onClick={onClose}>
-          Cancel
+          {formData.cancel}
         </Button>
         <Button
-          colorScheme={emailReqState.text !== states.failed.text ? "green" : "red"}
+          colorScheme={
+            emailReqState.text !== states.failed.text ? "green" : "red"
+          }
           type="submit"
           isLoading={emailReqState.text === states.loading.text}
-          loadingText={emailReqState.text === states.loading.text && emailReqState.text}
+          loadingText={
+            emailReqState.text === states.loading.text && emailReqState.text
+          }
           isDisabled={
-            emailReqState.text === states.success.text || emailReqState.text === states.failed.text
+            emailReqState.text === states.success.text ||
+            emailReqState.text === states.failed.text
           }
           rightIcon={emailReqState.icon}
           spinnerPlacement="end"
         >
-          {emailReqState.text}
+          {states[emailReqState.status].text}
         </Button>
       </ButtonGroup>
     </FormControl>
@@ -129,4 +163,5 @@ ContactUsForm.propTypes = {
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]),
   onClose: PropTypes.func,
+  lan: PropTypes.string,
 };

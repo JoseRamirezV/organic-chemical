@@ -6,10 +6,16 @@ export const sendEmail = async (e) => {
   const publicId = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
 
   const form = e.currentTarget;
+  return {
+    status: "error",
+    title: "Oops!",
+    description: "Something went wrong",
+  };
   try {
     const emailReq = await emailjs.sendForm(serviceId, templateId, form, {
       publicKey: publicId,
     });
+    form.reset()
     if (emailReq.status !== 200) throw new Error();
     return {
       status: "success",

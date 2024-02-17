@@ -1,10 +1,56 @@
 {
     "es": {
-        "sections": ["Inicio", "Productos", "Nosotros", "Contáctenos"],
-        "linkButtonText": "Saber más"
+        "sections": [
+            "Inicio",
+            "Productos",
+            "Nosotros",
+            "Contáctenos"
+        ],
+        "linkButtonText": "Saber más",
+        "formData": {
+            "greeting": "Hola! En que podemos ayudarte?",
+            "name": "Nombre",
+            "namePlaceholder": "Andres Gonzalez...",
+            "email": "E-mail",
+            "emailPlaceholder": "andresG@...",
+            "message": "Mensaje",
+            "messagePlaceholder": "Hola, me gustaría...",
+            "cancel": "Cancelar"
+        },
+        "emailRequestStates": {
+            "normal": "Enviar",
+            "success": "Enviado",
+            "failed": "Falló",
+            "loading": "Cargando",
+            "failedMessage": "Ups!,PArece que algo falló",
+            "successMessage": ""
+        }
     },
     "en": {
-        "sections": ["Home", "Products", "About us", "Contact us"],
-        "linkButtonText": "Learn more"
+        "sections": [
+            "Home",
+            "Products",
+            "About us",
+            "Contact us"
+        ],
+        "linkButtonText": "Learn more",
+        "formData": {
+            "greeting": "Hi! How can we help you?",
+            "name": "Name",
+            "namePlaceholder": "Andres Gonzalez...",
+            "email": "E-mail",
+            "emailPlaceholder": "andresG@...",
+            "message": "Message",
+            "messagePlaceholder": "Hi, I would love to...",
+            "cancel": "Cancel"
+        },
+        "emailRequestStates": {
+            "normal": "Send",
+            "success": "Sent!",
+            "failed": "Failed",
+            "loading": "Loading",
+            "failedMessage": "Oops!,Something went wrong",
+            "successMessage": ""
+        }
     }
 }

@@ -1,9 +1,9 @@
 
 import { sendEmail as sendEmailService } from "@/services/sendEmail.js";
-import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
+import { useState } from "react";
 
-export const useEmailJs = (states) => {
+export const useEmailJs = ({states}) => {
   const toast = useToast();
 
   const [emailReqState, setEmailReqState] = useState(states.normal);
