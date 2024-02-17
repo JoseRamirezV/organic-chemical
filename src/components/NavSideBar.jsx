@@ -40,7 +40,7 @@ export function NavSideBar({sections, lan, toggleLan}) {
             <Image
               h={"4rem"}
               objectFit="cover"
-              src="images/Logo.png"
+              src="images/Logo.webp"
               alt="Chemical-logo"
               loading="lazy"
             />

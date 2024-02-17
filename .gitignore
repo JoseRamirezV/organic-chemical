@@ -29,3 +29,6 @@ template/invitacion.jpg
 template/prodcuts.jpg
 template/services.jpg
 template/welcome.jpg
+
+# Enviroment variables
+.env
