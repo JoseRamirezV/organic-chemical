@@ -19,7 +19,7 @@ export const useEmailJs = ({ states, lan }) => {
         isClosable: true,
         duration: 10000,
       });
-      setEmailReqState(states.success);
+      setEmailReqState(states.failed);
       return;
     }
     const { status } = await sendEmailService(e);
