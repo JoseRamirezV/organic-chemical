@@ -1,0 +1,1 @@
+import{j as e,M as i,P as o}from"./index-qg5d3Oe-.js";import p from"./ProductCard-8uJ6QdJU.js";function a({lan:r,products:t}){return e.jsx(i,{justifyContent:"space-around",w:"100%",children:t[r].map((s,n)=>e.jsx(p,{product:s.name,description:s.description,link:s.link},n))})}a.propTypes={lan:o.oneOf(["es","en"]),products:o.object};export{a as default};
