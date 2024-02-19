@@ -1,13 +1,13 @@
 import { Box, Center, Flex, Show } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import { useCarousel } from "@/hooks/useCarousel";
+import useCarousel from "@/hooks/useCarousel";
 import {
   DotButton,
   NextButton,
   PrevButton,
 } from "./EmblaCarouselArrowsDotsButtons";
 
-export function EmblaCarousel({
+export default function EmblaCarousel({
   children,
   options,
   arrowBtnOptions = { color: "white", separation: "1rem" },

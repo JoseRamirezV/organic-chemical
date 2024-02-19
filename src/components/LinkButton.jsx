@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { LanguageContext } from "@/context/LanguageContext";
 import pageData from '@/mocks/pageData.json';
 
-export function LinkButton({ link, ...styles }) {
+export default function LinkButton({ link, ...styles }) {
   const { language } = useContext(LanguageContext);
 
   return (

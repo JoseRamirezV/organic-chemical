@@ -1,5 +1,4 @@
 import { primaryColor, primaryFontColor } from "@/colorConstants.json";
-import pageData from "@/mocks/pageData.json";
 import {
   Box,
   Highlight,
@@ -16,22 +15,27 @@ import {
   Tooltip,
   useDisclosure,
 } from "@chakra-ui/react";
-import PropTypes from "prop-types";
 import { Suspense, lazy, useRef, useState } from "react";
 import { AiFillMessage } from "react-icons/ai";
+import PropTypes from "prop-types";
+import pageData from "@/mocks/pageData.json";
 
-const ContactUsForm = lazy(() =>
-  import("@/components/ContactUsForm").then((module) => ({
-    default: module.ContactUsForm,
-  }))
-);
+const ContactUsForm = lazy(() => import("@/components/ContactUsForm"));
 
-export function FormPopover({ lan }) {
+export default function FormPopover({ lan }) {
   const initialFocusRef = useRef();
   const [showForm, setShowForm] = useState(false);
   const { onClose, isOpen, onOpen } = useDisclosure();
 
   const greeting = pageData[lan].formData.greeting;
+  const tooltipText = pageData[lan].formBtnTooltip;
+
+  const closePopover = () => {
+    onClose();
+    setTimeout(() => {
+      setShowForm(false);
+    }, 500);
+  };
 
   return (
     <Box position={"fixed"} bottom="20px" right={"20px"}>
@@ -41,21 +45,19 @@ export function FormPopover({ lan }) {
         closeOnBlur={false}
         isOpen={isOpen}
         onOpen={() => setShowForm(true)}
-        onClose={() => {
-          onClose();
-          setShowForm(false);
-        }}
+        onClose={() => closePopover()}
       >
         <PopoverTrigger>
           <Box bg={"none"}>
             <Tooltip
               as={"button"}
-              label={"Contact"}
-              hasArrow
+              label={tooltipText}
               rounded={"lg"}
+              mb={1}
               py={1}
-              px={3}
+              px={2}
               isDisabled={showForm}
+              hasArrow
             >
               <IconButton
                 variant={"unstyled"}
@@ -80,7 +82,7 @@ export function FormPopover({ lan }) {
           color="white"
           bg={primaryFontColor}
           borderColor={primaryFontColor}
-          w={{ base: "15rem", sm: "auto" }}
+          w={{ base: "75vw", sm: "20rem" }}
           p={2}
         >
           <PopoverHeader fontWeight="bold" border="0">

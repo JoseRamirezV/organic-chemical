@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-export const useScrollBackground = () => {
+export default function useScrollBackground() {
   const [scrollData, setScrollData] = useState({
     y: 0,
     lastY: 0,
@@ -39,4 +38,4 @@ export const useScrollBackground = () => {
   return {
     changeStyle,
   };
-};
+}

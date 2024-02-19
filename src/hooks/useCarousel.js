@@ -2,10 +2,8 @@ import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-export const useCarousel = (options, autoplay) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay(),
-  ]);
+export default function useCarousel(options, autoplay) {
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -45,7 +43,6 @@ export const useCarousel = (options, autoplay) => {
     emblaApi.on("reInit", onInit);
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
-
   }, [emblaApi, onInit, onSelect]);
 
   return {
@@ -58,4 +55,4 @@ export const useCarousel = (options, autoplay) => {
     scrollNext,
     scrollTo,
   };
-};
+}

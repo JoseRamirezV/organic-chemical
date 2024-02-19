@@ -1,12 +1,13 @@
-import { Footer } from "@/sections/Footer";
-import { Header } from "@/sections/Header";
-import { Products } from "@/sections/Products";
-import { Us } from "@/sections/Us";
-import { useContext } from "react";
-import { Hero } from "@/sections/Hero";
-import { LanguageContext } from "./context/LanguageContext";
+import Footer from "@/sections/Footer";
+import FormPopover from "@/sections/FormPopover";
+import Header from "@/sections/Header";
+import Hero from "@/sections/Hero";
+import Products from "@/sections/Products";
 import pageData from "./mocks/pageData.json";
-import { FormPopover } from '@/sections/FormPopover';
+import Us from "@/sections/Us";
+import { useContext } from "react";
+import { LanguageContext } from "./context/LanguageContext";
+
 function App() {
   const { language, toggleLanguage } = useContext(LanguageContext);
 
@@ -17,7 +18,7 @@ function App() {
       <Products lan={language} id={pageData[language].sections[1]} />
       <Us lan={language} id={pageData[language].sections[2]} />
       <Footer lan={language} id={pageData[language].sections[3]} />
-      <FormPopover lan={language}/>
+      <FormPopover lan={language} />
     </>
   );
 }

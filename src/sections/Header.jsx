@@ -1,5 +1,5 @@
 import { primaryColor } from "@/colorConstants.json";
-import { useScrollBackground } from "@/hooks/useScrollBackground";
+import useScrollBackground from "@/hooks/useScrollBackground";
 import pageData from "@/mocks/pageData.json";
 import {
   Button,
@@ -13,26 +13,26 @@ import {
 import PropTypes from "prop-types";
 import { Suspense, lazy } from "react";
 
-const NavSideBar = lazy(()=>import('@/components/NavSideBar').then(module => ({default: module.NavSideBar})))
+const NavSideBar = lazy(() => import("@/components/NavSideBar"));
 
-export function Header({ lan, toggleLan }) {
+export default function Header({ lan, toggleLan }) {
   const { changeStyle } = useScrollBackground();
-  const { sections } = pageData[lan]
+  const { sections } = pageData[lan];
 
   return (
     <Center
       as="header"
       w={"100%"}
-      h={"15%"}
+      h={{base: "10%", sm: "15%"}}
       position={"fixed"}
       zIndex={1}
       transition={"background 0.8s ease"}
       background={changeStyle && "gray.50"}
       boxShadow={changeStyle && `${primaryColor} 0px 0px 2px 0px`}
     >
-      <Flex w={"80vw"} h={"100%"} p={1} alignItems={"center"} pos={"relative"}>
+      <Flex w={{base: "90%", sm: "80vw"}} h={"100%"} p={1} alignItems={"center"} pos={"relative"}>
         <Image
-          h={{ base: "80%", sm: "100%" }}
+          h={{ base: "90%", sm: "100%" }}
           py={2}
           objectFit="cover"
           src="images/Logo.webp"
@@ -65,8 +65,8 @@ export function Header({ lan, toggleLan }) {
           </Button>
         </Show>
         <Show below="sm">
-          <Suspense fallback={<Spinner color="gray.50"/>}>
-          <NavSideBar sections={sections} lan={lan} toggleLan={toggleLan}/>
+          <Suspense fallback={<Spinner color="gray.50" />}>
+            <NavSideBar sections={sections} lan={lan} toggleLan={toggleLan} />
           </Suspense>
         </Show>
       </Flex>

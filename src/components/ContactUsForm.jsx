@@ -1,4 +1,6 @@
 import { primaryFontColor } from "@/colorConstants";
+import { useEmailJs } from "@/hooks/useEmailJs.js";
+import pageData from "@/mocks/pageData.json";
 import {
   Button,
   ButtonGroup,
@@ -7,17 +9,16 @@ import {
   Input,
   InputGroup,
   Textarea,
+  Tooltip
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import { useEmailJs } from "@/hooks/useEmailJs.js";
 import {
   IoCheckmarkOutline,
   IoCloseOutline,
   IoSendSharp,
 } from "react-icons/io5";
-import pageData from "@/mocks/pageData.json";
 
-export function ContactUsForm({ initialFocusRef, onClose, lan }) {
+export default function ContactUsForm({ initialFocusRef, onClose, lan }) {
   const { formData, emailRequestStates } = pageData[lan];
   const states = {
     normal: {
@@ -41,10 +42,12 @@ export function ContactUsForm({ initialFocusRef, onClose, lan }) {
       text: emailRequestStates.loading,
     },
   };
-  const { emailReqState, sendEmail } = useEmailJs({ states });
+
+  const { emailReqState, sendEmail } = useEmailJs({ states, lan });
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(window.localStorage.getItem('email-cant-send')) return
     sendEmail(e);
   };
 
@@ -120,8 +123,9 @@ export function ContactUsForm({ initialFocusRef, onClose, lan }) {
         readOnly
       />
       <ButtonGroup justifyContent="end" size={"sm"} mt={1}>
-        {emailReqState === states.failed && (
-          <Button
+        {emailReqState.status === states.failed.status && (
+          <Tooltip label={`${pageData[lan].emailRequestStates.normal} email`}>
+            <Button
             as={"a"}
             variant={"solid"}
             colorScheme={"blackAlpha"}
@@ -130,22 +134,23 @@ export function ContactUsForm({ initialFocusRef, onClose, lan }) {
           >
             {formData.email}
           </Button>
+          </Tooltip>
         )}
         <Button colorScheme="gray" onClick={onClose}>
           {formData.cancel}
         </Button>
         <Button
           colorScheme={
-            emailReqState.text !== states.failed.text ? "green" : "red"
+            emailReqState.status !== states.failed.status ? "green" : "red"
           }
           type="submit"
-          isLoading={emailReqState.text === states.loading.text}
+          isLoading={emailReqState.status === states.loading.status}
           loadingText={
-            emailReqState.text === states.loading.text && emailReqState.text
+            emailReqState.status === states.loading.status && emailReqState.text
           }
           isDisabled={
-            emailReqState.text === states.success.text ||
-            emailReqState.text === states.failed.text
+            emailReqState.status === states.success.status ||
+            emailReqState.status === states.failed.status
           }
           rightIcon={emailReqState.icon}
           spinnerPlacement="end"

@@ -10,10 +10,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import { EmblaCarousel } from "@/components/EmblaCarousel";
-import { LinkButton } from "@/components/LinkButton";
+import EmblaCarousel from "@/components/EmblaCarousel";
+import LinkButton from "@/components/LinkButton";
 
-export function Hero({ lan, id }) {
+export default function Hero({ lan, id }) {
 
   return (
     <Flex

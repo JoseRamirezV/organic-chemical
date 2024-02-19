@@ -14,7 +14,7 @@ import { TiThMenu } from "react-icons/ti";
 import { primaryColor } from "@/colorConstants";
 import PropTypes from 'prop-types';
 
-export function NavSideBar({sections, lan, toggleLan}) {
+export default function NavSideBar({sections, lan, toggleLan}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>

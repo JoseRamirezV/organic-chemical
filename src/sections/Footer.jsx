@@ -6,11 +6,11 @@ import {
   FaWhatsappSquare,
 } from "react-icons/fa";
 // import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineWhatsApp, AiOutlineLinkedin } from 'react-icons/ai';
-import PropTypes from "prop-types";
 import { primaryFontColor, secondaryFontColor } from "@/colorConstants.json";
 import pageData from "@/mocks/pageData.json";
+import PropTypes from "prop-types";
 
-export function Footer({ lan, id }) {
+export default function Footer({ lan, id }) {
   const socialMediaLinks = {
     Facebook: "https://Facebook.com",
     Instagram: "https://Instagram.com",
@@ -25,13 +25,33 @@ export function Footer({ lan, id }) {
     LinkedIn: FaLinkedin,
   };
 
+  // const linkIcons = {
+  //     Facebook: {
+  //       icon: <FaFacebookSquare style={{height: '100%', width: '100%'}}/>,
+  //       color: 'facebook'
+  //     },
+  //     Instagram: {
+  //       icon: <FaInstagramSquare style={{height: '100%', width: '100%'}}/>,
+  //       color: 'pink'
+  //     },
+  //     WhatsApp: {
+  //       icon: <FaWhatsappSquare style={{height: '100%', width: '100%'}}/>,
+  //       color: 'whatsapp'
+  //     },
+  //     LinkedIn: {
+  //       icon: <FaLinkedin style={{height: '100%', width: '100%'}}/>,
+  //       color: 'linkedin'
+  //     },
+  //   };
+
   return (
     <Box as="footer" id={id} boxSize="100%" bg={"gray.50"} py="2rem">
       <VStack gap={5} py={5} color={primaryFontColor}>
-        <HStack align={"center"}>
+        <HStack align={"center"} gap={1}>
           {Object.keys(socialMediaLinks).map((link, i) => (
-            <Link key={i} href={socialMediaLinks[link]} boxSize={"2.2rem"}>
-              <Icon as={linkIcons[link]} boxSize={"full"} />
+            <Link key={i} href={socialMediaLinks[link]} boxSize={"2rem"}>
+              <Icon as={linkIcons[link]} boxSize={"full"} transition={'all .1s ease'} _hover={{transform: 'scale(1.3)'}}/>
+              {/* <IconButton icon={linkIcons[link].icon} size={'sm'}/> */}
             </Link>
           ))}
         </HStack>

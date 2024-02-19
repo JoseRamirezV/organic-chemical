@@ -7,11 +7,12 @@
             "Contáctenos"
         ],
         "linkButtonText": "Saber más",
+        "formBtnTooltip": "Mensaje",
         "formData": {
             "greeting": "Hola! En que podemos ayudarte?",
             "name": "Nombre",
             "namePlaceholder": "Andres Gonzalez...",
-            "email": "E-mail",
+            "email": "Email",
             "emailPlaceholder": "andresG@...",
             "message": "Mensaje",
             "messagePlaceholder": "Hola, me gustaría...",
@@ -22,9 +23,10 @@
             "success": "Enviado",
             "failed": "Falló",
             "loading": "Cargando",
-            "failedMessage": "Ups!,PArece que algo falló",
-            "successMessage": ""
-        }
+            "errorMessage": "Ups!;Parece que hubo un problema al intentar enviar este mensaje, por favor comunícate por alguno de los otros medios o envíanos un correo usando el botón 'Email' ubicado en el formulario, perdón por la inconveniencia y muchas gracias",
+            "successMessage": "Genial!;Tu mensaje fue enviado con éxito"
+        },
+        "emailAlreadySent": "Hola!; Parece que ya nos has enviado un mensaje, apreciamos el interés, pero si tienes alguna duda por favor comunícate por alguno de los otros medios o envíanos un correo usando el botón 'Email' ubicado en el formulario"
     },
     "en": {
         "sections": [
@@ -34,11 +36,12 @@
             "Contact us"
         ],
         "linkButtonText": "Learn more",
+        "formBtnTooltip": "Contact us",
         "formData": {
             "greeting": "Hi! How can we help you?",
             "name": "Name",
             "namePlaceholder": "Andres Gonzalez...",
-            "email": "E-mail",
+            "email": "Email",
             "emailPlaceholder": "andresG@...",
             "message": "Message",
             "messagePlaceholder": "Hi, I would love to...",
@@ -49,8 +52,9 @@
             "success": "Sent!",
             "failed": "Failed",
             "loading": "Loading",
-            "failedMessage": "Oops!,Something went wrong",
-            "successMessage": ""
-        }
+            "errorMessage": "Oops!;There seems to be a problem when trying to send this message, please contact us by any of the other options or send us an email using the button 'Email' on the form, sorry for the inconvenience and thank you",
+            "successMessage": "Success!;Your message was sent successfully"
+        },
+        "emailAlreadySent": "Hi!; It looks that you've already sent us a message, we greatly appreciate your interest, but if you have any questions please contact us by any of the other options or send us an email using the button 'Email' on the form"
     }
 }

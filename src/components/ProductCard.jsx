@@ -1,3 +1,4 @@
+import { primaryColor, primaryFontColor } from "@/colorConstants.json";
 import {
   Card,
   CardBody,
@@ -7,14 +8,13 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import { PropTypes } from "prop-types";
-import { LinkButton } from "./LinkButton";
-import { primaryColor, primaryFontColor } from "@/colorConstants.json";
+import PropTypes from "prop-types";
+import LinkButton from "./LinkButton";
 
-export function ProductCard({ product, description, link, flex}) {
+export default function ProductCard({ product, description, link, flex }) {
   return (
     <Card
-      maxW={{base: "25rem", sm: "20rem"}}
+      maxW={{ base: "25rem", sm: "20rem" }}
       transition={"all 0.2s ease"}
       borderRadius={"3xl"}
       boxShadow="lg"
@@ -36,8 +36,9 @@ export function ProductCard({ product, description, link, flex}) {
           mt="6"
           gap={{ base: "1rem", sm: "3" }}
           w="100%"
+          textAlign={"center"}
         >
-          <Heading size={"md"} fontWeight={"semibold"} textAlign={"center"}>
+          <Heading size={"md"} fontWeight={"semibold"}>
             {product}
           </Heading>
           <Text fontSize="sm">{description}</Text>

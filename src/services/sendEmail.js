@@ -6,11 +6,10 @@ export const sendEmail = async (e) => {
   const publicId = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
 
   const form = e.currentTarget;
-  return {
-    status: "error",
-    title: "Oops!",
-    description: "Something went wrong",
-  };
+  // return {
+  //   status: 'error'
+  // }
+  
   try {
     const emailReq = await emailjs.sendForm(serviceId, templateId, form, {
       publicKey: publicId,
@@ -19,14 +18,10 @@ export const sendEmail = async (e) => {
     if (emailReq.status !== 200) throw new Error();
     return {
       status: "success",
-      title: "Success",
-      description: "Your message was sent successfully",
     };
   } catch (error) {
     return {
-      status: "error",
-      title: "Oops!",
-      description: "Something went wrong",
+      status: "failed",
     };
   }
 };
