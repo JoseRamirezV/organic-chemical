@@ -16,10 +16,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import useNearScreen from "../hooks/useNearScreen";
 import { useEffect } from "react";
+import useNearScreen from "../hooks/useNearScreen";
 
-export default function Us({ lan, id }) {
+export default function Us({ lan }) {
   const { isOpen, onOpen } = useDisclosure();
   const { isNearScreen, fromRef } = useNearScreen();
 
@@ -28,20 +28,13 @@ export default function Us({ lan, id }) {
   });
 
   return (
-    <Box
-      as="section"
-      id={id}
-      px={{ base: "5%", sm: "10%" }}
-      py={"6vh"}
-      bg={"gray.100"}
-      ref={fromRef}
-    >
+    <Box ref={fromRef} w={'100%'}>
       <SlideFade
         in={isOpen}
         offsetY={"50px"}
         transition={{ enter: { duration: 0.8 } }}
       >
-        <Tabs size={"lg"} variant="enclosed" isFitted isLazy>
+        <Tabs size={"lg"} w={'100%'} variant="enclosed" isFitted isLazy>
           <TabList
             mb={{ base: 2, sm: 0 }}
             gap={{ base: 1, sm: 0 }}
@@ -52,28 +45,24 @@ export default function Us({ lan, id }) {
               <Tab
                 key={title}
                 h="3rem"
-                roundedTop={"xl"}
-                roundedBottom={{ base: "xl", sm: "none" }}
+                rounded={"xl"}
+                roundedBottom={{ sm: "none" }}
                 bg={primaryColor}
                 color={"white"}
                 border={"1px solid"}
                 borderColor={"gray.300"}
-                borderBottom={"0"}
+                borderBottom={{sm: "0"}}
                 fontWeight={600}
                 fontSize={{ base: "md", sm: "lg" }}
                 transition={"all 0.2s ease"}
                 transform={"translateY(2px)"}
                 _selected={{
-                  base: {
-                    color: primaryFontColor,
-                    bg: "white",
-                  },
+                  color: primaryFontColor,
+                  bg: "white",
                 }}
                 _hover={{
-                  base: {
-                    color: primaryFontColor,
-                    bg: "white",
-                  },
+                  color: primaryFontColor,
+                  bg: "white",
                 }}
               >
                 {title}
@@ -84,7 +73,7 @@ export default function Us({ lan, id }) {
             border={"1px solid"}
             borderColor={"gray.300"}
             bg={"white"}
-            rounded={"lg"}
+            rounded={"xl"}
             roundedTop={{ sm: "none" }}
             px={"5%"}
             py={{ base: "1rem", sm: "2rem" }}
@@ -102,12 +91,14 @@ export default function Us({ lan, id }) {
                 <Flex
                   direction={{ base: "column-reverse", lg: "row" }}
                   justify={{ base: "center", lg: "space-between" }}
-                  gap={"4rem"}
+                  gap={"2rem"}
                   fontSize={{ base: "md", sm: "lg", lg: "xl" }}
                 >
-                  <Text whiteSpace={"pre-wrap"} flex={'1 0 50%'}>{description}</Text>
+                  <Text whiteSpace={"pre-wrap"} flex={"1 0 50%"}>
+                    {description}
+                  </Text>
                   <Box
-                    flex={'1 1 auto'}
+                    flex={"1 1 auto"}
                     h={"300px"}
                     rounded={"lg"}
                     overflow={"clip"}
@@ -132,5 +123,4 @@ export default function Us({ lan, id }) {
 
 Us.propTypes = {
   lan: PropTypes.oneOf(["es", "en"]),
-  id: PropTypes.string.isRequired,
 };

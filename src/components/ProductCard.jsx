@@ -14,7 +14,7 @@ import LinkButton from "./LinkButton";
 export default function ProductCard({ product, description, link, flex }) {
   return (
     <Card
-      maxW={{ base: "25rem", sm: "20rem" }}
+      maxW={"20rem"}
       transition={"all 0.2s ease"}
       borderRadius={"3xl"}
       boxShadow="lg"

@@ -1,17 +1,17 @@
 import { primaryColor, primaryFontColor } from "@/colorConstants.json";
-import { Suspense, lazy, useEffect } from "react";
+import useNearScreen from "@/hooks/useNearScreen";
+import productsData from "@/mocks/productsData.json";
 import {
+  Box,
   Divider,
   Heading,
   Show,
   SlideFade,
   Spinner,
-  VStack,
   useDisclosure,
 } from "@chakra-ui/react";
-import productsData from "@/mocks/productsData.json";
 import PropTypes from "prop-types";
-import useNearScreen from "@/hooks/useNearScreen";
+import { Suspense, lazy, useEffect } from "react";
 
 const EmblaCarousel = lazy(() => import("@/components/EmblaCarousel"));
 
@@ -19,7 +19,7 @@ const ProductsList = lazy(() => import("@/components/ProductsList"));
 
 const ProductCard = lazy(() => import("@/components/ProductCard"));
 
-export default function Products({ lan, id }) {
+export default function Products({ lan }) {
   const { isNearScreen, fromRef } = useNearScreen();
   const { isOpen, onOpen } = useDisclosure();
 
@@ -27,23 +27,19 @@ export default function Products({ lan, id }) {
     if (isNearScreen) onOpen();
   });
   return (
-    <SlideFade in={isOpen} offsetY="50px" transition={{enter:{duration: .8}}}>
-      <VStack
-        height="auto"
-        id={id}
-        px={{ base: "5%", sm: "10%", "2xl": "5%" }}
-        py={{ base: "2rem", "2xl": "5%" }}
-        align={"center"}
-        justify={"center"}
-        overflowX={"hidden"}
-        ref={fromRef}
+    <Box ref={fromRef} w={"100%"}>
+      <SlideFade
+        in={isOpen}
+        offsetY="50px"
+        transition={{ enter: { duration: 0.8 } }}
       >
         <Heading
           as="h2"
           w="12rem"
-          textAlign={"center"}
           mb={5}
           color={primaryFontColor}
+          textAlign={"center"}
+          mx={"auto"}
         >
           {lan === "es" ? "Productos" : "Products"}
           <Divider
@@ -54,11 +50,11 @@ export default function Products({ lan, id }) {
           />
         </Heading>
         <Suspense fallback={<Spinner />}>
-          <Show above="1550px">
+          <Show above="2xl">
             <ProductsList lan={lan} products={productsData} />
           </Show>
           {/* Show on mobile and small screens */}
-          <Show below="1550px">
+          <Show below="2xl">
             <EmblaCarousel
               options={{ slidesToScroll: "2" }}
               gap="2rem"
@@ -81,12 +77,11 @@ export default function Products({ lan, id }) {
             </EmblaCarousel>
           </Show>
         </Suspense>
-      </VStack>
-    </SlideFade>
+      </SlideFade>
+    </Box>
   );
 }
 
 Products.propTypes = {
   lan: PropTypes.oneOf(["es", "en"]),
-  id: PropTypes.string.isRequired,
 };

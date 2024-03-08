@@ -5,6 +5,7 @@ import {
   Button,
   Center,
   Flex,
+  Hide,
   Image,
   Show,
   Spacer,
@@ -23,16 +24,22 @@ export default function Header({ lan, toggleLan }) {
     <Center
       as="header"
       w={"100%"}
-      h={{base: "10%", sm: "15%"}}
       position={"fixed"}
       zIndex={1}
       transition={"background 0.8s ease"}
       background={changeStyle && "gray.50"}
       boxShadow={changeStyle && `${primaryColor} 0px 0px 2px 0px`}
+      py={{ base: 2, xl: 1, "2xl": 2 }}
     >
-      <Flex w={{base: "90%", sm: "80vw"}} h={"100%"} p={1} alignItems={"center"} pos={"relative"}>
+      <Flex
+        w={"100%"}
+        maxW={{ base: "90%" ,lg: "67.5rem", "2xl": "80%", "3xl": "75%" }}
+        mx={"auto"}
+        alignItems={"center"}
+        pos={"relative"}
+      >
         <Image
-          h={{ base: "90%", sm: "100%" }}
+          h={"5rem"}
           py={2}
           objectFit="cover"
           src="images/Logo.webp"
@@ -53,22 +60,20 @@ export default function Header({ lan, toggleLan }) {
             </Button>
           ))}
           <Button
-            pos={"absolute"}
-            right={"-4rem"}
             variant="solid"
             colorScheme={changeStyle ? "green" : "whiteAlpha"}
-            pb={0.5}
             rounded={"full"}
+            pb={0.5}
             onClick={() => toggleLan()}
           >
             {lan === "es" ? "en" : "es"}
           </Button>
         </Show>
-        <Show below="sm">
+        <Hide above="sm">
           <Suspense fallback={<Spinner color="gray.50" />}>
             <NavSideBar sections={sections} lan={lan} toggleLan={toggleLan} />
           </Suspense>
-        </Show>
+        </Hide>
       </Flex>
     </Center>
   );

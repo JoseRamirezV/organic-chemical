@@ -13,38 +13,43 @@ import PropTypes from "prop-types";
 import EmblaCarousel from "@/components/EmblaCarousel";
 import LinkButton from "@/components/LinkButton";
 
-export default function Hero({ lan, id }) {
-
+export default function Hero({ lan }) {
   return (
-    <Flex
-      as={"section"}
-      id={id}
-      overflowX={"hidden"}
-    >
-      <EmblaCarousel options={{ loop: true }} btnSeparation="0.5rem" autoplay>
-        {slides[lan].map((slide) => (
-          <Box
-            key={slide.id}
-            h={'100vh'}
-            bgImage={slide.imgUrl}
-            bgSize={"cover"}
-            flex={"0 0 100%"}
+    <EmblaCarousel options={{ loop: true }} btnSeparation="0.5rem" dotsOptions={{positionFromTop: "94%"}} autoplay>
+      {slides[lan].map((slide) => (
+        <Box
+          key={slide.id}
+          bgImage={slide.imgUrl}
+          bgSize={"cover"}
+          minH={{ md: "auto",lg: "100vh" , "3xl": "auto" }}
+          flex={"0 0 100%"}
+        >
+          <Flex
+            h={"100%"}
+            justifyContent={"center"}
+            bg={"#ffffff5c"}
+            backdropFilter={"blur(10px)"}
           >
             <Flex
-              direction={{ base: "column-reverse", md: "row" }}
-              h={"100%"}
-              px={{base: "5vw", sm: "10vw"}}
-              justify={{ base: "center", md: "space-between" }}
+              direction={{ base: "column-reverse", xl: "row" }}
+              justify={{
+                base: "center",
+                xl: "space-around",
+                '2xl': "space-between",
+              }}
+              gap={{xl: "0", "2xl": "4rem", "3xl": "8rem" }}
               align={"center"}
-              gap={{ md: "2rem" }}
-              bg={"#ffffff5c"}
-              backdropFilter={"blur(10px)"}
+              py={{ base: "4rem", xl: "0", "3xl": "10rem" }}
+              pt={{ base: "22%",md: "12%" , lg: "10%", xl: 0 }}
+              maxW={{ base: "100%", md: "90%" ,lg: "67.5rem", "2xl": "75%" }}
             >
               <Stack
                 justify={"center"}
-                textAlign={{ base: "center", sm: "start" }}
-                align={{ base: "center", sm: "start" }}
-                gap={{ base: 5, md: 10 }}
+                textAlign={{ base: "center", lg: "start" }}
+                align={{ base: "center", lg: "start" }}
+                justifyContent={"start"}
+                flexGrow={1}
+                gap={{ base: 4, md: 10 }}
                 p={"1.5rem"}
                 w={{ base: "100%", md: "60%" }}
                 color={"white"}
@@ -52,11 +57,11 @@ export default function Hero({ lan, id }) {
                 <Heading
                   as="h2"
                   fontWeight={"semibold"}
-                  size={{ base: "xl", md: "2xl" }}
+                  size={{ base: "lg", sm: "xl", md: "2xl" }}
                 >
                   {slide.title}
                 </Heading>
-                <Text>{slide.description}</Text>
+                <Text fontSize={{md: "lg", lg: "base", '2xl': "xl"}}>{slide.description}</Text>
                 <LinkButton
                   link={slide.link}
                   borderColor="white"
@@ -64,11 +69,7 @@ export default function Hero({ lan, id }) {
                   _hover={{ color: primaryColor, bg: "white" }}
                 />
               </Stack>
-              <AspectRatio
-                width={{ base: "90%", md: "25rem" }}
-                ratio={{ base: 6 / 4, md: 1 }}
-                flexGrow={{ md: 1 }}
-              >
+              <AspectRatio width={{ base: "15rem", md: "25rem" }} ratio={1}>
                 <Image
                   src={slide.imgUrl}
                   objectFit={"cover"}
@@ -76,14 +77,13 @@ export default function Hero({ lan, id }) {
                 ></Image>
               </AspectRatio>
             </Flex>
-          </Box>
-        ))}
-      </EmblaCarousel>
-    </Flex>
+          </Flex>
+        </Box>
+      ))}
+    </EmblaCarousel>
   );
 }
 
 Hero.propTypes = {
   lan: PropTypes.oneOf(["es", "en"]),
-  id: PropTypes.string.isRequired,
 };

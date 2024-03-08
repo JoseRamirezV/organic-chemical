@@ -25,7 +25,6 @@ export default function NavSideBar({sections, lan, toggleLan}) {
         colorScheme={"green"}
         variant={"unstyled"}
         fontSize={"2xl"}
-        p={0}
       />
       <Drawer onClose={onClose} isOpen={isOpen} size={"full"}>
         <DrawerOverlay />
@@ -35,10 +34,10 @@ export default function NavSideBar({sections, lan, toggleLan}) {
             borderBottomWidth="1px"
             display={"flex"}
             alignItems={"center"}
-            justifyContent={"space-around"}
+            justifyContent={"space-between"}
           >
             <Image
-              h={"4rem"}
+              h={"3rem"}
               objectFit="cover"
               src="images/Logo.webp"
               alt="Chemical-logo"
@@ -49,6 +48,7 @@ export default function NavSideBar({sections, lan, toggleLan}) {
               colorScheme={"green"}
               rounded={"full"}
               pb={0.5}
+              mr={4}
               onClick={() => toggleLan()}
             >
               {lan === "es" ? "en" : "es"}

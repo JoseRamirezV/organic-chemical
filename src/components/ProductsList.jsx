@@ -12,6 +12,7 @@ export default function ProductsList({lan, products}) {
           product={product.name}
           description={product.description}
           link={product.link}
+          flex={'1 0 fit-content'}
         ></ProductCard>
       ))}
     </Flex>

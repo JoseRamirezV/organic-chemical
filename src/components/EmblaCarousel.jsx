@@ -10,8 +10,8 @@ import {
 export default function EmblaCarousel({
   children,
   options,
-  arrowBtnOptions = { color: "white", separation: "1rem" },
-  dotsOptions = { color: "gray.50", positionFromTop: "95%"},
+  arrowBtnOptions,
+  dotsOptions,
   gap,
   p,
   autoplay,
@@ -36,7 +36,6 @@ export default function EmblaCarousel({
     >
       <Box
         // className="embla__viewport"
-        // boxSize="full"
         overflowX={"hidden"}
         px={p?.px}
         py={p?.py}
@@ -44,33 +43,34 @@ export default function EmblaCarousel({
       >
         <Flex
           // className="embla__container"
-          // h="full"
           style={{ touchAction: "pan-y", backfaceVisibility: "hidden" }}
           gap={gap}
+          cursor={"grab"}
+          _active={{ cursor: "grabbing" }}
         >
           {children}
         </Flex>
       </Box>
 
-      <Show above="sm">
+      <Show above="lg">
         <PrevButton
           onClick={scrollPrev}
           disabled={prevBtnDisabled}
-          left={arrowBtnOptions.separation}
-          color={arrowBtnOptions?.color}
+          left={arrowBtnOptions?.separation ?? "1rem"}
+          color={arrowBtnOptions?.color ?? "white"}
         />
         <NextButton
           onClick={scrollNext}
           disabled={nextBtnDisabled}
-          right={arrowBtnOptions.separation}
-          color={arrowBtnOptions?.color}
+          right={arrowBtnOptions?.separation ?? "1rem"}
+          color={arrowBtnOptions?.color ?? "white"}
         />
       </Show>
 
       <Center
         gap={"0.75rem"}
         pos={"absolute"}
-        top={dotsOptions.positionFromTop}
+        top={dotsOptions.positionFromTop ?? "95%"}
         left={0}
         right={0}
       >
@@ -84,8 +84,9 @@ export default function EmblaCarousel({
               rounded: "full",
               transition: "all 0.2s ease",
               outline: `2px solid`,
-              outlineColor: dotsOptions.color,
-              background: index === selectedIndex && dotsOptions.color,
+              outlineColor: dotsOptions.color ?? "white",
+              background:
+                index === selectedIndex && (dotsOptions.color ?? "white"),
             }}
           />
         ))}
@@ -102,12 +103,11 @@ EmblaCarousel.propTypes = {
   }),
   arrowBtnOptions: PropTypes.shape({
     color: PropTypes.string,
-    separation: PropTypes.string,
+    separation: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   }),
-  enableDots: PropTypes.bool,
   dotsOptions: PropTypes.shape({
     color: PropTypes.string,
-    positionFromTop: PropTypes.string
+    positionFromTop: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   }),
   gap: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   p: PropTypes.shape({
