@@ -1,4 +1,5 @@
-import { primaryColor, primaryFontColor } from "@/colorConstants.json";
+import { primaryColor, primaryFontColor } from '@/colorConstants.json';
+import pageData from '@/mocks/pageData.json';
 import {
   Box,
   Highlight,
@@ -14,13 +15,12 @@ import {
   Text,
   Tooltip,
   useDisclosure,
-} from "@chakra-ui/react";
-import { Suspense, lazy, useRef, useState } from "react";
-import { AiFillMessage } from "react-icons/ai";
-import PropTypes from "prop-types";
-import pageData from "@/mocks/pageData.json";
+} from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import { Suspense, lazy, useRef, useState } from 'react';
+import { AiFillMessage } from 'react-icons/ai';
 
-const ContactUsForm = lazy(() => import("@/components/ContactUsForm"));
+const ContactUsForm = lazy(() => import('@/components/ContactUsForm'));
 
 export default function FormPopover({ lan }) {
   const initialFocusRef = useRef();
@@ -38,21 +38,21 @@ export default function FormPopover({ lan }) {
   };
 
   return (
-    <Box position={"fixed"} bottom="20px" right={"20px"}>
+    <Box position={'fixed'} bottom='20px' right={'20px'}>
       <Popover
         initialFocusRef={initialFocusRef}
-        placement="left-start"
+        placement='left-start'
         closeOnBlur={false}
         isOpen={isOpen}
         onOpen={() => setShowForm(true)}
         onClose={() => closePopover()}
       >
         <PopoverTrigger>
-          <Box bg={"none"}>
+          <Box bg={'none'}>
             <Tooltip
-              as={"button"}
+              as={'button'}
               label={tooltipText}
-              rounded={"lg"}
+              rounded={'lg'}
               mb={1}
               py={1}
               px={2}
@@ -60,17 +60,17 @@ export default function FormPopover({ lan }) {
               hasArrow
             >
               <IconButton
-                variant={"unstyled"}
-                size={"lg"}
-                icon={<AiFillMessage size={"80%"} style={{ margin: "auto" }} />}
-                color={"gray.200"}
+                variant={'unstyled'}
+                size={'lg'}
+                icon={<AiFillMessage size={'80%'} style={{ margin: 'auto' }} />}
+                color={'gray.200'}
                 p={1}
                 bg={primaryColor}
                 isRound
                 _hover={{
-                  bg: "gray.200",
+                  bg: 'gray.200',
                   color: primaryColor,
-                  transform: "scale(1.1)",
+                  transform: 'scale(1.1)',
                   border: `2px solid ${primaryColor}`,
                 }}
                 onClick={onOpen}
@@ -79,23 +79,23 @@ export default function FormPopover({ lan }) {
           </Box>
         </PopoverTrigger>
         <PopoverContent
-          color="white"
-          bg={primaryFontColor}
-          borderColor={primaryFontColor}
-          w={{ base: "75vw", sm: "20rem" }}
+          color={primaryFontColor}
+          bg={'gray.50'}
+          borderColor={'gray.200'}
+          w={{ base: '75vw', sm: '20rem' }}
           p={2}
         >
-          <PopoverHeader fontWeight="bold" border="0">
-            <Text pt={4} pb={0} w={"95%"} fontSize={"lg"}>
+          <PopoverHeader fontWeight='bold' border='0'>
+            <Text pt={4} pb={0} w={'95%'} fontSize={'lg'}>
               <Highlight
-                query={greeting.split(" ")[0]}
-                styles={{ color: "green.400" }}
+                query={greeting.split(' ')[0]}
+                styles={{ color: 'green.400' }}
               >
                 {greeting}
               </Highlight>
             </Text>
           </PopoverHeader>
-          <PopoverArrow bg={primaryFontColor} shadow={"none"} />
+          <PopoverArrow bg={'gray.50'} shadow={'none'} />
           <PopoverCloseButton />
           <PopoverBody>
             <Suspense fallback={<Spinner />}>

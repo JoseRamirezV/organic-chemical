@@ -1,6 +1,6 @@
-import { primaryFontColor } from "@/colorConstants";
-import { useEmailJs } from "@/hooks/useEmailJs.js";
-import pageData from "@/mocks/pageData.json";
+import { primaryFontColor, secondaryFontColor } from '@/colorConstants';
+import { useEmailJs } from '@/hooks/useEmailJs.js';
+import pageData from '@/mocks/pageData.json';
 import {
   Button,
   ButtonGroup,
@@ -9,36 +9,36 @@ import {
   Input,
   InputGroup,
   Textarea,
-  Tooltip
-} from "@chakra-ui/react";
-import PropTypes from "prop-types";
+  Tooltip,
+} from '@chakra-ui/react';
+import PropTypes from 'prop-types';
 import {
   IoCheckmarkOutline,
   IoCloseOutline,
   IoSendSharp,
-} from "react-icons/io5";
+} from 'react-icons/io5';
 
 export default function ContactUsForm({ initialFocusRef, onClose, lan }) {
   const { formData, emailRequestStates } = pageData[lan];
   const states = {
     normal: {
-      status: "normal",
+      status: 'normal',
       text: emailRequestStates.normal,
       icon: <IoSendSharp />,
     },
     success: {
-      status: "success",
+      status: 'success',
       text: emailRequestStates.success,
-      description: "Your message was sent successfully",
+      description: 'Your message was sent successfully',
       icon: <IoCheckmarkOutline />,
     },
     failed: {
-      status: "failed",
+      status: 'failed',
       text: emailRequestStates.failed,
       icon: <IoCloseOutline />,
     },
     loading: {
-      status: "loading",
+      status: 'loading',
       text: emailRequestStates.loading,
     },
   };
@@ -47,103 +47,95 @@ export default function ContactUsForm({ initialFocusRef, onClose, lan }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(window.localStorage.getItem('email-cant-send')) return
+    if (window.localStorage.getItem('email-cant-send')) return;
     sendEmail(e);
   };
 
   const commonInputStyles = {
-    bg: "gray.600",
+    bg: 'gray.100',
     px: 4,
     py: 2,
     required: true,
+    sx: {
+      '&::-webkit-input-placeholder': {
+        color: secondaryFontColor,
+      },
+    },
   };
   return (
     <FormControl
-      as={"form"}
-      display={"flex"}
-      flexDirection={"column"}
+      as={'form'}
+      display={'flex'}
+      flexDirection={'column'}
       gap={2}
       onSubmit={handleSubmit}
     >
-      <InputGroup flexDirection={"column"} variant="unstyled">
+      <InputGroup flexDirection={'column'} variant='unstyled'>
         <FormLabel my={1}>{formData.name}</FormLabel>
         <Input
-          type="text"
-          name="user_name"
-          id="user_name"
+          type='text'
+          name='user_name'
+          id='user_name'
           placeholder={formData.namePlaceholder}
-          sx={{
-            "&::-webkit-input-placeholder": {
-              color: "gray.400",
-            },
-          }}
           {...commonInputStyles}
           ref={initialFocusRef}
         />
       </InputGroup>
-      <InputGroup flexDirection={"column"} variant="unstyled">
+      <InputGroup flexDirection={'column'} variant='unstyled'>
         <FormLabel my={1}>{formData.email}</FormLabel>
         <Input
-          type="email"
-          name="user_email"
-          id="user_email"
-          sx={{
-            "&::-webkit-input-placeholder": {
-              color: "gray.400",
-            },
-          }}
+          type='email'
+          name='user_email'
+          id='user_email'
           {...commonInputStyles}
           placeholder={formData.emailPlaceholder}
         />
       </InputGroup>
-      <InputGroup flexDirection={"column"} variant="unstyled">
+      <InputGroup flexDirection={'column'} variant='unstyled'>
         <FormLabel my={1}>{formData.message}</FormLabel>
         <Textarea
-          name="message"
-          id="message"
+          name='message'
+          id='message'
           placeholder={formData.messagePlaceholder}
           sx={{
-            "&::-webkit-scrollbar-track": { bg: primaryFontColor },
-            "&::-webkit-scrollbar-thumb": {
+            '&::-webkit-scrollbar-track': { bg: primaryFontColor },
+            '&::-webkit-scrollbar-thumb': {
               borderColor: primaryFontColor,
-            },
-            "&::-webkit-input-placeholder": {
-              color: "gray.400",
-            },
+            }
           }}
-          resize={"none"}
+          resize={'none'}
           {...commonInputStyles}
         />
       </InputGroup>
       <Input
-        type="text"
-        name="from_name"
-        value={"Chemical Group Page"}
+        type='text'
+        name='from_name'
+        value={'Chemical Group Page'}
         hidden
         readOnly
       />
-      <ButtonGroup justifyContent="end" size={"sm"} mt={1}>
+      <ButtonGroup justifyContent='end' size={'sm'} mt={1}>
         {emailReqState.status === states.failed.status && (
           <Tooltip label={`${pageData[lan].emailRequestStates.normal} email`}>
             <Button
-            as={"a"}
-            variant={"solid"}
-            colorScheme={"blackAlpha"}
-            me={"auto"}
-            href="mailto:jr.ramirez.varon@gmail.com"
-          >
-            {formData.email}
-          </Button>
+              as={'a'}
+              variant={'solid'}
+              colorScheme={'blackAlpha'}
+              me={'auto'}
+              href='mailto:jr.ramirez.varon@gmail.com'
+            >
+              {formData.email}
+            </Button>
           </Tooltip>
         )}
-        <Button colorScheme="gray" onClick={onClose}>
+        <Button colorScheme='gray' onClick={onClose}>
           {formData.cancel}
         </Button>
         <Button
           colorScheme={
-            emailReqState.status !== states.failed.status ? "green" : "red"
+            emailReqState.status !== states.failed.status ? 'green' : 'red'
           }
-          type="submit"
+          type='submit'
           isLoading={emailReqState.status === states.loading.status}
           loadingText={
             emailReqState.status === states.loading.status && emailReqState.text
@@ -153,7 +145,7 @@ export default function ContactUsForm({ initialFocusRef, onClose, lan }) {
             emailReqState.status === states.failed.status
           }
           rightIcon={emailReqState.icon}
-          spinnerPlacement="end"
+          spinnerPlacement='end'
         >
           {states[emailReqState.status].text}
         </Button>

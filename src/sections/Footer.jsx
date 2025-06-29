@@ -1,21 +1,21 @@
-import { Box, HStack, Icon, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Icon, Link, Text, VStack } from '@chakra-ui/react';
 import {
   FaFacebookSquare,
   FaInstagramSquare,
   FaLinkedin,
   FaWhatsappSquare,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 // import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineWhatsApp, AiOutlineLinkedin } from 'react-icons/ai';
-import { primaryFontColor, secondaryFontColor } from "@/colorConstants.json";
-import pageData from "@/mocks/pageData.json";
-import PropTypes from "prop-types";
+import { primaryFontColor, secondaryFontColor } from '@/colorConstants.json';
+import pageData from '@/mocks/pageData.json';
+import PropTypes from 'prop-types';
 
 export default function Footer({ lan, id }) {
   const socialMediaLinks = {
-    Facebook: "https://Facebook.com",
-    Instagram: "https://Instagram.com",
-    WhatsApp: "https://wa.me/573173777044",
-    LinkedIn: "https://LinkedIn.com",
+    Facebook: 'https://Facebook.com',
+    Instagram: 'https://Instagram.com',
+    WhatsApp: 'https://wa.me/573173777044',
+    LinkedIn: 'https://LinkedIn.com',
   };
 
   const linkIcons = {
@@ -45,12 +45,17 @@ export default function Footer({ lan, id }) {
   //   };
 
   return (
-    <Box as="footer" id={id} boxSize="100%" bg={"gray.50"} py="2rem">
+    <Box as='footer' id={id} boxSize='100%' bg={'gray.50'} py='2rem'>
       <VStack gap={5} py={5} color={primaryFontColor}>
-        <HStack align={"center"} gap={1}>
+        <HStack align={'center'} gap={1}>
           {Object.keys(socialMediaLinks).map((link, i) => (
-            <Link key={i} href={socialMediaLinks[link]} boxSize={"2rem"}>
-              <Icon as={linkIcons[link]} boxSize={"full"} transition={'all .1s ease'} _hover={{transform: 'scale(1.3)'}}/>
+            <Link key={i} href={socialMediaLinks[link]} boxSize={'2rem'}>
+              <Icon
+                as={linkIcons[link]}
+                boxSize={'full'}
+                transition={'all .1s ease'}
+                _hover={{ transform: 'scale(1.3)' }}
+              />
               {/* <IconButton icon={linkIcons[link].icon} size={'sm'}/> */}
             </Link>
           ))}
@@ -60,10 +65,10 @@ export default function Footer({ lan, id }) {
             return (
               section !== pageData[lan].sections[3] && (
                 <Text
-                  as={"a"}
+                  as={'a'}
                   key={i}
-                  fontSize={{ base: "md", md: "xl" }}
-                  textAlign={"center"}
+                  fontSize={{ base: 'md', md: 'xl' }}
+                  textAlign={'center'}
                   href={`#${section}`}
                 >
                   {section}
@@ -72,7 +77,7 @@ export default function Footer({ lan, id }) {
             );
           })}
         </HStack>
-        <Text color={secondaryFontColor} textAlign={"center"} mx={2}>
+        <Text color={secondaryFontColor} textAlign={'center'} mx={2}>
           Copyright © 2024 All rights reserved by Chemical Group
         </Text>
       </VStack>
@@ -81,6 +86,6 @@ export default function Footer({ lan, id }) {
 }
 
 Footer.propTypes = {
-  lan: PropTypes.oneOf(["es", "en"]),
+  lan: PropTypes.oneOf(['es', 'en']),
   id: PropTypes.string.isRequired,
 };

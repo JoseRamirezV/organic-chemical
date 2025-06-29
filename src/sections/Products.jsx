@@ -1,5 +1,5 @@
-import { primaryColor, primaryFontColor } from "@/colorConstants.json";
-import { Suspense, lazy, useEffect } from "react";
+import { primaryColor, primaryFontColor } from '@/colorConstants.json';
+import { Suspense, lazy, useEffect } from 'react';
 import {
   Divider,
   Heading,
@@ -8,16 +8,16 @@ import {
   Spinner,
   VStack,
   useDisclosure,
-} from "@chakra-ui/react";
-import productsData from "@/mocks/productsData.json";
-import PropTypes from "prop-types";
-import useNearScreen from "@/hooks/useNearScreen";
+} from '@chakra-ui/react';
+import productsData from '@/mocks/productsData.json';
+import PropTypes from 'prop-types';
+import useNearScreen from '@/hooks/useNearScreen';
 
-const EmblaCarousel = lazy(() => import("@/components/EmblaCarousel"));
+const EmblaCarousel = lazy(() => import('@/components/EmblaCarousel'));
 
-const ProductsList = lazy(() => import("@/components/ProductsList"));
+const ProductsList = lazy(() => import('@/components/ProductsList'));
 
-const ProductCard = lazy(() => import("@/components/ProductCard"));
+const ProductCard = lazy(() => import('@/components/ProductCard'));
 
 export default function Products({ lan, id }) {
   const { isNearScreen, fromRef } = useNearScreen();
@@ -27,7 +27,11 @@ export default function Products({ lan, id }) {
     if (isNearScreen) onOpen();
   });
   return (
-    <SlideFade in={isOpen} offsetY="50px" transition={{enter:{duration: .8}}}>
+    <SlideFade
+      in={isOpen}
+      offsetY='50px'
+      transition={{ enter: { duration: 0.8 } }}
+    >
       <VStack
         height="auto"
         id={id}
@@ -37,37 +41,38 @@ export default function Products({ lan, id }) {
         justify={"center"}
         overflowX={"hidden"}
         ref={fromRef}
+        userSelect={'none'}
       >
         <Heading
-          as="h2"
-          w="12rem"
-          textAlign={"center"}
+          as='h2'
+          w='12rem'
+          textAlign={'center'}
           mb={5}
           color={primaryFontColor}
         >
-          {lan === "es" ? "Productos" : "Products"}
+          {lan === 'es' ? 'Productos' : 'Products'}
           <Divider
             mt={2}
-            borderBottom={"5px solid"}
+            borderBottom={'5px solid'}
             borderBottomColor={primaryColor}
-            borderRadius={"full"}
+            borderRadius={'full'}
           />
         </Heading>
         <Suspense fallback={<Spinner />}>
-          <Show above="1550px">
+          <Show above='2xl'>
             <ProductsList lan={lan} products={productsData} />
           </Show>
           {/* Show on mobile and small screens */}
-          <Show below="1550px">
+          <Show below='2xl'>
             <EmblaCarousel
-              options={{ slidesToScroll: "2" }}
-              gap="2rem"
-              p={{ px: { base: ".5rem", sm: "1rem" }, py: "1rem" }}
+              options={{ slidesToScroll: '2' }}
+              gap='2rem'
+              p={{ px: { base: '.5rem', sm: '1rem' }, py: '1rem' }}
               arrowBtnOptions={{
                 color: primaryColor,
-                separation: "-3rem",
+                separation: '-3rem',
               }}
-              dotsOptions={{ color: primaryColor, positionFromTop: "100%" }}
+              dotsOptions={{ color: primaryColor, positionFromTop: '100%' }}
             >
               {productsData[lan].map((product, i) => (
                 <ProductCard
@@ -75,7 +80,7 @@ export default function Products({ lan, id }) {
                   product={product.name}
                   description={product.description}
                   link={product.link}
-                  flex="0 0 fit-content"
+                  flex='0 0 fit-content'
                 />
               ))}
             </EmblaCarousel>

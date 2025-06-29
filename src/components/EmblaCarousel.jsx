@@ -36,7 +36,6 @@ export default function EmblaCarousel({
     >
       <Box
         // className="embla__viewport"
-        // boxSize="full"
         overflowX={"hidden"}
         px={p?.px}
         py={p?.py}
@@ -44,9 +43,10 @@ export default function EmblaCarousel({
       >
         <Flex
           // className="embla__container"
-          // h="full"
           style={{ touchAction: "pan-y", backfaceVisibility: "hidden" }}
           gap={gap}
+          cursor={"grab"}
+          _active={{ cursor: "grabbing" }}
         >
           {children}
         </Flex>
