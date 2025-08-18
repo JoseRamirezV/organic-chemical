@@ -2,15 +2,13 @@ import { Flex } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
 
-export default function ProductsList({ lan, products }) {
+export default function ProductsList({ products }) {
   return (
-    <Flex justifyContent={'space-around'} w='100%'>
-      {products[lan].map((product, i) => (
+    <Flex w='100%' h={'28rem'}>
+      {products.map((product, i) => (
         <ProductCard
           key={i}
-          product={product.name}
-          description={product.description}
-          link={product.link}
+          product={product}
         />
       ))}
     </Flex>
@@ -18,6 +16,5 @@ export default function ProductsList({ lan, products }) {
 }
 
 ProductsList.propTypes = {
-  lan: PropTypes.oneOf(['es', 'en']),
-  products: PropTypes.object,
+  products: PropTypes.array,
 };

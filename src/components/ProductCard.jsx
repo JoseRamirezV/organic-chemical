@@ -1,67 +1,102 @@
-import { primaryColor, primaryFontColor } from "@/colorConstants.json";
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  Flex,
-  Heading,
-  Image,
-  Text,
-} from "@chakra-ui/react";
-import PropTypes from "prop-types";
-import LinkButton from "./LinkButton";
+import { primaryColor, secondaryColor } from '@/colorConstants.json';
+import { Card, CardBody, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import LinkButton from './LinkButton';
 
-export default function ProductCard({ product, description, link, flex }) {
+export default function ProductCard({ product }) {
   return (
     <Card
-      maxW={{ base: "25rem", sm: "20rem" }}
-      transition={"all 0.2s ease"}
-      borderRadius={"3xl"}
-      boxShadow="lg"
-      color={primaryFontColor}
-      _hover={{ bg: primaryColor, color: "white" }}
-      flex={flex}
+      h={'inherit'}
+      aspectRatio={'3/4'}
+      transition={'all 0.2s ease'}
+      borderRadius={'none'}
+      boxShadow='lg'
+      color={'white'}
+      overflow={'clip'}
+      flex={1}
       data-group
+      _hover={{
+        flex: 2,
+      }}
     >
-      <CardBody>
+      <CardBody
+        h={'inherit'}
+        position={'relative'}
+        overflow={'clip'}
+        p={0}
+        // borderRadius='3xl'
+      >
         <Image
-          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          alt={product}
-          borderRadius="2xl"
-          loading="lazy"
-          w={"100%"}
+          src={product.imgUrl}
+          alt={product.name}
+          loading='lazy'
+          w={'full'}
+          h={'full'}
+          objectFit={'cover'}
         />
-        <Flex
-          direction="column"
-          mt="6"
-          gap={{ base: "1rem", sm: "3" }}
-          w="100%"
-          textAlign={"center"}
+        <Text
+          fontSize={'xl'}
+          fontWeight={'semibold'}
+          pos={'absolute'}
+          bottom={0}
+          left={'100%'}
+          p={'.4rem 1rem'}
+          // w={'auto'}
+          whiteSpace={'pre'}
+          transform={'rotate(-90deg)'}
+          transformOrigin={'bottom left'}
+          bg={secondaryColor}
+          color={'white'}
+          _groupHover={{
+            opacity: 0
+          }}
         >
-          <Heading size={"md"} fontWeight={"semibold"}>
-            {product}
+          {product.name}
+        </Text>
+        <Flex
+          backdropFilter='blur(5px)'
+          bg='rgba(0, 0, 0, 0.4)'
+          h={'inherit'}
+          w='100%'
+          p={5}
+          top={'0'}
+          opacity={0}
+          position={'absolute'}
+          direction='column'
+          gap={{ base: '1rem', sm: '3' }}
+          textAlign={'center'}
+          transition={'opacity .4s ease, blur .3s ease'}
+          _groupHover={{
+            opacity: 1,
+          }}
+        >
+          <Heading size={'md'} fontWeight={'semibold'} textAlign={'start'}>
+            {product.name}
           </Heading>
-          <Text fontSize="sm">{description}</Text>
+          <Text fontSize='sm' textAlign={'start'} flex={'20%'}>
+            {product.description}
+          </Text>
+          <LinkButton
+            link={product.link}
+            color={'white'}
+            _hover={{
+              color: primaryColor,
+              bg: 'white',
+              borderColor: 'white'
+            }}
+          />
         </Flex>
       </CardBody>
-      <CardFooter justify={"center"}>
-        <LinkButton
-          link={link}
-          color={primaryColor}
-          _groupHover={{
-            color: "white",
-            borderColor: "white",
-            _hover: { bg: "white", color: primaryColor },
-          }}
-        />
-      </CardFooter>
     </Card>
   );
 }
 
 ProductCard.propTypes = {
-  product: PropTypes.string,
-  description: PropTypes.string,
-  link: PropTypes.string,
+  product: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    imgUrl: PropTypes.string,
+    link: PropTypes.string,
+  }),
   flex: PropTypes.string,
 };

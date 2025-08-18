@@ -1,17 +1,18 @@
-import { Box, Center, Flex, Show } from "@chakra-ui/react";
-import PropTypes from "prop-types";
-import useCarousel from "@/hooks/useCarousel";
+import { Box, Center, Flex, Show } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import useCarousel from '@/hooks/useCarousel';
 import {
   DotButton,
   NextButton,
   PrevButton,
-} from "./EmblaCarouselArrowsDotsButtons";
+} from './EmblaCarouselArrowsDotsButtons';
 
 export default function EmblaCarousel({
   children,
   options,
-  arrowBtnOptions = { color: "white", separation: "1rem" },
-  dotsOptions = { color: "gray.50", positionFromTop: "95%"},
+  enableArrows = true,
+  arrowOptions: arrowOptions = { color: 'white', separation: '1rem' },
+  dotsOptions = { color: 'gray.50', positionFromTop: '95%' },
   gap,
   p,
   autoplay,
@@ -30,46 +31,48 @@ export default function EmblaCarousel({
   return (
     <Flex
       // className="embla"
-      w={"100%"}
-      direction={"column"}
-      pos={"relative"}
+      w={'100%'}
+      direction={'column'}
+      pos={'relative'}
     >
       <Box
         // className="embla__viewport"
-        overflowX={"hidden"}
+        overflowX={'hidden'}
         px={p?.px}
         py={p?.py}
         ref={emblaRef}
       >
         <Flex
           // className="embla__container"
-          style={{ touchAction: "pan-y", backfaceVisibility: "hidden" }}
+          style={{ touchAction: 'pan-y', backfaceVisibility: 'hidden' }}
           gap={gap}
-          cursor={"grab"}
-          _active={{ cursor: "grabbing" }}
+          cursor={'grab'}
+          _active={{ cursor: 'grabbing' }}
         >
           {children}
         </Flex>
       </Box>
 
-      <Show above="sm">
-        <PrevButton
-          onClick={scrollPrev}
-          disabled={prevBtnDisabled}
-          left={arrowBtnOptions.separation}
-          color={arrowBtnOptions?.color}
-        />
-        <NextButton
-          onClick={scrollNext}
-          disabled={nextBtnDisabled}
-          right={arrowBtnOptions.separation}
-          color={arrowBtnOptions?.color}
-        />
-      </Show>
+      {enableArrows && (
+        <Show above='sm'>
+          <PrevButton
+            onClick={scrollPrev}
+            disabled={prevBtnDisabled}
+            left={arrowOptions.separation}
+            color={arrowOptions?.color}
+          />
+          <NextButton
+            onClick={scrollNext}
+            disabled={nextBtnDisabled}
+            right={arrowOptions.separation}
+            color={arrowOptions?.color}
+          />
+        </Show>
+      )}
 
       <Center
-        gap={"0.75rem"}
-        pos={"absolute"}
+        gap={'0.75rem'}
+        pos={'absolute'}
         top={dotsOptions.positionFromTop}
         left={0}
         right={0}
@@ -80,9 +83,9 @@ export default function EmblaCarousel({
             onClick={() => scrollTo(index)}
             _after={{
               content: '""',
-              boxSize: "100%",
-              rounded: "full",
-              transition: "all 0.2s ease",
+              boxSize: '100%',
+              rounded: 'full',
+              transition: 'all 0.2s ease',
               outline: `2px solid`,
               outlineColor: dotsOptions.color,
               background: index === selectedIndex && dotsOptions.color,
@@ -99,15 +102,16 @@ EmblaCarousel.propTypes = {
   options: PropTypes.shape({
     loop: PropTypes.bool,
     duration: PropTypes.number,
+    slidesToScroll: PropTypes.number
   }),
-  arrowBtnOptions: PropTypes.shape({
+  enableArrows: PropTypes.bool,
+  arrowOptions: PropTypes.shape({
     color: PropTypes.string,
     separation: PropTypes.string,
   }),
-  enableDots: PropTypes.bool,
   dotsOptions: PropTypes.shape({
     color: PropTypes.string,
-    positionFromTop: PropTypes.string
+    positionFromTop: PropTypes.string,
   }),
   gap: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   p: PropTypes.shape({

@@ -1,34 +1,36 @@
-import { Button, HStack, Icon, Text } from "@chakra-ui/react";
-import { PropTypes } from "prop-types";
-import { FaAngleRight } from "react-icons/fa";
-import { secondaryColor } from "@/colorConstants.json";
-import { useContext } from "react";
-import { LanguageContext } from "@/context/LanguageContext";
+import { Button, HStack, Icon, Text } from '@chakra-ui/react';
+import { PropTypes } from 'prop-types';
+import { FaAngleRight } from 'react-icons/fa';
+import { secondaryColor } from '@/colorConstants.json';
+import { useContext } from 'react';
+import { LanguageContext } from '@/context/LanguageContext';
 import pageData from '@/mocks/pageData.json';
 
-export default function LinkButton({ link, ...styles }) {
+export default function LinkButton({ link, variant, ...styles }) {
   const { language } = useContext(LanguageContext);
 
   return (
     <Button
-      as="a"
-      w={"9rem"}
-      h={"auto"}
-      rounded="full"
+      as='a'
+      w={'9rem'}
+      h={'auto'}
+      rounded='full'
       href={link}
-      variant={"outline"}
-      border={"2px solid"}
+      variant={variant ?? 'outline'}
+      border={'2px solid'}
       {...styles}
     >
       <HStack gap={5} p={1.5}>
-        <Text ml={2} w={'4.5rem'}>{pageData[language].linkButtonText}</Text>
+        <Text ml={2} w={'4.5rem'}>
+          {pageData[language].linkButtonText}
+        </Text>
         <Icon
           as={FaAngleRight}
           boxSize={7}
-          p={"5px"}
-          rounded={"full"}
+          p={'5px'}
+          rounded={'full'}
           bg={secondaryColor}
-          fill={"white"}
+          fill={'white'}
         />
       </HStack>
     </Button>
@@ -37,5 +39,6 @@ export default function LinkButton({ link, ...styles }) {
 
 LinkButton.propTypes = {
   link: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(['ghost', 'outline', 'solid', 'link', 'unstyled']),
   styles: PropTypes.object,
 };
