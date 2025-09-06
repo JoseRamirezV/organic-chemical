@@ -1,38 +1,20 @@
 {
   "homepage": "http://JoseRamirezV/github.io/organic-chemical/",
   "name": "organic-chemicalgroup",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@chakra-ui/react": "2.8.2",
-    "@emailjs/browser": "^4.1.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "embla-carousel-autoplay": "^8.0.0-rc22",
-    "embla-carousel-react": "8.0.0-rc15",
-    "framer-motion": "^10.16.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.53.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.4",
-    "gh-pages": "^6.1.1",
-    "vite": "^5.0.0"
+    "@iconify-json/ant-design": "^1.2.5",
+    "@iconify-json/iconamoon": "^1.2.2",
+    "@tailwindcss/vite": "^4.1.12",
+    "astro": "^5.13.2",
+    "astro-icon": "^1.1.5",
+    "tailwindcss": "^4.1.12"
   }
 }

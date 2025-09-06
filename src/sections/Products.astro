@@ -1,0 +1,21 @@
+---
+import ProductCard from '@components/ProductCard.astro';
+import type { Product } from '@interfaces/product';
+
+interface Props {
+  data: Product[];
+}
+
+const { data } = Astro.props;
+---
+
+<div class='flex flex-col h-screen'>
+  <h2 class='text-4xl grid place-content-center text-primary h-1/5'>
+    Productos
+  </h2>
+  <div class='flex h-4/6 mx-20 rounded-2xl overflow-clip'>
+    {data.map(product => (
+      <ProductCard data={product}/>
+    ))}
+  </div>
+</div>

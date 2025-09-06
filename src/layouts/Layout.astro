@@ -1,0 +1,32 @@
+---
+import '@assets/styles/main.css';
+
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+import Logo from '@assets/images/Logo.webp';
+import FormPopover from '@components/FormPopover.astro';
+import Header from '@components/Header.astro';
+import Footer from '@sections/Footer.astro';
+
+const { title, description } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content={description} />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='icon' type='image' href={Logo.src} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header data={t('sections')} lang={lang}/>
+    <slot />
+    <FormPopover />
+    <Footer data={t('sections')}/>
+  </body>
+</html>

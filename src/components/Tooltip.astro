@@ -1,0 +1,23 @@
+---
+const { text } = Astro.props;
+---
+
+<span class='tooltip tooltip-arrow'>{text}</span>
+
+<style>
+  @reference '../assets/styles/main.css';
+
+  .tooltip {
+    @apply absolute flex justify-center -top-11/12 bg-gray-700 text-white py-1 px-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity;
+  }
+
+  .tooltip-arrow::after {
+    position: absolute;
+    top: 95%;
+    content: '';
+    border: 10px solid transparent;
+    border-bottom: 0;
+    border-top: 10px solid;
+    @apply border-t-gray-700;
+  }
+</style>

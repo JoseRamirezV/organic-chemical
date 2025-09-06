@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Carbox Compound",
+    "description": "Organic mineral fertilizer that, thanks to its composition, microbiological characteristics, and concentration of organic matter, improves the physicochemical conditions of various types of soils, enhancing their productivity and promoting their recovery.",
+    "imgUrl": "/images/products/humus4.webp",
+    "link": "url"
+  },
+  {
+    "name": "Real Humus",
+    "description": "REAL HUMUS is a liquid organic amendment, formulated with top-quality raw materials in which treated water is used that meets quality standards, in line with the principles of the circular economy adopted by the company and complying with ICA requirements.",
+    "imgUrl": "/images/products/humus2.webp",
+    "link": "url"
+  },
+  {
+    "name": "Real Gamin - Growth Biostimulant",
+    "description": "REALGAMIN is the result of processing a type of algae called Cyanobacteria and/or Cyanophytes, whose main characteristic is that they develop in high temperatures and in aquatic environments rich in minerals.",
+    "imgUrl": "/images/products/gamin.webp",
+    "link": "url"
+  },
+  {
+    "name": "Real Gamin - Growth Biostimulant",
+    "description": "REALGAMIN is the result of processing a type of algae called Cyanobacteria and/or Cyanophytes, whose main characteristic is that they develop in high temperatures and in aquatic environments rich in minerals.",
+    "imgUrl": "/images/products/humus3.webp",
+    "link": "url"
+  }
+]

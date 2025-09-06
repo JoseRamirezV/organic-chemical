@@ -1,0 +1,16 @@
+---
+import { Icon } from 'astro-icon/components';
+import Tooltip from './Tooltip.astro';
+---
+
+<button
+  class='fixed cursor-pointer bottom-5 right-5 bg-primary border-2 border-transparent hover:border-primary hover:bg-white rounded-full hover:scale-110 transition group'
+>
+  <div class='relative flex justify-center p-1.5'>
+    <Icon
+      name='iconamoon:comment-dots-fill'
+      class='text-4xl text-white group-hover:text-primary'
+    />
+    <Tooltip text="Mensaje"/>
+  </div>
+</button>

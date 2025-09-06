@@ -1,0 +1,21 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  label?: string;
+  path: string;
+}
+
+const { label = 'Saber mas', path } = Astro.props;
+---
+
+<a
+  class='w-fit flex items-center gap-4 p-1.5 ps-4 text-white font-medium text-lg rounded-full ring-2 ring-white bg-transparent transition hover:bg-white hover:text-primary group/button'
+  href={path}
+>
+  {label}
+  <Icon
+    name={'iconamoon:arrow-right-2-bold'}
+    class='bg-white rounded-full text-primary size-7 p-0.5 transition-[background,color,scale] group-hover/button:bg-primary group-hover/button:text-white group-hover/button:scale-125'
+  />
+</a>

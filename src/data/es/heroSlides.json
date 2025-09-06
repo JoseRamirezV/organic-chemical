@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "dolor sit amet consectetur adipisicing elit.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus impedit quaerat a laudantium quia ut ipsa. Iure quos, quasi corrupti asperiores iusto dolorum omnis quae numquam mollitia totam, eveniet officiis.",
+    "link": "",
+    "imgUrl": "images/slide1.webp"
+  },
+  {
+    "id": 2,
+    "title": "dolor sit amet consectetur adipisicing elit.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus impedit quaerat a laudantium quia ut ipsa. Iure quos, quasi corrupti asperiores iusto dolorum omnis quae numquam mollitia totam, eveniet officiis.",
+    "link": "",
+    "imgUrl": "images/slide2.webp"
+  }
+]
