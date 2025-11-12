@@ -1,0 +1,118 @@
+---
+import { Image } from 'astro:assets';
+
+import logo from '@assets/images/Logo.webp';
+import LangSwitchButton from './LangSwitchButton.astro';
+import NavSideBar from './NavSidebar.astro';
+
+const { data, lang } = Astro.props;
+const url = Astro.url;
+const isMainView = url.pathname === `/${lang}/`;
+const sections = Object.keys(data);
+---
+
+<nav
+	id='navbar'
+	data-main={isMainView}
+	class:list={[
+		isMainView
+			? 'text-white bg-transparent'
+			: 'text-gray-700 bg-gray-50 sm:px-section',
+		'fixed top-0 flex justify-between w-screen z-10 h-16 sm:h-24 transition-[height,background,color,padding] px-6 max-sm:py-2 sm:px-14',
+	]}
+>
+	<a href={`/${lang}/`} class='aspect-video'>
+		<Image src={logo} alt='Organic Chemical' class='h-full object-contain' />
+	</a>
+	<ul class='hidden md:flex items-center gap-7 text-lg font-medium'>
+		{
+			sections.map((section: string) => {
+				const link = section === 'home' ? `/${lang}/` : data[section].link;
+				const selectedItem = url.pathname.split('/')[2] === section;
+				return (
+					<li>
+						<a
+							class:list={[
+								selectedItem
+									? 'text-secondary-600 before:bg-secondary-600'
+									: isMainView
+										? 'before:bg-white'
+										: 'before:bg-gray-700',
+								'hvr-underline-from-center',
+							]}
+							href={`/${lang}/${link}`}
+						>
+							{data[section].label}
+						</a>
+					</li>
+				);
+			})
+		}
+		<li>
+			<LangSwitchButton lang={lang} />
+		</li>
+	</ul>
+	<NavSideBar data={data} lang={lang} />
+</nav>
+
+<script>
+	const navbar = document.getElementById('navbar');
+	const isMainView = navbar?.dataset.main === 'true';
+	const baseClasses = [
+		'sm:h-24',
+		'bg-transparent',
+		'sm:px-14',
+		'text-white',
+		'[&>ul_a::before]:bg-white',
+	];
+	const scrolledClasses = [
+		'sm:h-18',
+		'bg-gray-50',
+		'sm:px-section',
+		'text-gray-700',
+		'shadow-md',
+		'[&>ul_a::before]:bg-gray-700',
+	];
+	const scrollClasses = {
+		scrolled: {
+			add: scrolledClasses,
+			remove: baseClasses,
+		},
+		top: {
+			add: baseClasses,
+			remove: scrolledClasses,
+		},
+	};
+
+	let scrollTimeout: number;
+	let isScrolled = false;
+
+	window.addEventListener(
+		'scroll',
+		() => {
+			if (!navbar) return;
+
+			clearTimeout(scrollTimeout);
+			scrollTimeout = window.setTimeout(() => {
+				const shouldBeScrolled = window.scrollY > 10;
+
+				// Only update DOM if state actually changed
+				if (shouldBeScrolled === isScrolled) return;
+
+				isScrolled = shouldBeScrolled;
+				const classes = isScrolled ? scrollClasses.scrolled : scrollClasses.top;
+
+				// Update height
+				navbar.classList.remove(...classes.remove.slice(0, 1));
+				navbar.classList.add(...classes.add.slice(0, 1));
+
+				// Only update styling classes if in main view
+				if (isMainView) {
+					navbar.classList.remove(...classes.remove.slice(1));
+					navbar.classList.add(...classes.add.slice(1));
+				}
+			}, 10);
+		},
+		{ passive: true }
+	);
+</script>

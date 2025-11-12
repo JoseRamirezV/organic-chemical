@@ -1,0 +1,71 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import type { Product } from '@interfaces/product.interface';
+import ProductListItem from '@components/home/ProductListItem.astro';
+
+interface Props {
+	data: Product[];
+	title: string;
+}
+
+const { data, title } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div
+	class='flex flex-col items-center gap-7 lg:gap-14 px-section py-7 lg:py-16'
+>
+	<h2
+		class='relative lg:text-center text-4xl lg:text-6xl text-black w-full lg:w-xl leading-10 lg:leading-[4.5rem] font-semibold'
+	>
+		{title}
+	</h2>
+	<div class='flex max-lg:flex-col gap-5 lg:h-4/6 w-full overflow-clip'>
+		{data.slice(0, 4).map((product) => <ProductListItem data={product} />)}
+	</div>
+	<a
+		class='hvr-shutter-out py-4 px-7 bg-primary-700 text-white font-medium text-xl rounded-lg before:bg-secondary-600'
+		href={'products'}
+	>
+		{t('allProductsBtn')}
+	</a>
+</div>
+<style is:global>
+	.touched {
+		& legend {
+			bottom: -100%;
+		}
+
+		& div {
+			opacity: 1;
+
+			& footer {
+				pointer-events: all;
+			}
+		}
+
+	}
+</style>
+<script is:inline>
+	if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+		document.querySelectorAll('article.card-list-item').forEach((card) => {
+			card.addEventListener('touchstart', (e) => {
+				document.querySelectorAll('article.touched').forEach((el) => {
+					if (el !== card) el.classList.remove('touched');
+				});
+				card.classList.toggle('touched');
+			});
+		});
+
+		document.addEventListener('touchstart', (e) => {
+			const touchedCard = e.target.closest('article');
+			if (!touchedCard) {
+				document
+					.querySelectorAll('article.touched')
+					.forEach((el) => el.classList.remove('touched'));
+			}
+		});
+	}
+</script>

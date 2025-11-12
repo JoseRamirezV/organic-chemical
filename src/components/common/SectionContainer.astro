@@ -1,0 +1,90 @@
+---
+interface Props {
+	class?: string;
+	id: string;
+}
+
+const { class: className, id } = Astro.props;
+---
+
+<section
+	id={id}
+	data-section={id}
+	class={`${className ?? ''} w-full scroll-mt-20 sm:scroll-mt-24`}
+>
+	<slot />
+</section>
+
+<!-- <style scoped>
+  h2::after {
+    background-color: var(--color-primary-700);
+    border-radius: 10px;
+    content: "";
+    height: 4px;
+    position: absolute;
+    top: 110%;
+    width: 100%;
+  }
+</style> -->
+
+<!-- <script is:inline>
+  if (matchMedia('(min-width: 640px)').matches) {
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.section_link');
+    const anchor = document.querySelector('#lang');
+    const initialUrl = anchor.getAttribute('href');
+
+    const onChange = (entries) => {
+      let newURL;
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target.id === 'home') {
+            newURL = initialUrl;
+            if (newURL !== anchor.getAttribute('href')) {
+              anchor.setAttribute('href', newURL);
+            }
+            return;
+          }
+          navItems.forEach((item) => {
+            if (entry.target.id === item.getAttribute('aria-label')) {
+              newURL = initialUrl + '#' + entry.target.id;
+              if (newURL !== anchor.getAttribute('href')) {
+                anchor.setAttribute('href', newURL);
+              }
+              item.classList.add('md:text-blue-500', 'md:dark:text-blue-400');
+              item.firstElementChild.classList.add('md:scale-125');
+            } else {
+              item.classList.remove(
+                'md:text-blue-500',
+                'md:dark:text-blue-400'
+              );
+              item.firstElementChild.classList.remove('md:scale-125');
+              newURL = initialUrl;
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(onChange, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.4,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === 'hidden') {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  }
+</script> -->

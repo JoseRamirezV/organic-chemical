@@ -1,0 +1,16 @@
+---
+import ProductCard from '@components/products/ProductCard.astro';
+import products from '@data/en/products.json';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout title='Products - Organic & Chemical Group' description=''>
+	<section>
+		<h1 class="text-5xl text-center font-bold pb-8 py-36">Our Products</h1>
+		<div
+			class='grid gap-12 p-8 pb-12 sm:px-14 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+		>
+			{products.map((product) => product.imgUrl && <ProductCard data={product} />)}
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,21 @@
+---
+import SectionContainer from '@components/common/SectionContainer.astro';
+import Layout from '@layouts/Layout.astro';
+import products from '@data/es/products.json';
+
+export async function getStaticPaths() {
+  return products.map(p => ({
+    params: { id: p.id },
+    props: { product: p },
+  }));
+}
+
+const { id } = Astro.params;
+const { product } = Astro.props;
+
+---
+
+<Layout>
+  <SectionContainer >
+  </SectionContainer>
+</Layout>

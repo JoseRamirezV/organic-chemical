@@ -1,0 +1,28 @@
+---
+import products from '@data/en/products.json';
+import Layout from '@layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+export async function getStaticPaths() {
+	return products.map((p) => ({
+		params: { id: p.id },
+		props: { product: p },
+	}));
+}
+
+const { id } = Astro.params;
+const { product } = Astro.props;
+---
+
+<Layout title='' description=''>
+	<section class='flex flex-col gap-5 my-28 px-5'>
+		<a href={'/en/products'} class="flex items-center gap-1 w-fit transition-[color,gap] hover:gap-2 hover:text-primary-700">
+			<Icon name='iconamoon:arrow-left-1-bold' class='size-4'/>
+			Back to Products
+		</a>
+		<article class="flex justify-between">
+			
+		</article>
+		<div></div>
+	</section>
+</Layout>

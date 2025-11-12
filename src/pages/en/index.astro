@@ -1,31 +1,26 @@
 ---
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-
-import SectionContainer from '@components/SectionContainer.astro';
+import SectionContainer from '@components/common/SectionContainer.astro';
+import Hero from '@components/home/Hero.astro';
+import Products from '@components/home/Products.astro';
+import Us from '@components/home/Us.astro';
 import Layout from '@layouts/Layout.astro';
-import Hero from '@sections/Hero.astro';
-import Products from '@sections/Products.astro';
-import Us from '@sections/Us.astro';
 
-import products from '@data/en/products.json';
-import slides from '@data/en/heroSlides.json';
 import us from '@data/en/company.json';
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import slides from '@data/en/heroSlides.json';
+import products from '@data/en/products.json';
 ---
 
 <Layout
-  title='Organic & Chemical group'
-  description='Organic & Chemical Group is a company dedicated to promoting the use of organic products for agriculture. Finding efficient solutions that restore and improve soil efficiency and fertility..'
+	title='Organic & Chemical Group'
+	description='Organic & Chemical Group is a company dedicated to promoting the use of organic products for agriculture. Finding efficient solutions that restore and improve soil efficiency and fertility..'
 >
-  <SectionContainer id='home'>
-    <Hero data={slides} />
-  </SectionContainer>
-  <SectionContainer id='products'>
-    <Products data={products} />
-  </SectionContainer>
-  <SectionContainer id='about-me'>
-    <Us data={us} />
-  </SectionContainer>
+	<SectionContainer id='home'>
+		<Hero data={slides} />
+	</SectionContainer>
+	<SectionContainer id='products' class='bg-[url(/images/fondo.webp)]'>
+		<Products data={products} title={'Products'} />
+	</SectionContainer>
+	<SectionContainer id='about-me'>
+		<Us data={us} />
+	</SectionContainer>
 </Layout>

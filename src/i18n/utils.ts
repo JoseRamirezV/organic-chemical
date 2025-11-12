@@ -1,9 +1,9 @@
-import ui from '@data/ui.json'
-import { defaultLang, languages } from "./ui";
+import { defaultLang } from "./ui";
+import ui from '@data/ui.json';
 
-export type Lang = keyof typeof languages;
-type UI = typeof ui;
-type Keys = keyof UI[Lang];
+export type Ui = typeof ui;
+export type Lang = keyof Ui;
+export type Keys = keyof Ui[Lang];
 
 export function getLangFromUrl(url: URL): Lang {
   const [, lang] = url.pathname.split("/");
@@ -12,7 +12,7 @@ export function getLangFromUrl(url: URL): Lang {
 }
 
 export function useTranslations(lang: Lang) {
-  return function t(key: Keys) {
+  return function t<K extends keyof Ui[Lang]>(key: K): Ui[Lang][K] {
     return ui[lang][key] || ui[defaultLang][key];
   };
 }

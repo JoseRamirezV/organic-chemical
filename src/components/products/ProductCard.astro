@@ -1,0 +1,53 @@
+---
+import type { Product } from '@interfaces/product.interface';
+
+interface Props {
+	data: Product;
+}
+
+const { id, name, imgUrl, imgFit } = Astro.props.data;
+---
+
+<article class='flex flex-col gap-2 h-fit aspect-3/4 duration-300 group'>
+	<a
+		href={'products/' + id}
+		class='relative rounded-xl overflow-clip after:opacity-0 group-hover:after:opacity-100'
+	>
+		<picture>
+			{
+				!imgFit && (
+					<img
+						src='/images/leavesbg.webp'
+						alt='background'
+						class='absolute inset-0 size-full'
+					/>
+				)
+			}
+			<img
+				src={imgUrl}
+				alt='Nombre del producto'
+				class:list={[
+					!imgFit ? 'scale-90' : '',
+					'relative h-full w-full aspect-3/4 object-cover',
+				]}
+			/>
+		</picture>
+	</a>
+	<h2
+		class='text-lg text-center font-semibold text-gray-800 group-hover:text-secondary-600 transition-colors'
+	>
+		{name}
+	</h2>
+</article>
+
+<style scoped>
+	a::after {
+		position: absolute;
+		inset: 0;
+		content: '';
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.4);
+		transition: opacity 0.3s ease;
+	}
+</style>

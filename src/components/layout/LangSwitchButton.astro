@@ -1,0 +1,34 @@
+---
+import { languages } from '@i18n/ui';
+
+const { lang } = Astro.props;
+const newLang = lang === 'es' ? 'en' : 'es';
+---
+
+<button
+	data-lang={newLang}
+	title={languages[newLang].name}
+	class='lang-btn h-fit aspect-[4/3] py-2 px-5 rounded-full text-white bg-primary-700 cursor-pointer transition-colors duration-300 ease hover:bg-secondary-500'
+	data-lang={newLang}
+>
+	{languages[newLang].abbr}
+</button>
+
+<script>
+	const langBtn = document.querySelectorAll<HTMLButtonElement	>('.lang-btn');
+
+	langBtn?.forEach((btn) => {
+		btn.addEventListener('click', function () {
+			const newLang = btn.dataset.lang!;
+			const url = new URL(window.location.href);
+			const parts = url.pathname.split('/');
+
+			parts[1] = newLang;
+			url.pathname = parts.join('/');
+
+			const newUrl = url.toString();
+
+			window.location.replace(newUrl);
+		});
+	});
+</script>

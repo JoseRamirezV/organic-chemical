@@ -1,0 +1,29 @@
+---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+	path: string;
+	label?: string;
+	class?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { path, class: className } = Astro.props;
+---
+
+<a
+	class:list={[
+		className,
+		'w-fit flex items-center gap-4 p-1.5 ps-4 text-white font-medium text-lg rounded-full ring-2 ring-white bg-transparent transition hover:bg-white hover:text-gray-800 group/button',
+	]}
+	href={path}
+>
+	{t('linkButtonText')}
+	<Icon
+		name={'iconamoon:arrow-right-2-bold'}
+		class='bg-white rounded-full text-primary-700 size-7 p-0.5 transition-[background,color,scale] group-hover/button:bg-secondary-600 group-hover/button:text-white group-hover/button:scale-125'
+	/>
+</a>
