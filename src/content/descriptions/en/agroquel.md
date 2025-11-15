@@ -1,0 +1,3 @@
+# Agroquel
+
+It is a product formulated to increase yields of fruits, tubers, and grains. It improves weight, quality, appearance, and organoleptic characteristics. Its high potassium and phosphorus content ensures greater cellular, metabolic, and photosynthetic activity during crop filling. In addition, Ascophyllum nodosum seaweed provides a natural hormonal balance in the plant, essential for fruits, tubers, and grains to reach their maximum potential in size and weight.

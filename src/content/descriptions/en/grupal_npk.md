@@ -1,0 +1,3 @@
+# Grupal Npk
+
+It is a complex chemical NPK granular fertilizer with a high potassium content (23%), making it especially suitable for production stages. It is also recommended in situations requiring higher potassium demand, such as protection against cold temperatures and water stress. In addition to its high potassium content, it provides nitric nitrogen, assimilable phosphorus, magnesium, sulfur, zinc, and boron—elements necessary for plant growth. In the balance presented by GRUPAL NPK, they promote the formation, growth, and development of fruits, grains, and other harvested storage organs. It is recommended for many crops, including oil palm, coffee, plantain, fruit trees, cereals, and potatoes. 15 – 4 – 23 + 4% MgO + 2% S + 0.1% B + 0.1% Zn

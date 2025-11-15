@@ -1,0 +1,3 @@
+# Germinar
+
+Estimulador de crecimiento para el tratamiento de semillas en gramíneas ( trigo , maíz , arroz ). Posee en su composición zinc totalmente quelatado, lo que estimula el sistema radicular de las plantas, con raíces más desarrolladas y activas. Permite que la planta absorba más agua y nutrientes del suelo, mejorando el establecimiento en la etapa inicial del cultivo. Asegura plantas más uniformes en su establecimiento. Incrementa la absorción de agua y nutrientes. Aporte de zinc quelatado, evitando el antagonismo fósforo-zinc. Presentado en forma de concentrado soluble para aplicación foliar

@@ -2,7 +2,6 @@
 	{
 		"id": "carbox_compost",
 		"name": "Carbox Compost",
-		"description": "Organic mineral fertilizer that, thanks to its composition, microbiological characteristics, and concentration of organic matter, improves the physicochemical conditions of various types of soils, enhancing their productivity and promoting their recovery.",
 		"summary": "Organic mineral fertilizer made from 100% biodegradable composted organic matter. Improves the physical and chemical conditions of the soil, increases organic matter and carbon, promotes nutrition, controls erosion, and promotes soil recovery and productivity.",
 		"imgUrl": "/images/products/humus4.webp",
 		"imgFit": true
@@ -10,21 +9,18 @@
 	{
 		"id": "agrofol",
 		"name": "Agrofol",
-		"description": "It is a systemic fungicide from the phosphorous acid group that activates the plant’s natural defenses and combats diseases caused by Oomycete fungi such as Phytophthora and downy mildew. It is used preventively and for early curative control in crops like avocados, potatoes, grapes, and vegetables. \n\nWhat is it used for?\n Disease control: Effective against diseases caused by Oomycetes such as downy mildew and Phytophthora.\n Resistance inducer: Stimulates the plant’s natural defenses by activating systemic acquired resistance (SAR) responses. \n Synergist: Its tank-mix compatibility with other fungicides enhances their effectiveness and residual activity. \n Anti-stress: Helps crops recover from stress caused by herbicides, hail, or waterlogging. \n\n Where is it used? \nFruit trees: Avocados and vines. Vegetables: Potatoes, tomatoes, asparagus, and more.",
 		"summary": "Systemic fungicide that combats fungi like Phytophthora and downy mildew, stimulating natural defenses and reducing crop stress.",
 		"imgUrl": "/images/products/agrofol.webp"
 	},
 	{
 		"id": "agroquel",
 		"name": "Agroquel",
-		"description": "It is a product formulated to increase yields of fruits, tubers, and grains. It improves weight, quality, appearance, and organoleptic characteristics. Its high potassium and phosphorus content ensures greater cellular, metabolic, and photosynthetic activity during crop filling. In addition, Ascophyllum nodosum seaweed provides a natural hormonal balance in the plant, essential for fruits, tubers, and grains to reach their maximum potential in size and weight.",
 		"summary": "Biostimulant with phosphorus, potassium, and seaweed extracts that enhances filling, size, and quality of fruits, tubers, and grains.",
 		"imgUrl": "/images/products/agroquel.webp"
 	},
 	{
 		"id": "carbox_compound",
 		"name": "Carbox Compound",
-		"description": "Organic mineral fertilizer balanced between macro and microelements. Thanks to its composition, microbiological characteristics, concentration of organic matter, and concentration of major and minor elements, it favors the physical-chemical conditions of many types of soils, improving crop and soil productivity, promoting the recovery of poor and unstable soil layers, and serving as a source of nutrition for all types of crops. This product is made from a base of biodegradable organic matter, which is stabilized through a controlled process called composting and a mixture of nutrients rich in phosphorus, nitrogen, potassium, magnesium, and zinc. The constant application of CARBOX COMPOUND increases the concentration of organic matter and the fixation of organic carbon, promoting soil and crop nutrition, helping to control erosion, and encouraging the recovery of its productive activity.",
 		"summary": "Organic fertilizer enriched with macro and microelements that improves soil fertility, nutrition, and stability, promoting more productive crops.",
 		"imgUrl": "/images/products/humus2.webp",
 		"imgFit": true
@@ -32,7 +28,6 @@
 	{
 		"id": "real_humus",
 		"name": "Real Humus",
-		"description": "It is a liquid organic amendment, formulated with top-quality raw materials using treated water that complies with quality standards, in line with the circular economy principles adopted by the company and in compliance with ICA requirements.\n\nThe use of REALHUMUS improves the physical, chemical, and microbiological characteristics of the soil, enhancing any type of crop. Among its main advantages are: pH regulation, increased cation exchange, restoration of biota, improving nutrient assimilation and root development, and enhancing the effectiveness of fertilizers, whether organic or chemical.",
 		"summary": "Liquid organic amendment that improves soil properties, regulates pH, and enhances nutrient assimilation and root development.",
 		"imgUrl": "/images/products/gamin.webp",
 		"imgFit": true
@@ -40,39 +35,33 @@
 	{
 		"id": "completo_npk",
 		"name": "Completo Npk",
-		"description": "INGENUITY AND TECHNOLOGY COMPLETE NPK PLANT NUTRITION Complete NPK Plant Nutrition is a combination of nitrogen (N), phosphorus (P), and potassium (K) designed to maximize crop yield and quality. It is formulated to meet the specific needs of each crop. COMPLETE NPK is one of the most efficient sources of N, P, and K available on the market. Each prill of COMPLETE NPK contains balanced amounts of NPK precisely adapted to the crop’s requirements. When applied at the correct rate and under proper conditions, it promotes nutrient absorption. This product is a chemical complex and therefore provides uniform nutrient distribution, whether applied by broadcasting or with fertilizer spreaders. There is no risk of nutrient segregation during transport, handling, or application. COMPLETE NPK has a balanced nitrogen source that contains nitrogen in both nitrate and ammonium forms.",
 		"summary": "Balanced NPK fertilizer that maximizes crop yield and quality, ensuring uniform nutrient distribution."
 	},
 	{
 		"id": "radifos_npk",
 		"name": "Radifos Npk",
-		"description": "It is a granular fertilizer with a high phosphorus content, especially needed in the early stages of crop growth to promote root development and plant growth. It also provides nitrogen, potassium, magnesium, sulfur, boron, and zinc in an optimal ratio for early crop development. The phosphorus provided by RADIFOS NPK comes in the form of highly soluble monocalcium phosphates, immediately available to the plant, and dicalcium phosphates for more progressive availability. The contribution of other elements along with high levels of phosphorus makes it a unique fertilizer that ensures successful crop establishment in the field. 12 – 24 – 12 + 2% MgO + 1% S + 0.04% B + 0.02% Zn + SiO",
 		"summary": "Granular fertilizer rich in phosphorus and micronutrients that stimulates root development and early crop growth."
 	},
 	{
 		"id": "grupal_npk",
 		"name": "Grupal Npk",
-		"description": "It is a complex chemical NPK granular fertilizer with a high potassium content (23%), making it especially suitable for production stages. It is also recommended in situations requiring higher potassium demand, such as protection against cold temperatures and water stress. In addition to its high potassium content, it provides nitric nitrogen, assimilable phosphorus, magnesium, sulfur, zinc, and boron—elements necessary for plant growth. In the balance presented by GRUPAL NPK, they promote the formation, growth, and development of fruits, grains, and other harvested storage organs. It is recommended for many crops, including oil palm, coffee, plantain, fruit trees, cereals, and potatoes. 15 – 4 – 23 + 4% MgO + 2% S + 0.1% B + 0.1% Zn",
 		"summary": "NPK fertilizer with high potassium content that improves production and quality of fruits, grains, and roots in various crops."
 	},
 	{
 		"id": "fosfoplan_p55",
 		"name": "Fosfoplan P55",
-		"description": "It is a concentrated, 100% water-soluble powder fertilizer designed to achieve and maintain the nutritional balance of most crops through its high nitrogen, phosphorus, and potassium content. It also provides a balanced supply of micronutrients.\n\nIt is recommended to apply FOSFOPLAN P55®️ + MINORS to obtain and maintain a high nutritional level in crops during stages of high nutrient demand.\n\nBenefits:\n-Greater flower, fruit, and seed formation, increasing crop yield.\n-Greater precocity.\n-Increased synthesis of proteins and sugars.\n-Enhanced root development. Recommended for Avocado 🥑",
 		"summary": "Water-soluble fertilizer with NPK and micronutrients that enhances flowering, fruiting, and root development in demanding crops.",
 		"imgUrl": "/images/products/fosfoplan_p55.webp"
 	},
 	{
 		"id": "nutriplan_k45",
 		"name": "Nutriplan K45",
-		"description": "It is a complex fertilizer for foliar or fertigation application, 100% soluble, chelated, and balanced with macro- and micronutrients. It can be applied at any crop growth stage and enhances vigor and vegetative growth. It is easily assimilated and transformed by plants.\n\nAPPLICATION METHOD AND TIMING\n\nFor foliar applications, it is essential to apply in early morning or late afternoon when leaves are turgid. Applications during midday, under high temperatures, or wilted plants may be ineffective. Use sufficient water volume for better results. It can also be applied aerially, alone or mixed with pesticides. Recommended for Avocado 🥑",
 		"summary": "Water-soluble foliar and fertigation fertilizer that improves plant vigor and growth at all stages.",
 		"imgUrl": "/images/products/nutriplan_k45.webp"
 	},
 	{
 		"id": "real_gamin",
 		"name": "Real Gamin - Growth Biostimulant",
-		"description": "REALGAMIN is the result of processing a type of algae called Cyanobacteria and/or Cyanophytes, whose main characteristic is that they develop in high temperatures and in aquatic environments rich in minerals.",
 		"summary": "Biostimulant made from cyanobacteria and humic substances that provides essential amino acids and nutrients for plant growth.",
 		"imgUrl": "/images/products/humus3.webp",
 		"imgFit": true
@@ -80,77 +69,66 @@
 	{
 		"id": "germinar",
 		"name": "Germinar",
-		"description": "Growth stimulator for seed treatment in grasses (wheat, corn, rice). It contains fully chelated zinc, which stimulates the plant’s root system, resulting in more developed and active roots. It allows the plant to absorb more water and nutrients from the soil, improving early crop establishment. Ensures more uniform plants at establishment. Increases absorption of water and nutrients. Provides chelated zinc, preventing phosphorus-zinc antagonism. Presented as a soluble concentrate for foliar application.",
 		"summary": "Seed growth stimulator for grasses with chelated zinc that strengthens roots and improves early crop establishment.",
 		"imgUrl": "/images/products/germinar.webp"
 	},
 	{
 		"id": "nutrifollaje",
 		"name": "Nutrifollaje",
-		"description": "Organic-mineral fertilizer based on the seaweed Ascophyllum nodosum, rich in cytokinin precursors that increase crop yield and quality. Its secondary metabolites activate resistance processes in the plant.",
 		"summary": "Organic fertilizer based on seaweed that improves crop yield, quality, and resistance.",
 		"imgUrl": "/images/products/nutrifollaje.webp"
 	},
 	{
 		"id": "pegaplan_ph",
 		"name": "Pegaplan Ph",
-		"description": "Contains 93% vegetable oil emulsifiable in water. It is indicated for use with insecticides, fungicides, herbicides, acaricides, and for controlling scale insects.\n\nBenefits and Functions:\n\n-Encapsulator: This property allows PEGAPLAN PH to form an oil film that adheres to the agrochemical molecule, protecting it from factors such as water pH, hardness, metals, and suspended solids.\n-Adherent: This property is crucial for pest control.",
 		"summary": "Emulsifiable vegetable oil that acts as an adherent and encapsulator, improving agrochemical effectiveness and pest control.",
 		"imgUrl": "/images/products/pegaplan_ph.webp"
 	},
 	{
 		"id": "cuaje_y_amarre",
 		"name": "Cuaje Y Amarre",
-		"description": "Its goal is to control excessive vigor by promoting the movement of assimilates from leaves to fruits and other storage organs. It enhances the mobilization of sugars and nutrients to key storage organs (roots, fruits, etc.), controls vegetative vigor, and reduces internode length. It concentrates and synchronizes flowering and fruit set, preventing fruit abortion and reabsorption. It promotes the growth of more compact plants with increased lateral development.\nPresented as a soluble concentrate designed for foliar spraying.\n\nDosage:\nConsult based on soil and crop analysis.\n\nGeneral conditions:\nIt is applied to most crops every 7 days; however, the frequency should not exceed 14 days.\n\nIf frequency increases to 14 days, the application dose should be 1 L/Ha.",
 		"summary": "Growth regulator that controls vigor, improves fruit set and development, and promotes compact plants with better structure.",
 		"imgUrl": "/images/products/cuaje_y_amarre.webp"
 	},
 	{
 		"id": "mas_llenado",
 		"name": "Mas Llenado",
-		"description": "As a growth regulator, it is designed to delay foliar senescence when plants lack a good root system. It increases the development of lateral shoots by inducing a phenomenon called “directed accumulation,” where the application of MAS LLENADO promotes the transport of essential substances to deficient areas, delaying senescence and actively participating in cell elongation.\n\nTECHNICAL INFORMATION\n\nApplied to plants under stress with high ethylene levels to stop premature fruit ripening. Improves fruit quality and shelf life. When applied to fruits between 2–8 mm in diameter, it stimulates cell division, resulting in higher-quality fruits. When applied frequently to roots, it strengthens the root system, providing greater resistance to pests and diseases.",
 		"summary": "Growth regulator that delays senescence, improves fruit filling and quality, and strengthens the root system.",
 		"imgUrl": "/images/products/mas_llenado.webp"
 	},
 	{
 		"id": "trimix_cobre",
 		"name": "Trimix Cobre",
-		"description": "Fungicide\nClassic bactericide with preventive action, broad activity spectrum, and good persistence.\n\nTRIMIX COPPER\n\nGeneral information\nCharacteristics\nCopper has fungistatic and bacteriostatic activity, inhibiting the vital functions of fungi and bacteria. In general, copper is strongly retained in the soil’s surface layer and is practically immobile. It has high affinity for soil colloids and forms stable complexes with organic compounds. Plants use it as a nutrient.\n\nInorganics\n\nTRIMIX COPPER\n\nBenefits\nEasy and safer handling (SC formulation)\nFewer harvest residues (soluble copper)\nNo harvest interval restrictions (tolerance-exempt in crops).\nRecommended for Avocado 🥑",
 		"summary": "Preventive fungicide and bactericide based on copper with high persistence, low toxicity, and no harvest restrictions.",
 		"imgUrl": "/images/products/trimix_cobre.webp"
 	},
 	{
 		"id": "botrizan",
 		"name": "Botrizan",
-		"description": "It is an anilinopyrimidine fungicide used to control fungal diseases such as Botrytis cinerea (gray mold) and powdery mildew in fruits, vegetables, and ornamental plants. It acts both preventively and curatively by inhibiting methionine biosynthesis (a key amino acid for fungi) and the secretion of enzymes necessary for infection, thus blocking fungal penetration and mycelial development. It is a systemic fungicide with translaminar action, meaning it penetrates plant tissues and moves within them, providing leaf protection.\n\nMode of action: Methionine inhibition: BOTRIZAN blocks methionine production, an essential amino acid for protein and lipid synthesis in fungi, halting their development.\n\nEnzymatic blockade: It also inhibits the secretion of hydrolytic enzymes fungi need to break down and penetrate plant tissues.\n\nUses and crops: Used to control diseases in various crops.",
 		"summary": "Systemic and translaminar fungicide that controls gray mold and powdery mildew by blocking fungal methionine and enzyme synthesis.",
 		"imgUrl": "/images/products/botrizan.webp"
 	},
 	{
 		"id": "fungibac",
 		"name": "Fungibac",
-		"description": "It is a preventive and contact fungicide formulated with FUNGIBAC as the active ingredient, used to control fungal diseases in various crops such as avocado 🥑, potato, tomato, banana, and rice. It inhibits the cellular respiration of fungi, preventing spore germination and fungal entry into the plant.\nMain characteristics\nType: Non-systemic, contact, and preventive fungicide.\nActive ingredients:\nOXYTETRACYCLINE AGRICULTURAL\nPLUS\nTHIAZOLES\nFormulation: Suspension concentrate (SC).\nMode of action: Blocks fungal respiration and protects the plant from infection.",
 		"summary": "Preventive contact fungicide that blocks fungal respiration, protecting crops such as avocado, potato, and rice.",
 		"imgUrl": "/images/products/fungibac.webp"
 	},
 	{
 		"id": "simpuk_75",
 		"name": "Simpuk 75",
-		"description": "It is a pyrethroid agricultural insecticide (Toxicological Category II – moderately hazardous) that acts by contact and ingestion, causing paralysis in insects by disrupting their nerve cell membranes. It is presented as an emulsifiable concentrate and is a product of Ingenio y Tecnología.\nHow it works\nNeurotoxin: SIMPUK 75 acts as a neurotoxin, disrupting normal neuronal function.\nSodium ion alteration: Alters sodium ion flow through cell membranes, causing excessive nervous activity.\nParalysis: This repetitive nerve firing in sensory and motor pathways leads to paralysis and eventual death.",
 		"summary": "Pyrethroid insecticide acting by contact and ingestion, causing insect paralysis by disrupting their nervous system.",
 		"imgUrl": "/images/products/simpuk_75.webp"
 	},
 	{
 		"id": "singer",
 		"name": "Singer",
-		"description": "Insecticide\nComposition:\n100 g/l Isocycloseram\n150 g/l Lambda-cyhalothrin\nFormulation:\nA mixed CS and SC formulation (ZC)\nProduct description\nSINGER®️ ZC is an insecticide formulated with Isocycloseram (PLINAZOLIN®️ or PLIN) and Lambda-cyhalothrin.\nIsocycloseram (PLINAZOLIN®️ or PLIN) belongs to IRAC Group 30 insecticides by mode of action. It acts by contact and ingestion. It affects the nervous system as an allosteric modulator of the GABA-activated chloride channel. It binds to a novel site on GABA receptors in synapses and prevents them from opening. As a result, muscle relaxation fails, leading to continuous contractions and ultimately the insect’s death. Lambda-cyhalothrin (LCY) belongs to IRAC Group 3A. It penetrates the insect cuticle rapidly and disrupts nerve conduction by delaying sodium channel closure.",
 		"summary": "Dual-action insecticide with Isocycloseram and Lambda-cyhalothrin that disrupts the insect nervous system causing death.",
 		"imgUrl": "/images/products/singer.webp"
 	},
 	{
 		"id": "big-bac",
 		"name": "Bic-Bac",
-		"description": "It is a pyrethroid insecticide that acts by ingestion and contact on the central nervous system. It is absorbed through the insect’s cuticle, delaying the closure of sodium channels, causing prolonged sodium currents during depolarization, and leading to death.",
 		"summary": "Pyrethroid insecticide acting by contact and ingestion that alters sodium channels in the insect’s nervous system, causing death.",
 		"imgUrl": "/images/products/bic-bac.webp"
 	}

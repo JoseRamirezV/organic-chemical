@@ -1,0 +1,3 @@
+# Agroquel
+
+Es un producto formulado para incrementar las cosechas de frutos, tubérculos y granos. Permite mejorar el peso, la calidad, la apariencia y las características organolépticas. Su alto contenido de Potasio y Fósforo, garantizan una mayor actividad celular, metabólica y fotosintética para el llenado de sus cosechas. Además, las algas marinas Ascophyllum nudosum generan un balance hormonal natural en la planta, necesario para que sus frutos, tubérculos y granos, alcancen su máximo potencial en cantidad, tamaño y peso.

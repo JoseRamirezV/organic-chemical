@@ -1,0 +1,3 @@
+# Radifos Npk
+
+It is a granular fertilizer with a high phosphorus content, especially needed in the early stages of crop growth to promote root development and plant growth. It also provides nitrogen, potassium, magnesium, sulfur, boron, and zinc in an optimal ratio for early crop development. The phosphorus provided by RADIFOS NPK comes in the form of highly soluble monocalcium phosphates, immediately available to the plant, and dicalcium phosphates for more progressive availability. The contribution of other elements along with high levels of phosphorus makes it a unique fertilizer that ensures successful crop establishment in the field. 12 – 24 – 12 + 2% MgO + 1% S + 0.04% B + 0.02% Zn + SiO

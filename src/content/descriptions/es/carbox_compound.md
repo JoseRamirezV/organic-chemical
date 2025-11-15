@@ -1,0 +1,5 @@
+# Carbox Compound
+
+Fertilizante Orgánico mineral equilibrado entre macro y microelementos. Gracias a su composición, características microbiológicas, concentración de materia orgánica y concentración en elementos mayores y menores favorece las condiciones físico-químicas de diversos tipos de suelos, mejorando la productividad de cultivos y suelos, promoviendo la recuperación de la capa edáfica pobre e inestable y siendo una fuente de nutrición para todo tipo de cultivo.
+
+Este producto es elaborado a partir de una base de materia orgánica biodegradable, la cual es estabilizada por medio de un proceso controlado llamado compostaje y una mezcla de elementos nutritivos ricos en fósforo, nitrógeno, potasio, magnesio y zinc. La aplicación constante de CARBOX COMPUESTO aumenta la concentración de materia orgánica y la fijación de carbono orgánico, favoreciendo la nutrición del suelo y los cultivos, ayudando a controlar la erosión y fomentando la recuperación de su actividad productiva.

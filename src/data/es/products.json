@@ -2,7 +2,6 @@
 	{
 		"id": "carbox_compost",
 		"name": "Carbox Compost",
-		"description": "Fertilizante Orgánico mineral. Gracias a su composición, características microbiológicas y concentración de materia orgánica, favorece las condiciones físico-químicas de diversos tipos de suelos, mejorando la productividad de los mismos y promoviendo su recuperación. Este producto es elaborado 100% a base de materia orgánica biodegradable, la cual es estabilizada por medio de un proceso controlado llamado compostaje. \n\nLa aplicación constante de CARBOX COMPOST aumenta la concentración de materia orgánica y la fijación de carbono orgánico, favoreciendo la nutrición del suelo, controlando la erosión y fomentando la recuperación de su actividad productiva.",
 		"summary": "Fertilizante orgánico mineral elaborado 100% con materia orgánica biodegradable compostada. Mejora las condiciones físico-químicas del suelo, aumenta la materia y el carbono orgánico, favorece la nutrición, controla la erosión y promueve la recuperación y productividad del suelo.",
 		"imgUrl": "/images/products/humus4.webp",
 		"imgFit": true
@@ -10,21 +9,18 @@
 	{
 		"id": "agrofol",
 		"name": "Agrofol",
-		"description": "Es un fungicida sistémico del grupo de los ácidos fosforosos que actúa activando las defensas naturales de la planta y combatiendo enfermedades causadas por hongos de la clase Oomycetes, como  Phytophthora y mildiú. Se usa de forma preventiva y curativa temprana en diversos cultivos como paltos,  papas, uvas y hortalizas. \n\n¿Para qué sirve?\n Control de enfermedades: Es eficaz contra enfermedades causadas por Oomycetes como el mildiú y Phytophthora.\n Inductor de resistencia: Estimula las defensas naturales de las plantas a través de la activación de respuestas de resistencia tipo SAR (Resistencia Sistémica Adquirida). \n Potenciador de otros fungicidas: Su compatibilidad en mezclas de tanque con otros fungicidas permite mejorar la efectividad y la residualidad de otros productos. \nAnti-estrés: Ayuda a la recuperación de los cultivos que han sufrido estrés por herbicidas, granizo o encharcamiento. \n\n ¿En qué cultivos se usa? \nFrutales: Aguacate (paltos) y vides. Hortalizas: Papas, tomates, espárragos y 🥑 🥑",
 		"summary": "Fungicida sistémico que combate hongos como Phytophthora y mildiú, estimulando las defensas naturales y reduciendo el estrés de los cultivos.",
 		"imgUrl": "/images/products/agrofol.webp"
 	},
 	{
 		"id": "agroquel",
 		"name": "Agroquel",
-		"description": "Es un producto formulado para incrementar las cosechas de frutos, tubérculos y granos. Permite mejorar el peso, la calidad, la apariencia y las características organolépticas. Su alto contenido de Potasio y Fósforo, garantizan una mayor actividad celular, metabólica y fotosintética para el llenado de sus cosechas. Además, las algas marinas Ascophyllum nudosum generan un balance hormonal natural en la planta, necesario para que sus frutos, tubérculos y granos, alcancen su máximo potencial en cantidad, tamaño y peso.",
 		"summary": "Bioestimulante con fósforo, potasio y extractos de algas que mejora el llenado, tamaño y calidad de frutos, tubérculos y granos.",
 		"imgUrl": "/images/products/agroquel.webp"
 	},
 	{
-		"id": "carbox_compuesto",
-		"name": "Carbox compost Fertibio\n Compuesto Enriquecido",
-		"description": "Fertilizante Orgánico mineral equilibrado entre macro y microelementos. Gracias a su composición, características microbiológicas, concentración de materia orgánica y concentración en elementos mayores y menores favorece las condiciones físico-químicas de diversos tipos de suelos, mejorando la productividad de cultivos y suelos, promoviendo la recuperación de la capa edáfica pobre e inestable y siendo una fuente de nutrición para todo tipo de cultivo.\n\nEste producto es elaborado a partir de una base de materia orgánica biodegradable, la cual es estabilizada por medio de un proceso controlado llamado compostaje y una mezcla de elementos nutritivos ricos en fósforo, nitrógeno, potasio, magnesio y zinc. La aplicación constante de CARBOX COMPUESTO aumenta la concentración de materia orgánica y la fijación de carbono orgánico, favoreciendo la nutrición del suelo y los cultivos, ayudando a controlar la erosión y fomentando la recuperación de su actividad productiva.",
+		"id": "carbox_compound",
+		"name": "Carbox Compost Fertibio\n Compuesto Enriquecido",
 		"summary": "Fertilizante orgánico enriquecido con macro y microelementos que mejoran la fertilidad, nutrición y estabilidad del suelo, promoviendo cultivos productivos.",
 		"imgUrl": "/images/products/humus2.webp",
 		"imgFit": true
@@ -32,7 +28,6 @@
 	{
 		"id": "real_humus",
 		"name": "Real Humus",
-		"description": "Es una  enmienda orgánica líquida, formulada con materias primas de primer nivel en la que se utilizan aguas tratadas que cumplen con los estándares de calidad, en sintonía con los principios de la economía circular que ha adoptado la empresa y cumpliendo con las exigencias del ICA.\n\nEl uso de REALHUMUS favorece características físicas, químicas y microbiológicas del suelo potencializando cualquier tipo de cultivo, entre sus principales ventajas se encuentran: la regulación del pH, el incremento del intercambio catiónico, restablecimiento de la biota mejorando la asimilación de nutrientes y el desarrollo radicular, potencializa los fertilizantes utilizados bien sean ecológicos o químicos",
 		"summary": "Enmienda orgánica líquida que mejora las propiedades del suelo, regula el pH y potencia la asimilación de nutrientes y el desarrollo radicular.",
 		"imgUrl": "/images/products/gamin.webp",
 		"imgFit": true
@@ -40,7 +35,6 @@
 	{
 		"id": "real_gamin",
 		"name": "Real Gamin - Bioestimulante\n De Crecimiento",
-		"description": "Es el resultado del tratamiento de una clase de algas denominadas Cianobacterias y/o Cianofitas, de las cualessu característica principal esla de generarse en altastemperaturas y en ambientes hídricos ricos en minerales. Del proceso de hidrólisis de las proteínas que están presentes en estas algas se obtienen algunos aminoácidos esenciales de origen vegetal que presentan altos contenidos de nutrientes. Estos, a su vez, se combinan con sustancias húmicas líquidas (ácidos húmicos y fúlvicos) obtenidas a partir de Leonardita para brindarle a la planta una nutrición completa y así hacer de REALGAMIN el mejor aliado para el crecimiento de sus plantas.",
 		"summary": "Bioestimulante a base de cianobacterias y sustancias húmicas que aporta aminoácidos y nutrientes esenciales para el crecimiento vegetal.",
 		"imgUrl": "/images/products/humus3.webp",
 		"imgFit": true
@@ -48,109 +42,93 @@
 	{
 		"id": "completo_npk",
 		"name": "Completo Npk",
-		"description": "INGENIO Y TECNOLOGÍA NUTRICIÓN VEGETAL COMPLETO NPK Nutrición Vegetal COMPLETO NPK es una combinación de nitrógeno (N), fósforo (P) y potasio (K) diseñada para maximizar el rendimiento y la calidad del cultivo. Está formulada para responder a las necesidades específicas del cultivo. COMPLETO NPK es una de las fuentes más eficientes de N, P y K disponibles en el mercado. Cada prill de COMPLETO NPK contiene cantidades de NPK balanceadas y adaptadas con precisión a los requerimientos del cultivo. Cuando se aplica en la dosis correcta y en las condiciones adecuadas, promueve la absorción de estos nutrientes. Este producto es un complejo químico y por lo tanto ofrece una distribución pareja de los nutrientes, sea que se aplique al voleo o con máquinas fertilizadoras. No hay riesgo de segregación de nutrientes durante el transporte, manipulación y aplicación. COMPLETO NPK tiene una fuente de nitrógeno balanceada que contiene nitrógeno tanto en forma de nitrato como de amonio.",
 		"summary": "Fertilizante NPK balanceado que maximiza el rendimiento y la calidad del cultivo, garantizando una distribución uniforme de nutrientes."
 	},
 	{
 		"id": "radifos_npk",
 		"name": "Radifos Npk",
-		"description": "Es un fertilizante granular con un alto contenido de fósforo que es especialmente necesario en etapas tempranas del cultivo para promover el desarrollo de raíces y el crecimiento de las plantas. También aporta nitrógeno, potasio, magnesio, azufre, boro y zinc en una relación óptima para el desarrollo en las primeras etapas del cultivo. El fósforo que provee RADIFOS NPK viene en forma de fosfatos monocálcicos de alta solubilidad inmediatamente disponibles para la planta y de fosfatos dicálcicos para una disponibilidad más progresiva. El aporte de otros elementos en conjunto con los altos niveles de fósforo lo convierten en un fertilizante único que asegura el establecimiento de los cultivos en el campo. 12 – 24 – 12 + 2% MgO + 1% S + 0.04% B + 0.02% Zn+Sio",
 		"summary": "Fertilizante granular rico en fósforo y micronutrientes que estimula el desarrollo radicular y el crecimiento inicial de los cultivos."
 	},
 	{
 		"id": "grupal_npk",
 		"name": "Grupal Npk",
-		"description": "Es un fertilizante granular complejo químico NPK, con alto contenido de potasio (23%) por lo que es especialmente adecuado para las etapas de producción. También se recomienda en otras situaciones que requieren una mayor demanda de potasio como prevención contra el daño por temperaturas frías y déficit de agua, entre otros. Además de su alto contenido de potasio, aporta nitrógeno nítrico, fósforo asimilable, magnesio, azufre, zinc y boro, elementos necesarios para el crecimiento de las plantas y que en el balance presentado por GRUPAL NPK promueven la formación, crecimiento y desarrollo de frutos, granos y otros órganos de almacenamiento que se cosechan. Es recomendado para muchos tipos de cultivos, incluyendo palma de aceite, café, plátano, frutales, cereales y papa, entre otros. 15 – 4 – 23 + 4% MgO + 2% S + 0.1% B + 0.1% Zn",
 		"summary": "Fertilizante NPK con alto potasio que mejora la producción y calidad de frutos, granos y raíces en diversos cultivos."
 	},
 	{
 		"id": "nutrifollaje",
 		"name": "Nutrifollaje",
-		"description": "Fertilizante orgánico mineral a base del alga marina Ascophyllum nodosum, ricas en precursores citoquinéticos, que incrementan el rendimiento y calidad de los cultivos. Con metabolitos secundarios que activan en la planta procesos de resistencia",
 		"summary": "Fertilizante orgánico a base de algas marinas que mejora el rendimiento, calidad y resistencia de los cultivos.",
 		"imgUrl": "/images/products/nutrifollaje.webp"
 	},
 	{
 		"id": "fosfoplan_p55",
 		"name": "Fosfoplan P55",
-		"description": "Es un fertilizante concentrado en polvo, 100% soluble en agua, indicado para obtener y mantener el equilibrio nutricional de la mayoría de los cultivos gracias a su aporte elevado de nitrógeno, fósforo y potasio. Además aporta de manera balanceada un completo paquete de micronutrientes.\n\nSe recomienda aplicar FOSFOPLAN P55 ®️ + MENORES para obtener y mantener un elevado nivel nutricional de los cultivos en etapas de alto requerimiento de nutrientes.\n\nBeneficios:\n-Mayor formación de flores, frutos y semillas, incrementando el rendimiento de los cultivos.\n-Mayor precocidad.\n-Mayor síntesis de proteínas y azúcares.\n-Mayor desarrollo radicular.producto recomendado para Aguacate 🥑",
 		"summary": "Fertilizante soluble con NPK y micronutrientes que mejora la floración, fructificación y desarrollo radicular en cultivos exigentes.",
 		"imgUrl": "/images/products/fosfoplan_p55.webp"
 	},
 	{
 		"id": "germinar",
 		"name": "Germinar",
-		"description": "Estimulador de crecimiento para el tratamiento de semillas en gramíneas ( trigo , maíz , arroz ). Posee en su composición zinc totalmente quelatado, lo que estimula el sistema radicular de las plantas, con raíces más desarrolladas y activas. Permite que la planta absorba más agua y nutrientes del suelo, mejorando el establecimiento en la etapa inicial del cultivo. Asegura plantas más uniformes en su establecimiento. Incrementa la absorción de agua y nutrientes. Aporte de zinc quelatado, evitando el antagonismo fósforo-zinc. Presentado en forma de concentrado soluble para aplicación foliar",
 		"summary": "Estimulador para semillas de gramíneas con zinc quelatado que fortalece raíces y mejora el establecimiento inicial del cultivo.",
 		"imgUrl": "/images/products/germinar.webp"
 	},
 	{
 		"id": "cuaje_y_amarre",
 		"name": "Cuaje Y Amarre",
-		"description": "Tiene el objetivo de controlar el exceso de vigor, promoviendo el movimiento de los asimilados desde las hojas hacia los frutos y otros órganos de acumulación. Promueva la movilización de azúcares y nutrientes hacia los principales órganos de acumulación (raíces, frutas, etc.). Controla el vigor del crecimiento vegetativo y reduce el distanciamiento de los entrenudos. Concentra y uniformiza la floración y el cuajado de frutos. Previene el aborto y la reabsorción de frutos y demás órganos a cosechar. Favorece el crecimiento de plantas más compactas, con mayor crecimiento lateral.\nPresentado en forma de concentrado soluble diseñado para ser aplicado en aspersiones foliares .\n\nDosis:\nConsultar en base a análisis de suelos y cultivo.\n\nCondicionamientos generales:\nSe aplica en la mayoría de cultivos cada 7 días, sin embargo, la frecuencia de aplicación no debe exceder los 14 días.\n\nEn caso de aumentar la frecuencia hasta 14 días, la dosis de aplicación debe ser 1 L/Ha.",
 		"summary": "Regulador que controla el vigor, mejora el cuajado y crecimiento de frutos, y favorece plantas compactas con mejor desarrollo.",
 		"imgUrl": "/images/products/cuaje_y_amarre.webp"
 	},
 	{
 		"id": "nutriplan_k45",
 		"name": "Nutriplan K45",
-		"description": "Es un fertilizante complejo de aplicación foliar o por fertirriego, 100% soluble, quelatado, con elementos mayores y menores adecuadamente balanceados, para ser aplicado en cualquier etapa fenológica del cultivo, ayuda a mejorar el vigor y crecimiento de nuevas estructuras vegetativas de las plantas. Es de fácil asimilación y transformación por parte de las plantas.\n\nFORMA Y ÉPOCA DE APLICACIÓN\n\nPara aplicaciones al follaje es esencial hacerlo en las primeras horas de la mañana o en las últimas horas de la tarde, cuando las hojas estén turgentes. Cuando las plantas muestran marchites o durante las horas de medio día, con altas temperaturas, las aplicaciones pueden resultar ineficaces. Utilice buen volumen de agua para lograr mejores resultados. También puede aplicar vía aérea solo o en mezcla con pesticidas. Este producto puede obtener mejores resultados en Aguacate 🥑",
 		"summary": "Fertilizante soluble foliar y por fertirriego que mejora el vigor y crecimiento de las plantas en todas sus etapas.",
 		"imgUrl": "/images/products/nutriplan_k45.webp"
 	},
 	{
 		"id": "mas_llenado",
 		"name": "Mas Llenado",
-		"description": "Por ser un producto regulador de crecimiento esta diseñado para retardar la senescencia foliar cuando las plantas carecen de un buen sistema radicular, incrementa el desarrollo de los brotes laterales en plantas al desarrollar un\nfenómeno llamado “acumulación dirigida” en donde la aplicación de MAS LLENADO promueve el transporte de sustancias necesarias por la planta a los puntos de deficiencia, retardando de esta forma el proceso de senescencia y participando activamente en la elongación celular.\n\nINFORMACIÓN TÉCNICA\n\nA plantas que están bajo estrés con altos niveles de Etileno, para detener la maduraciónforzada de los frutos. Para tener mejor calidad y mayor vida de anaquel y almacenamiento.\nAplicado a los frutos cuando estos tienen de 2 a 8 mm de diámetro estimula la división celular con lo cual se obtienen frutos de mejor calidad. Aplicado con cierta frecuencia a la raíz fortalece el sistema radicular por lo que proporciona a la planta más resistencia a plagas y enfermedades.",
 		"summary": "Regulador de crecimiento que retrasa la senescencia, mejora el llenado y calidad de frutos, y fortalece el sistema radicular.",
 		"imgUrl": "/images/products/mas_llenado.webp"
 	},
 	{
 		"id": "pegaplan_ph",
 		"name": "Pegaplan Ph",
-		"description": "Contiene 93% de aceite vegetal emulsionable en agua. Es indicado para aplicación con insecticidas, fungicidas, herbicidas, acaricidas y para el control de las cochinillas.\n\nBeneficios y Funciones:\n\n-Encapsulador: Esta propiedad permite que PEGAPLAN PH forme una película de aceite que se adhiere a la molécula del agroquímico protegiéndolo así de la acción de los factores como el pH del agua, la dureza, los metales y los limos en suspensión.\n-Adherente: Esta propiedad es muy importante para el control de plagas.",
 		"summary": "Aceite vegetal emulsionable que actúa como adherente y encapsulador, mejorando la eficacia de agroquímicos y el control de plagas.",
 		"imgUrl": "/images/products/pegaplan_ph.webp"
 	},
 	{
 		"id": "trimix_cobre",
 		"name": "Trimix Cobre",
-		"description": "Fungicida\nBactericida clásico, de acción preventiva, con amplio rango de actividad y buena persistencia.\n\nTRIMIX COBRE\n\nInformación general\nCaracterísticas\nEl cobre posee actividad fungistática y bacteriostática, inhibiendo la actividad vital de hongos y bacterias. En general el cobre es retenido fuertemente en la zona superficial del suelo y por tanto es prácticamente inmóvil. Tiene una elevada afinidad por coloides del suelo y forma complejos estables con compuestos orgánicos. Las plantas lo utilizan como nutriente.\n\nInorgánicos\n\nTRIMIX COBRE\n\nBeneficios\nFacilidad y menor riesgo de manipulación (formulación SC)\nMenores residuos en cosecha bloqueo de fotosíntesis y (cobre soluble)\nNo tiene restricción por periodo de carencia (exento de tolerancias en cultivos.\nRecomendado en Aguacate 🥑",
 		"summary": "Fungicida y bactericida preventivo a base de cobre con alta persistencia, baja toxicidad y sin restricción de cosecha.",
 		"imgUrl": "/images/products/trimix_cobre.webp"
 	},
 	{
 		"id": "botrizan",
 		"name": "Botrizan",
-		"description": "Es un fungicida anilinopirimidínico usado para controlar enfermedades fúngicas como Botrytis cinerea (moho gris) y el oídio en frutas, verduras y plantas ornamentales. Funciona de manera preventiva y curativa al inhibir la biosíntesis de la metionina (un aminoácido clave para el hongo) y la secreción de enzimas necesarias para la infección, bloqueando así la penetración y el desarrollo del micelio fúngico. Es un fungicida sistémico con acción translaminar, lo que significa que penetra en los tejidos de la planta y se mueve dentro de ellos, ofreciendo protección a las hojas.\n\nMecanismo de acción: Inhibición de la metionina: BOTRIZAN actúa bloqueando la producción de metionina, un aminoácido esencial para la formación de proteínas y lípidos en el hongo, deteniendo su desarrollo.\n\nBloqueo enzimático: También inhibe la secreción de enzimas hidrolíticas que los hongos necesitan para descomponer y penetrar los tejidos de la planta.\n\nUsos y cultivos: Cultivos: Se utiliza para controlar enfermedades",
 		"summary": "Fungicida sistémico y translaminar que controla moho gris y oídio bloqueando la síntesis de metionina y enzimas fúngicas.",
 		"imgUrl": "/images/products/botrizan.webp"
 	},
 	{
 		"id": "fungibac",
 		"name": "Fungibac",
-		"description": "Es un fungicida de acción preventiva y por contacto, formulado con FUNGIBAC como ingrediente activo, utilizado para controlar enfermedades fúngicas en diversos cultivos como Aguacate 🥑 papa, tomate, banano y arroz. Inhibe la respiración celular de los hongos, previniendo la germinación de esporas y la entrada del hongo en la planta.\nCaracterísticas principales\nTipo de fungicida: No sistémico, de acción por contacto y preventivo.\nIngrediente activo:\nOXITETRACICLINA AGRICOLA\nMAS\nTIASOLES\nFormulación: Suspensión concentrada (SC).\nMecanismo de acción: Actúa bloqueando la respiración celular del hongo y protegiendo la planta contra la infección.",
 		"summary": "Fungicida preventivo de contacto que bloquea la respiración de los hongos, protegiendo cultivos como aguacate, papa y arroz.",
 		"imgUrl": "/images/products/fungibac.webp"
 	},
 	{
 		"id": "simpuk_75",
 		"name": "Simpuk 75",
-		"description": "Es un insecticida agrícola piretroide de la categoría toxicológica II (moderadamente peligroso) que actúa por contacto e ingestión, causando parálisis en los insectos al alterar las membranas de sus células nerviosas. Se presenta como un concentrado emulsionable y es un producto del laboratorio de Ingenio y Tecnología\nCómo funciona\nNeurotoxina: SIMPUK 75\nactúa como una neurotoxina, interrumpiendo la función normal de las neuronas del insecto.\nAlteración de iones de sodio: Altera el paso de iones de sodio en las membranas celulares, lo que provoca una actividad nerviosa excesiva.\nParálisis: Esta actividad repetitiva en las vías sensoriales y motoras del insecto conduce a la parálisis y posterior muerte.",
 		"summary": "Insecticida piretroide de acción por contacto e ingestión que provoca parálisis en insectos al alterar su sistema nervioso.",
 		"imgUrl": "/images/products/simpuk_75.webp"
 	},
 	{
 		"id": "singer",
 		"name": "Singer",
-		"description": "Insecticida\nComposición:\n100 g/l Isocycloseram\n150 g/l Lambda-cyhalotrina\nFormulación:\nUna formulación mezcla de CS y SC (ZC)\nDescripción del producto\nSINGER®️ ZC es un insecticida formulado con Isocycloseram (PLINAZOLIN®️ o PLIN) y Lambdacyhalotrin.\nIsocycloseram (PLINAZOLIN®️ o PLIN) ha sido asignado al Grupo 30 de la clasificación\npor modo de acción de los insecticidas de IRAC. Tiene efecto de contacto e ingestión. Actúa sobre\nel sistema nervioso como un modulador alostérico del canal de cloro activado por GABA. Se une a\nun sitio novedoso en los receptores GABA en las sinapsis y evita que se abran. Como resultado, el\nproceso de relajación no funciona correctamente y los músculos se contraen sin control, lo que\nprovoca calambres y, finalmente, la muerte del insecto. Lambda-cyhalotrin (LCY) pertenece al\nGrupo 3A de IRAC. Penetra rápidamente en la cutícula del insecto e interrumpe la conducción\nnerviosa al retrasar el cierre de los insectos.",
 		"summary": "Insecticida de doble acción con Isocycloseram y Lambda-cyhalotrina que altera el sistema nervioso de los insectos causando su muerte.",
 		"imgUrl": "/images/products/singer.webp"
 	},
 	{
 		"id": "big-bac",
 		"name": "Bic-Bac",
-		"description": "Es un insecticida piretroide que actúa por ingestión y contacto sobre el sistema nervioso central. Es absorbido por la cutícula de los insectos postergando el cierre de los canales de sodio, produciendo una prolongada corriente de sodio durante el final de la despolarización causando su muerte.",
 		"summary": "Insecticida piretroide de contacto e ingestión que altera los canales de sodio del sistema nervioso de los insectos provocando su muerte.",
 		"imgUrl": "/images/products/bic-bac.webp"
 	}

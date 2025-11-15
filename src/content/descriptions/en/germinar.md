@@ -1,0 +1,3 @@
+# Germinar
+
+Growth stimulator for seed treatment in grasses (wheat, corn, rice). It contains fully chelated zinc, which stimulates the plant’s root system, resulting in more developed and active roots. It allows the plant to absorb more water and nutrients from the soil, improving early crop establishment. Ensures more uniform plants at establishment. Increases absorption of water and nutrients. Provides chelated zinc, preventing phosphorus-zinc antagonism. Presented as a soluble concentrate for foliar application.

@@ -1,0 +1,3 @@
+# Real Gamin
+
+Es el resultado del tratamiento de una clase de algas denominadas Cianobacterias y/o Cianofitas, de las cualessu característica principal esla de generarse en altastemperaturas y en ambientes hídricos ricos en minerales. Del proceso de hidrólisis de las proteínas que están presentes en estas algas se obtienen algunos aminoácidos esenciales de origen vegetal que presentan altos contenidos de nutrientes. Estos, a su vez, se combinan con sustancias húmicas líquidas (ácidos húmicos y fúlvicos) obtenidas a partir de Leonardita para brindarle a la planta una nutrición completa y así hacer de REALGAMIN el mejor aliado para el crecimiento de sus plantas.
