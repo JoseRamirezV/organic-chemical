@@ -1,52 +1,99 @@
 ---
+import logo from '@assets/images/Logo_blanco.webp';
+import InfoPill from '@components/home/InfoPill.astro';
+import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
-import logo from '@assets/images/Logo.webp';
 
-const { data } = Astro.props;
+interface Props {
+	contact: ContactSection;
+	socials: Social[];
+}
+
+interface ContactSection {
+	label: string;
+	data: ContactData[];
+}
+
+interface Social {
+	label: string;
+	link: string;
+	icon: string;
+}
+
+interface ContactData {
+	type: string;
+	value: string;
+	icon: string;
+}
+
+const { contact, socials } = Astro.props;
+const { label, data: contactInfo } = contact;
 ---
 
-<footer class='flex max-md:flex-col gap-8 [&>*]:flex-1 px-section py-14 min-h-80 bg-gray-100'>
-  <div class=''>
-    <Image
-      src={logo}
-      alt='Organic Chemical'
-      class='w-2/5 object-contain mr-auto'
-    />
-    <address class='font-medium not-italic mt-5 leading-loose'>
-      Visítenos en: Calle 5B carrera 67 Manzana 11 Casa 2<br />
-      Teléfono: (+57) 314 131 4351 <br />
-      <a href='mailto:webmaster@example.com'>webmaster@example.com</a>
-    </address>
-  </div>
-  <ul class='bg-blue-400'>
-  </ul>
-  <form class='flex flex-col gap-4'>
-    <legend class='pb-2 text-2xl font-semibold border-b-2 border-b-gray-400'>
-      {data.greeting}
-    </legend>
-    <label>
-      {data.name}
-      <input type="text" name="" placeholder={data.namePlaceholder}>
-    </label>
-    <label>
-      {data.email}
-      <input type="text" name="" placeholder={data.emailPlaceholder}>
-    </label>
-  </form>
+<footer
+	class='flex max-md:flex-col gap-16 [&>*]:flex-1 px-section h-fit py-14 bg-green-950 text-white'
+>
+	<div class='flex flex-col gap-5'>
+		<Image
+			src={logo}
+			alt='Organic Chemical'
+			class='w-full lg:w-2/6 object-contain mr-auto'
+		/>
+		<p class='max-sm:text-center md:text-lg'>
+			Leading sustainable agriculture with innovative solutions for efficient,
+			eco-friendly farming practices
+		</p>
+		<ul class="flex max-sm:justify-evenly sm:gap-4">
+			{
+				socials.map(({label, link, icon}) => (
+					<li>
+						<a href={link} title={label} class="hvr-radial-out grid place-content-center p-2.5 rounded-full border before:bg-white group">
+							<Icon name={icon} class='size-5 transition-[color] duration-300 group-focus-within:text-green-950 group-hover:text-green-950'/>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+	<address class='not-italic'>
+		<h3 class='text-2xl font-semibold mb-6'>{label}</h3>
+		<ul class='flex flex-col gap-6 justify-between'>
+			{
+				contactInfo.map(({ type, value, icon }) => (
+					<li>
+						<InfoPill title={type} text={value} iconName={icon} />
+					</li>
+				))
+			}
+		</ul>
+	</address>
+	<!-- <form class='flex flex-col gap-4'>
+		<legend class='pb-2 text-2xl font-semibold border-b-2 border-b-gray-400'>
+			{data.greeting}
+		</legend>
+		<label>
+			{data.name}
+			<input type='text' name='' placeholder={data.namePlaceholder} />
+		</label>
+		<label>
+			{data.email}
+			<input type='text' name='' placeholder={data.emailPlaceholder} />
+		</label>
+	</form> -->
 </footer>
 
 <style scoped>
-  @reference "../../assets/styles/main.css";
+	@reference "../../assets/styles/main.css";
 
-  form label{
-    display: flex;
-    flex-direction: column;
-    gap: .2rem;
-    @apply text-lg
-  }
+	form label {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+		@apply text-lg;
+	}
 
-  input {
-    background-color: white;
-    @apply rounded-lg px-3 py-1.5 text-base ring-secondary-600 focus-within:ring-1 focus:outline-0;
-  }
+	input {
+		background-color: white;
+		@apply rounded-lg px-3 py-1.5 text-base ring-secondary-600 focus-within:ring-1 focus:outline-0;
+	}
 </style>
