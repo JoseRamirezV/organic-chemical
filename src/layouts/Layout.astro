@@ -1,7 +1,8 @@
 ---
 import '@assets/styles/main.css';
 
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { useTranslations } from '@i18n/utils';
+import { getLangFromUrl } from '@i18n/getLanguageFromUrl';
 
 import Logo from '@assets/images/Logo.webp';
 import Footer from '@components/layout/Footer.astro';
@@ -32,6 +33,6 @@ const t = useTranslations(lang);
 		<Header data={t('sections')} lang={lang} />
 		<slot />
 		<FormPopover />
-		<Footer contact={t('contactData')} socials={t('socials')} />
+		<Footer data={t('footer')} />
 	</body>
 </html>

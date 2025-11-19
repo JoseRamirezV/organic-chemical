@@ -1,29 +1,21 @@
 ---
-import SectionContainer from '@components/common/SectionContainer.astro';
-import Hero from '@components/home/Hero.astro';
-import Products from '@components/home/Products.astro';
-import Us from '@components/home/Us.astro';
 import Layout from '@layouts/Layout.astro';
+import Main from '@components/Main.astro';
 
 import us from '@data/es/company.json';
 import slides from '@data/es/heroSlides.json';
 import products from '@data/es/products.json';
+
+const data = {
+	us,
+	slides,
+	products,
+};
 ---
 
 <Layout
 	title='Organic & Chemical Group'
 	description='Organic & Chemical Group es una compañía dedicada a promover el uso de productos de carácter orgánicos para el agro. Encontrando soluciones eficientes que recuperen y mejoren la eficiencia y fertilidad de los suelos'
 >
-	<SectionContainer id='home'>
-		<Hero data={slides} />
-	</SectionContainer>
-	<SectionContainer id='products' class='bg-[url(/images/fondo.webp)]'>
-		<Products
-			data={products}
-			title={'Nuestros Productos Principales'}
-		/>
-	</SectionContainer>
-	<SectionContainer id='about-me'>
-		<Us data={us} />
-	</SectionContainer>
+	<Main data={data} />
 </Layout>

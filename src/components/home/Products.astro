@@ -1,5 +1,7 @@
 ---
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getLangFromUrl } from '@i18n/getLanguageFromUrl';
+import { useTranslations } from '@i18n/utils';
+
 import type { Product } from '@interfaces/product.interface';
 import ProductListItem from '@components/home/ProductListItem.astro';
 
@@ -26,10 +28,10 @@ const t = useTranslations(lang);
 		{data.slice(0, 4).map((product) => <ProductListItem data={product} />)}
 	</div>
 	<a
-		class='hvr-shutter-out py-2 md:py-4 px-4 md:px-7 bg-primary-700 text-white max-md:text-center md:font-medium md:text-xl rounded-lg before:bg-secondary-600 active:bg-primary-950 hover:bg-primary-950'
+		class='hvr-shutter-out py-2 md:py-4 px-4 md:px-7 bg-primary-700 text-white max-md:text-center md:font-medium md:text-xl rounded-lg before:rounded-md before:bg-secondary-600 active:bg-primary-950 hover:bg-primary-950'
 		href={'products'}
 	>
-		{t('allProductsBtn')}
+		{t('products').allProductsBtn}
 	</a>
 </div>
 <style is:global>
@@ -42,8 +44,12 @@ const t = useTranslations(lang);
 
 		& div {
 			opacity: 1;
+			
+			h2, p {
+				translate: 0;
+			}
 
-			& footer {
+			footer {
 				pointer-events: all;
 			}
 		}

@@ -14,65 +14,79 @@
 				"label": "Get in Touch"
 			}
 		},
-		"allProductsBtn": "View All Products",
-		"linkButtonText": "Discover More",
-		"formBtnTooltip": "Send us a message",
-		"formData": {
-			"greeting": "Hello! How can we assist you today?",
-			"name": "Full Name",
-			"namePlaceholder": "e.g. Andrew Gonzalez",
-			"email": "Email Address",
-			"emailPlaceholder": "example@email.com",
-			"message": "Message",
-			"messagePlaceholder": "Hi, I'd like to know more about...",
-			"cancel": "Cancel"
+		"common": {
+			"linkButtonText": "Discover More"
 		},
-		"emailRequestStates": {
-			"normal": "Send Message",
-			"success": "Message Sent!",
-			"failed": "Failed to Send",
-			"loading": "Sending...",
-			"errorMessage": "Oops!; Something went wrong while trying to send your message. Please try again later, or contact us directly via email using the 'Email' button on the form. We're sorry for the inconvenience.",
-			"successMessage": "Thank you!; Your message has been successfully sent. We'll get back to you as soon as possible."
+		"hero": {
+			"subtitle": "High-Quality Organic Chemicals for Diverse Industries",
+			"title": "Complete <strong class='text-secondary-500'>nutrition</strong> for your crops",
+			"buttonText": "Get to Know Us"
 		},
-		"emailAlreadySent": "Hello again!; It seems you've already sent us a message. We truly appreciate your interest. If you need further assistance, feel free to reach us through another channel or by using the 'Email' button on the form.",
-		"contactData": {
-			"label": "",
-			"data": [
+		"products": {
+			"allProductsBtn": "View All Products"
+		},
+		"contactForm": {
+			"formData": {
+				"send": "Send message",
+				"title": "Hello! How can we assist you today?",
+				"text": "",
+				"name": "Full Name",
+				"namePlaceholder": "e.g. Andrew Gonzalez",
+				"email": "Email Address",
+				"emailPlaceholder": "example@email.com",
+				"message": "Message",
+				"messagePlaceholder": "Hi, I'd like to know more about...",
+				"cancel": "Cancel"
+			},
+			"emailRequestStates": {
+				"normal": "Send Message",
+				"success": "Message Sent!",
+				"failed": "Failed to Send",
+				"loading": "Sending...",
+				"errorMessage": "Oops!; Something went wrong while trying to send your message. Please try again later, or contact us directly via email using the 'Email' button on the form. We're sorry for the inconvenience.",
+				"successMessage": "Thank you!; Your message has been successfully sent. We'll get back to you as soon as possible."
+			},
+			"emailAlreadySent": "Hello again!; It seems you've already sent us a message. We truly appreciate your interest. If you need further assistance, feel free to reach us through another channel or by using the 'Email' button on the form."
+		},
+		"footer": {
+			"contactData": {
+				"label": "",
+				"data": [
+					{
+						"type": "Location",
+						"value": "Colombia",
+						"icon": "location"
+					},
+					{
+						"type": "Email",
+						"value": "comercial@chemical.com",
+						"icon": "mail"
+					},
+					{
+						"type": "Phone",
+						"value": "317-377-7074",
+						"icon": "phone"
+					}
+				]
+			},
+			"socials": [
 				{
-					"type": "Location",
-					"value": "Colombia",
-					"icon": "iconamoon:location-pin"
+					"label": "Facebook",
+					"link": "www.facebook.com/chemical",
+					"icon": "facebook"
 				},
 				{
-					"type": "Email",
-					"value": "comercial@chemical.com",
-					"icon": "iconamoon:email"
+					"label": "Youtube",
+					"link": "www.youtube.com/chemical",
+					"icon": "youtube"
 				},
 				{
-					"type": "Phone",
-					"value": "317-377-7074",
-					"icon": "iconamoon:phone"
+					"label": "LinkedIn",
+					"link": "www.linkedin.com/chemical",
+					"icon": "linkedin"
 				}
 			]
-		},
-		"socials": [
-			{
-				"label": "Facebook",
-				"link": "www.facebook.com/chemical",
-				"icon": "facebook"
-			},
-			{
-				"label": "Youtube",
-				"link": "www.youtube.com/chemical",
-				"icon": "youtube"
-			},
-			{
-				"label": "LinkedIn",
-				"link": "www.linkedin.com/chemical",
-				"icon": "linkedin"
-			}
-		]
+		}
 	},
 	"es": {
 		"sections": {
@@ -89,64 +103,78 @@
 				"label": "Hablemos"
 			}
 		},
-		"allProductsBtn": "Ver todos los productos",
-		"linkButtonText": "Saber más",
-		"formBtnTooltip": "Enviar mensaje",
-		"formData": {
-			"greeting": "¡Hola! ¿En qué podemos ayudarte hoy?",
-			"name": "Nombre completo",
-			"namePlaceholder": "Ej. Andrés González",
-			"email": "Correo electrónico",
-			"emailPlaceholder": "ejemplo@correo.com",
-			"message": "Mensaje",
-			"messagePlaceholder": "Hola, me gustaría saber más sobre...",
-			"cancel": "Cancelar"
+		"common": {
+			"linkButtonText": "Saber más"
 		},
-		"emailRequestStates": {
-			"normal": "Enviar mensaje",
-			"success": "¡Mensaje enviado!",
-			"failed": "Error al enviar",
-			"loading": "Enviando...",
-			"errorMessage": "¡Ups!; Ocurrió un problema al intentar enviar tu mensaje. Por favor, intenta nuevamente o comunícate con nosotros por correo usando el botón 'Email' del formulario. Lamentamos las molestias.",
-			"successMessage": "¡Gracias!; Tu mensaje fue enviado correctamente. Te responderemos lo antes posible."
+		"hero": {
+			"subtitle": "Químicos Orgánicos de Alta Calidad para Diversas Industrias",
+			"title": "Nutrición <strong class='text-secondary-500'>completa</strong> para tus cultivos",
+			"buttonText": "Conócenos"
 		},
-		"emailAlreadySent": "¡Hola de nuevo!; Parece que ya nos has enviado un mensaje. Agradecemos mucho tu interés. Si necesitas más información, puedes contactarnos por otro medio o mediante el botón 'Email' del formulario.",
-		"contactData": {
-			"label": "",
-			"data": [
+		"products": {
+			"allProductsBtn": "Ver todos los productos"
+		},
+		"contactForm": {
+			"formData": {
+				"send": "Enviar mensaje",
+				"title": "¡Hola! ¿En qué podemos ayudarte hoy?",
+				"text": "",
+				"name": "Nombre completo",
+				"namePlaceholder": "Ej. Andrés González",
+				"email": "Correo electrónico",
+				"emailPlaceholder": "ejemplo@correo.com",
+				"message": "Mensaje",
+				"messagePlaceholder": "Hola, me gustaría saber más sobre...",
+				"cancel": "Cancelar"
+			},
+			"emailRequestStates": {
+				"normal": "Enviar mensaje",
+				"success": "¡Mensaje enviado!",
+				"failed": "Error al enviar",
+				"loading": "Enviando...",
+				"errorMessage": "¡Ups!; Ocurrió un problema al intentar enviar tu mensaje. Por favor, intenta nuevamente o comunícate con nosotros por correo usando el botón 'Email' del formulario. Lamentamos las molestias.",
+				"successMessage": "¡Gracias!; Tu mensaje fue enviado correctamente. Te responderemos lo antes posible."
+			},
+			"emailAlreadySent": "¡Hola de nuevo!; Parece que ya nos has enviado un mensaje. Agradecemos mucho tu interés. Si necesitas más información, puedes contactarnos por otro medio o mediante el botón 'Email' del formulario."
+		},
+		"footer": {
+			"contactData": {
+				"label": "",
+				"data": [
+					{
+						"type": "Ubicación",
+						"value": "Colombia",
+						"icon": "location"
+					},
+					{
+						"type": "Email",
+						"value": "comercial@chemical.com",
+						"icon": "mail"
+					},
+					{
+						"type": "Teléfono",
+						"value": "317-377-7074",
+						"icon": "phone"
+					}
+				]
+			},
+			"socials": [
 				{
-					"type": "Ubicación",
-					"value": "Colombia",
-					"icon": "iconamoon:location-pin"
+					"label": "Facebook",
+					"link": "www.facebook.com/chemical",
+					"icon": "facebook"
 				},
 				{
-					"type": "Email",
-					"value": "comercial@chemical.com",
-					"icon": "iconamoon:email"
+					"label": "Youtube",
+					"link": "www.youtube.com/chemical",
+					"icon": "youtube"
 				},
 				{
-					"type": "Teléfono",
-					"value": "317-377-7074",
-					"icon": "iconamoon:phone"
+					"label": "LinkedIn",
+					"link": "www.linkedin.com/chemical",
+					"icon": "linkedin"
 				}
 			]
-		},
-		"socials": [
-			{
-				"label": "Facebook",
-				"link": "www.facebook.com/chemical",
-				"icon": "facebook"
-			},
-			{
-				"label": "Youtube",
-				"link": "www.youtube.com/chemical",
-				"icon": "youtube"
-			},
-			{
-				"label": "LinkedIn",
-				"link": "www.linkedin.com/chemical",
-				"icon": "linkedin"
-			}
-		]
+		}
 	}
 }

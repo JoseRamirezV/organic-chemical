@@ -1,8 +1,10 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-import products from '@data/es/products.json';
+import { getLangFromUrl } from '@i18n/getLanguageFromUrl';
+import { useTranslations } from '@i18n/utils';
+
 import ProductCard from '@components/products/ProductCard.astro';
+import products from '@data/es/products.json';
+import Layout from '@layouts/Layout.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -10,11 +12,17 @@ const t = useTranslations(lang);
 
 <Layout title='Productos - Organic & Chemical Group' description=''>
 	<section>
-		<h1 class='text-5xl text-center font-bold pb-8 py-36'>Nuestros Productos</h1>
+		<h1 class='text-4xl lg:text-5xl text-center font-bold pb-4 pt-28 lg:pb-8 lg:pt-36'>
+			Nuestros Productos
+		</h1>
 		<div
-			class='grid gap-12 p-8 pb-12 sm:px-14 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+			class='grid gap-12 p-8 pb-12 sm:px-14 sm:grid-cols-2 lg:grid-cols-4'
 		>
-			{products.map((product) => product.imgUrl && <ProductCard data={product} />)}
+			{
+				products.map(
+					(product) => product.imgUrl && <ProductCard data={product} />
+				)
+			}
 		</div>
 	</section>
 </Layout>

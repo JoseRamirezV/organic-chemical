@@ -1,0 +1,49 @@
+---
+import { getLangFromUrl } from '@i18n/getLanguageFromUrl';
+import { useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { formData } = t('contactForm');
+---
+
+<div
+	class='flex-2 flex overflow-clip lg:[clip-path:ellipse(53%_100%_at_40%_55%)]'
+>
+	<img src='/images/contactFormBg.jpg' alt='' class='object-cover' />
+</div>
+<main class='flex-1 flex flex-col gap-2 lg:gap-4 py-14 px-section lg:ps-0'>
+	<h2 class='text-2xl lg:text-4xl text-white font-bold'>{formData.title}</h2>
+	<p>{formData.text}</p>
+	<form class='flex flex-col items-stretch justify-center gap-6'>
+		<label>
+			{formData.name}
+			<input type='text' placeholder={formData.namePlaceholder} />
+		</label>
+		<label>
+			{formData.email}
+			<input type='email' placeholder={formData.emailPlaceholder} />
+		</label>
+		<label>
+			{formData.message}
+			<textarea placeholder={formData.messagePlaceholder}></textarea>
+		</label>
+		<button
+			class='hvr-shutter-out lg:self-start py-3 px-5 mt-2 text-lg lg:text-xl shadow-xl rounded text-white bg-secondary-600 transition-colors before:bg-primary-700'
+		>
+			{formData.send}
+		</button>
+	</form>
+</main>
+<style scoped>
+	@reference '../../assets/styles/main.css';
+
+	label {
+		@apply flex flex-col gap-2 text-white lg:text-xl shadow-xl;
+
+		input,
+		textarea {
+			@apply text-gray-800 bg-gray-50 rounded py-2 lg:py-4 px-5 lg:px-7;
+		}
+	}
+</style>

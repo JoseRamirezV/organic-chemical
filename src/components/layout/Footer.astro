@@ -5,7 +5,11 @@ import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 
 interface Props {
-	contact: ContactSection;
+	data: FooterData;
+}
+
+interface FooterData {
+	contactData: ContactSection;
 	socials: Social[];
 }
 
@@ -14,19 +18,19 @@ interface ContactSection {
 	data: ContactData[];
 }
 
-interface Social {
-	label: string;
-	link: string;
-	icon: string;
-}
-
 interface ContactData {
 	type: string;
 	value: string;
 	icon: string;
 }
 
-const { contact, socials } = Astro.props;
+interface Social {
+	label: string;
+	link: string;
+	icon: string;
+}
+
+const { contactData: contact , socials } = Astro.props.data;
 const { label, data: contactInfo } = contact;
 ---
 
@@ -43,12 +47,19 @@ const { label, data: contactInfo } = contact;
 			Leading sustainable agriculture with innovative solutions for efficient,
 			eco-friendly farming practices
 		</p>
-		<ul class="flex max-sm:justify-evenly sm:gap-4">
+		<ul class='flex max-sm:justify-evenly sm:gap-4'>
 			{
-				socials.map(({label, link, icon}) => (
+				socials.map(({ label, link, icon }) => (
 					<li>
-						<a href={link} title={label} class="hvr-radial-out grid place-content-center p-2.5 rounded-full border before:bg-white group">
-							<Icon name={icon} class='size-5 transition-[color] duration-300 group-focus-within:text-green-950 group-hover:text-green-950'/>
+						<a
+							href={link}
+							title={label}
+							class='hvr-radial-out grid place-content-center p-2.5 rounded-full border before:bg-white before:rounded-full group'
+						>
+							<Icon
+								name={icon}
+								class='size-5 transition-[color] duration-300 group-focus-within:text-green-950 group-hover:text-green-950'
+							/>
 						</a>
 					</li>
 				))
@@ -67,19 +78,6 @@ const { label, data: contactInfo } = contact;
 			}
 		</ul>
 	</address>
-	<!-- <form class='flex flex-col gap-4'>
-		<legend class='pb-2 text-2xl font-semibold border-b-2 border-b-gray-400'>
-			{data.greeting}
-		</legend>
-		<label>
-			{data.name}
-			<input type='text' name='' placeholder={data.namePlaceholder} />
-		</label>
-		<label>
-			{data.email}
-			<input type='text' name='' placeholder={data.emailPlaceholder} />
-		</label>
-	</form> -->
 </footer>
 
 <style scoped>

@@ -5,19 +5,21 @@ const { text } = Astro.props;
 <span class='tooltip tooltip-arrow'>{text}</span>
 
 <style>
-  @reference '../assets/styles/main.css';
+  @reference '../../assets/styles/main.css';
 
   .tooltip {
-    @apply absolute flex justify-center -top-11/12 bg-gray-700 text-white py-1 px-3 rounded-xl scale-0 opacity-0 transition-[opacity,scale] origin-bottom group-hover:opacity-100 group-hover:scale-100;
+    @apply absolute flex justify-center -top-1/2 right-full bg-gray-700 text-white py-1 px-3 mr-1 rounded-lg rounded-br-none scale-0 opacity-0 transition-[opacity,scale] origin-bottom-right group-hover:opacity-100 group-hover:scale-100;
   }
 
-  .tooltip-arrow::after {
+  /* .tooltip-arrow::after {
     position: absolute;
-    top: 95%;
+    top: 75%;
+		left: 85%;
     content: '';
     border: 10px solid transparent;
     border-bottom: 0;
     border-top: 10px solid;
+		transform: rotate(-45deg);
     @apply border-t-gray-700;
-  }
+  } */
 </style>

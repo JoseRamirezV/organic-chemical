@@ -1,29 +1,38 @@
 ---
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getLangFromUrl } from '@i18n/getLanguageFromUrl';
+import { useTranslations } from '@i18n/utils';
 import { Icon } from 'astro-icon/components';
 
 interface Props {
 	path: string;
 	label?: string;
 	class?: string;
+	hideIcon?: boolean;
 }
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { path, class: className } = Astro.props;
+const { path, label, class: className, hideIcon } = Astro.props;
 ---
 
 <a
 	class:list={[
 		className,
-		'w-fit flex items-center gap-4 p-1.5 ps-4 text-white font-medium text-lg rounded-full ring-2 ring-white bg-transparent transition hover:bg-white hover:text-gray-800 group/button',
+		hideIcon
+			? 'hvr-radial-out px-4 py-2 before:bg-white'
+			: 'p-1.5 ps-4 hover:bg-white',
+		'w-fit flex items-center gap-4 text-white font-medium border-2 bg-transparent transition active:text-gray-800 group hover:text-gray-800 group/button',
 	]}
 	href={path}
 >
-	{t('linkButtonText')}
-	<Icon
-		name={'iconamoon:arrow-right-2-bold'}
-		class='bg-white rounded-full text-primary-700 size-7 p-0.5 transition-[background,color,scale] group-hover/button:bg-secondary-600 group-hover/button:text-white group-hover/button:scale-125'
-	/>
+	{label ?? t('common').linkButtonText}
+	{
+		!hideIcon && (
+			<Icon
+				name={'arrow-right'}
+				class='bg-white rounded-full text-primary-700 size-7 p-1 pe-0.5 transition-[background,color,scale] group-hover/button:bg-secondary-600 group-hover/button:text-white group-hover/button:scale-125'
+			/>
+		)
+	}
 </a>

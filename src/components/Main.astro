@@ -1,0 +1,18 @@
+---
+import SectionContainer from './common/SectionContainer.astro';
+import Contact from './home/Contact.astro';
+import Hero from './home/Hero.astro';
+import Products from './home/Products.astro';
+
+const { slides, products, us } = Astro.props.data;
+---
+
+<SectionContainer id='home'>
+	<Hero data={slides} />
+</SectionContainer>
+<SectionContainer id='products' class='bg-[url(/images/fondo.webp)]'>
+	<Products data={products} title={'Products'} />
+</SectionContainer>
+<SectionContainer id='contact' class='flex max-sm:flex-col bg-green-900 min-h-screen'>
+	<Contact data={us} />
+</SectionContainer>

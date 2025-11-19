@@ -36,7 +36,7 @@ const sections = Object.keys(data);
           <li class='list-none'>
             <a
               onclick="document.getElementById('drawer').classList.replace('left-0', 'left-full');document.body.classList.toggle('overflow-clip')"
-              href={'#' + data[section].link}
+              href={`/${lang}/${data[section].link}`}
             >
               {data[section].label}
             </a>

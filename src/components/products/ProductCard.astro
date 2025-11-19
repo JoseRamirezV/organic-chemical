@@ -1,47 +1,52 @@
 ---
+import { getLangFromUrl } from '@i18n/getLanguageFromUrl';
 import type { Product } from '@interfaces/product.interface';
 
 interface Props {
 	data: Product;
 }
 
-const { id, name, imgUrl, imgFit } = Astro.props.data;
+const { id, name, summary, imgUrl, imgFit } = Astro.props.data;
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<article class='flex flex-col gap-2 h-fit aspect-3/4 duration-300 group'>
-	<a
-		href={'products/' + id}
-		class='relative rounded-xl overflow-clip after:opacity-0 group-hover:after:opacity-100'
+<a
+	href={`/${lang}/products/${id}`}
+	class='flex lg:flex-col max-sm:items-center gap-4 lg:gap-2 lg:aspect-3/4 duration-300 group'
+>
+	<picture
+		class='relative max-md:size-full flex-1/4 rounded-xl overflow-clip after:opacity-0 group-hover:after:opacity-100'
 	>
-		<picture>
-			{
-				!imgFit && (
-					<img
-						src='/images/leavesbg.webp'
-						alt='background'
-						class='absolute inset-0 size-full'
-					/>
-				)
-			}
-			<img
-				src={imgUrl}
-				alt='Nombre del producto'
-				class:list={[
-					!imgFit ? 'scale-90' : '',
-					'relative h-full w-full aspect-3/4 object-cover',
-				]}
-			/>
-		</picture>
-	</a>
-	<h2
-		class='text-lg text-center font-semibold text-gray-800 group-hover:text-secondary-600 transition-colors'
+		{
+			!imgFit && (
+				<img
+					src='/images/leavesBg.webp'
+					alt='background'
+					class='absolute inset-0 lg:size-full w-full aspect-square'
+				/>
+			)
+		}
+		<img
+			src={imgUrl}
+			alt='Nombre del producto'
+			class:list={[
+				!imgFit ? 'scale-90 object-contain' : 'object-cover',
+				'relative w-full aspect-square lg:aspect-3/4',
+			]}
+		/>
+	</picture>
+	<footer
+		class='max-lg:flex max-lg:flex-col max-lg:justify-evenly max-sm:h-full text-sm text-gray-800 flex-3/4 group-hover:text-secondary-600 transition-colors'
 	>
-		{name}
-	</h2>
-</article>
+		<h2 class='lg:text-lg lg:text-center font-semibold max-md:line-clamp-1'>
+			{name}
+		</h2>
+		<p class='lg:hidden font-normal line-clamp-2 sm:line-clamp-3 lg:line-clamp-none'>{summary}</p>
+	</footer>
+</a>
 
 <style scoped>
-	a::after {
+	picture::after {
 		position: absolute;
 		inset: 0;
 		content: '';
