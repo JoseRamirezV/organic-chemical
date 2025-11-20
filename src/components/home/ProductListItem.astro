@@ -33,19 +33,26 @@ const { data } = Astro.props;
 		class='absolute flex flex-col size-full top-0 p-8 text-white bg-black/60 bg backdrop-blur-sm opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100'
 	>
 		<h2
-			class='lg:w-[26rem] text-xl lg:text-3xl text-secondary-500 line-clamp-2 font-bold transition-[translate] duration-500 -translate-x-full group-hover:translate-0'
+			class='sm:w-48 lg:w-2xs xl:w-[26rem] text-xl lg:text-3xl text-secondary-500 line-clamp-2 font-bold'
 		>
 			{data.name}
 		</h2>
 
 		<p
-			class='my-4 lg:my-4 w-full lg:w-[26rem] line-clamp-6 max-sm:text-sm text-pretty transition-[translate] duration-500 -translate-x-full group-hover:translate-0'
+			class='my-4 w-full sm:w-48 lg:my-4 lg:w-2xs xl:w-[26rem] md:max-lg:line-clamp-5 line-clamp-6 max-sm:text-sm text-pretty'
 		>
 			{data.summary}
 		</p>
 
-		<footer class='max-sm:mx-auto mt-auto'>
+		<footer class='max-sm:self-center mt-auto'>
 			<LinkButton path={'products/' + data.id} class='rounded-full border-white lg:text-lg' />
 		</footer>
 	</div>
 </article>
+<style>
+	@reference '../../assets/styles/main.css';
+	
+	h2, p, footer {
+		@apply transition-[translate] duration-500 -translate-x-full group-hover:translate-0;
+	}
+</style>

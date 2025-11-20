@@ -24,7 +24,7 @@ const t = useTranslations(lang);
 	>
 		{title}
 	</h2>
-	<div class='flex max-md:flex-col gap-5 lg:h-4/6 w-full overflow-clip'>
+	<div class='flex wrap-anywhere max-md:flex-col gap-5 lg:h-4/6 w-full overflow-clip'>
 		{data.slice(0, 4).map((product) => <ProductListItem data={product} />)}
 	</div>
 	<a
@@ -45,7 +45,7 @@ const t = useTranslations(lang);
 		& div {
 			opacity: 1;
 			
-			h2, p {
+			h2, p, footer {
 				translate: 0;
 			}
 

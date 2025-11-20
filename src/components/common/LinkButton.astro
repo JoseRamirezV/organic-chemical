@@ -20,9 +20,9 @@ const { path, label, class: className, hideIcon } = Astro.props;
 	class:list={[
 		className,
 		hideIcon
-			? 'hvr-radial-out px-4 py-2 before:bg-white'
+			? 'hvr-radial-out px-3 sm:px-4 py-1 sm:py-2 before:bg-white'
 			: 'p-1.5 ps-4 hover:bg-white',
-		'w-fit flex items-center gap-4 text-white font-medium border-2 bg-transparent transition active:text-gray-800 group hover:text-gray-800 group/button',
+		'w-fit flex items-center md:gap-2 gap-4 text-white font-medium border-2 bg-transparent transition active:text-gray-800 group hover:text-gray-800 group/button',
 	]}
 	href={path}
 >
